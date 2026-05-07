@@ -305,6 +305,50 @@
       color: #b0b0c0;
       letter-spacing: -0.1px;
     }
+
+    /* ── Desktop ── */
+    @media (min-width: 700px) {
+      body {
+        max-width: none;
+        background: #e8eaf5;
+      }
+
+      .header {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 56px 48px 0;
+      }
+
+      .header-title {
+        font-size: 72px;
+        letter-spacing: -2.5px;
+        margin-bottom: 40px;
+      }
+
+      .cards {
+        max-width: 1080px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 40px 48px 96px;
+      }
+
+      .card-wrapper {
+        position: relative;
+        margin-bottom: 0;
+      }
+
+      .card-visual {
+        height: 240px;
+      }
+
+      .footer {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding-bottom: 80px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -527,6 +571,7 @@
     }
 
     function updateStack() {
+      if (window.innerWidth >= 700) return;
       const scroll = window.scrollY;
       cards.forEach((card, i) => {
         if (i === cards.length - 1) return;
