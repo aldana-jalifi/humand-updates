@@ -70,7 +70,6 @@
       top: 0;
       margin-bottom: 24px;
       transform-origin: top center;
-      will-change: transform, filter;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
     }
@@ -80,14 +79,26 @@
     .card-wrapper:nth-child(3) { z-index: 30; }
 
     /* ── Flip ── */
+    .card-scene {
+      width: 100%;
+      -webkit-perspective: 1200px;
+      perspective: 1200px;
+    }
+
     .card-inner {
       width: 100%;
       position: relative;
+      -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
     }
 
-    .card-wrapper.flipped .card-inner { transform: rotateY(180deg); }
+    .card-wrapper.flipped .card-inner {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
 
     .card-front, .card-back {
       backface-visibility: hidden;
@@ -98,9 +109,15 @@
       box-shadow: 0 2px 16px rgba(30, 30, 60, 0.07), 0 1px 3px rgba(30, 30, 60, 0.04);
     }
 
+    .card-front {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+
     .card-back {
       position: absolute;
       inset: 0;
+      -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg);
       display: flex;
       flex-direction: column;
@@ -371,6 +388,7 @@
   <div class="cards">
 
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
           <div class="card-visual" style="background:#eeeffe;">
@@ -426,9 +444,11 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
 
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
           <div class="card-visual" style="background:#e3f2ec;">
@@ -481,9 +501,11 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
 
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
           <div class="card-visual" style="background:#fdecea;">
@@ -546,6 +568,7 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
 
   </div>
@@ -560,13 +583,12 @@
       "Gestión de Servicios":      { color: "#fdecea" }
     };
 
-    // Stack scroll effect
+    // Stack scroll effect — transform applied to .card-scene to avoid breaking 3D flip context
     const cards  = Array.from(document.querySelectorAll('.card-wrapper'));
+    const scenes = Array.from(document.querySelectorAll('.card-scene'));
     const CARD_H = 380;
-    const GAP    = 24;
 
     function getDocTop(i) {
-      // approx doc position of each card
       return cards[i].getBoundingClientRect().top + window.scrollY;
     }
 
@@ -575,12 +597,12 @@
       const scroll = window.scrollY;
       cards.forEach((card, i) => {
         if (i === cards.length - 1) return;
-        const nextTop    = getDocTop(i + 1);
-        const stickyBot  = card.offsetHeight;
-        const nextVP     = nextTop - scroll;
-        const progress   = Math.max(0, Math.min(1, (stickyBot - nextVP) / CARD_H));
-        card.style.transform = `scale(${1 - progress * 0.04})`;
-        card.style.filter    = `brightness(${1 - progress * 0.18})`;
+        const nextTop  = getDocTop(i + 1);
+        const stickyBot = card.offsetHeight;
+        const nextVP   = nextTop - scroll;
+        const progress = Math.max(0, Math.min(1, (stickyBot - nextVP) / CARD_H));
+        scenes[i].style.transform = `scale(${1 - progress * 0.04})`;
+        scenes[i].style.filter    = `brightness(${1 - progress * 0.18})`;
       });
     }
 
