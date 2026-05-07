@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Updates HuGo · Mayo 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+      background: #f0f2fa;
+      max-width: 390px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 20px 20px 0;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header-date {
+      font-size: 13px;
+      font-weight: 400;
+      color: #8e8ea0;
+      letter-spacing: -0.1px;
+    }
+
+    .header-brand {
+      font-size: 15px;
+      font-weight: 500;
+      color: #303036;
+      letter-spacing: -0.3px;
+    }
+
+    .header-title {
+      font-size: 42px;
+      font-weight: 400;
+      color: #1a1a2e;
+      letter-spacing: -1.5px;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .header-title strong {
+      font-weight: 700;
+    }
+
+    /* ── Cards ── */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0 16px 48px;
+    }
+
+    .card-wrapper {
+      position: sticky;
+      top: 0;
+      margin-bottom: 24px;
+      transform-origin: top center;
+      will-change: transform, filter;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .card-wrapper:nth-child(1) { z-index: 10; }
+    .card-wrapper:nth-child(2) { z-index: 20; }
+    .card-wrapper:nth-child(3) { z-index: 30; }
+
+    /* ── Flip ── */
+    .card-inner {
+      width: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-wrapper.flipped .card-inner { transform: rotateY(180deg); }
+
+    .card-front, .card-back {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 16px rgba(30, 30, 60, 0.07), 0 1px 3px rgba(30, 30, 60, 0.04);
+    }
+
+    .card-back {
+      position: absolute;
+      inset: 0;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Visual area ── */
+    .card-visual {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      border-radius: 16px;
+      margin: 8px;
+      width: calc(100% - 16px);
+      overflow: hidden;
+    }
+
+    .card-visual-icon {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(30,30,60,0.10);
+      z-index: 2;
+    }
+
+    .card-visual-icon img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    /* ── Ilustraciones (Roboto — imágenes de producto) ── */
+    .mock {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 28px rgba(33,52,120,0.10), 0 1px 4px rgba(33,52,120,0.06);
+      padding: 10px 12px;
+      width: 210px;
+      font-family: 'Roboto', sans-serif;
+      z-index: 1;
+    }
+
+    .mock-head {
+      font-size: 9px; font-weight: 600; color: #303036;
+      letter-spacing: 0.2px; margin-bottom: 8px;
+    }
+
+    .mock-row {
+      display: flex; align-items: center; gap: 7px;
+      padding: 5px 0; border-bottom: 1px solid #f0f1f7;
+    }
+
+    .mock-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .mock-av {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    .mock-lines { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+
+    .mock-bar {
+      height: 5px; border-radius: 3px; background: #e8eaf0;
+    }
+
+    .mock-bar.d { background: #c8cde0; }
+    .mock-bar.w90 { width: 90%; } .mock-bar.w70 { width: 70%; }
+    .mock-bar.w55 { width: 55%; } .mock-bar.w40 { width: 40%; }
+
+    /* Nav rows (librerías) */
+    .mock-nav {
+      display: flex; align-items: center; gap: 7px;
+      padding: 5px 0; border-bottom: 1px solid #f0f1f7;
+    }
+    .mock-nav:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .mock-icon {
+      width: 22px; height: 22px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .mock-badge-new {
+      margin-left: auto; background: #eff2ff; color: #6f93eb;
+      font-size: 7px; font-weight: 600; letter-spacing: 0.2px;
+      padding: 2px 5px; border-radius: 999px; font-family: 'Roboto', sans-serif;
+    }
+
+    /* File rows (gestión) */
+    .mock-file {
+      display: flex; align-items: center; gap: 7px;
+      padding: 5px 0; border-bottom: 1px solid #f0f1f7;
+    }
+    .mock-file:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .mock-check {
+      width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0;
+    }
+    .mock-check.on  { background: #6f93eb; }
+    .mock-check.off { background: #fff; border: 1.5px solid #d0d3e0; }
+
+    .mock-dl { margin-left: auto; flex-shrink: 0; }
+
+    /* ── Card content ── */
+    .card-content {
+      padding: 16px 20px 22px;
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #f0f2fa;
+      color: #636271;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.1px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a1a2e;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .card-cta {
+      font-size: 13px;
+      font-weight: 400;
+      color: #6f93eb;
+      letter-spacing: -0.1px;
+    }
+
+    /* ── Back face ── */
+    .back-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid #f0f1f7;
+    }
+
+    .back-module {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #636271;
+      letter-spacing: -0.1px;
+    }
+
+    .back-module-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .back-close {
+      width: 30px; height: 30px;
+      border-radius: 999px;
+      background: #f0f2fa;
+      display: flex; align-items: center; justify-content: center;
+      color: #8e8ea0; font-size: 12px;
+      cursor: pointer;
+      border: none;
+      flex-shrink: 0;
+    }
+
+    .back-content {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px 24px;
+    }
+
+    .back-body {
+      font-size: 22px;
+      font-weight: 400;
+      color: #1a1a2e;
+      letter-spacing: -0.6px;
+      line-height: 1.45;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 0 0 64px;
+      font-size: 12px;
+      color: #b0b0c0;
+      letter-spacing: -0.1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-top">
+      <span class="header-date">5 - 9 de Mayo | 2026</span>
+      <svg width="80" height="40" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="humand">
+        <path fill="#1c2b74" d="M86.89,276.32c-2.41,0-4.3-.72-5.68-2.16-1.38-1.44-2.07-3.25-2.07-5.41v-86.57c0-2.4.69-4.3,2.07-5.68,1.38-1.38,3.27-2.07,5.68-2.07,2.28,0,4.12.69,5.5,2.07,1.38,1.38,2.07,3.28,2.07,5.68v86.57c0,2.16-.69,3.97-2.07,5.41-1.38,1.44-3.22,2.16-5.5,2.16ZM86.89,315.28c-2.41,0-4.3-.69-5.68-2.07-1.38-1.38-2.07-3.21-2.07-5.5v-83.32c0-2.4.69-4.3,2.07-5.68,1.38-1.38,3.27-2.07,5.68-2.07,2.28,0,4.12.69,5.5,2.07,1.38,1.38,2.07,3.28,2.07,5.68v83.32c0,2.29-.69,4.12-2.07,5.5-1.38,1.38-3.22,2.07-5.5,2.07ZM163.36,315.28c-2.29,0-4.15-.72-5.59-2.16-1.44-1.44-2.16-3.25-2.16-5.41v-45.99c0-7.33-1.35-13.31-4.06-17.94-2.71-4.63-6.4-8.12-11.09-10.46-4.69-2.34-10.04-3.52-16.05-3.52-5.65,0-10.73,1.11-15.24,3.34-4.51,2.23-8.09,5.23-10.73,9.02-2.65,3.79-3.97,8.15-3.97,13.08h-10.46c.24-7.57,2.25-14.34,6.04-20.29,3.79-5.95,8.86-10.67,15.24-14.16,6.37-3.49,13.47-5.23,21.28-5.23,8.41,0,15.96,1.78,22.63,5.32,6.67,3.55,11.96,8.75,15.87,15.6,3.91,6.85,5.86,15.27,5.86,25.25v45.99c0,2.16-.72,3.97-2.16,5.41-1.44,1.44-3.25,2.16-5.41,2.16Z"/>
+        <path fill="#1c2b74" d="M263.09,316.36c-8.54,0-16.14-1.77-22.81-5.32-6.67-3.54-11.93-8.75-15.78-15.6-3.85-6.85-5.77-15.27-5.77-25.25v-45.99c0-2.16.72-3.97,2.16-5.41,1.44-1.44,3.25-2.16,5.41-2.16s3.97.72,5.41,2.16c1.44,1.44,2.16,3.25,2.16,5.41v45.99c0,7.34,1.38,13.32,4.15,17.94,2.76,4.63,6.49,8.12,11.18,10.46,4.69,2.34,9.98,3.52,15.87,3.52s10.76-1.11,15.33-3.34c4.57-2.22,8.18-5.23,10.82-9.02,2.64-3.79,3.97-8.14,3.97-13.08h10.28c-.24,7.57-2.23,14.34-5.95,20.29-3.73,5.95-8.78,10.67-15.15,14.16-6.37,3.49-13.47,5.23-21.28,5.23ZM302.77,315.28c-2.29,0-4.12-.69-5.5-2.07-1.38-1.38-2.07-3.27-2.07-5.68v-83.32c0-2.28.69-4.12,2.07-5.5,1.38-1.38,3.21-2.07,5.5-2.07s4.15.69,5.59,2.07c1.44,1.38,2.16,3.22,2.16,5.5v83.32c0,2.41-.72,4.3-2.16,5.68-1.44,1.38-3.31,2.07-5.59,2.07Z"/>
+        <path fill="#1c2b74" d="M369.68,315.28c-2.41,0-4.3-.69-5.68-2.07-1.38-1.38-2.07-3.21-2.07-5.5v-83.32c0-2.28.69-4.15,2.07-5.59,1.38-1.44,3.27-2.16,5.68-2.16,2.28,0,4.12.72,5.5,2.16,1.38,1.44,2.07,3.31,2.07,5.59v83.32c0,2.29-.69,4.12-2.07,5.5-1.38,1.38-3.22,2.07-5.5,2.07ZM431.9,315.28c-2.16,0-3.97-.69-5.41-2.07-1.44-1.38-2.16-3.21-2.16-5.5v-51.76c0-8.3-2.14-14.73-6.4-19.3-4.27-4.57-9.71-6.85-16.32-6.85-7.1,0-12.93,2.34-17.49,7.03-4.57,4.69-6.85,10.82-6.85,18.4h-10.46c.24-7.81,1.92-14.7,5.05-20.65,3.13-5.95,7.45-10.61,12.98-13.98,5.53-3.36,11.84-5.05,18.94-5.05s13.17,1.62,18.58,4.87c5.41,3.25,9.62,7.91,12.62,13.98,3,6.07,4.51,13.26,4.51,21.55v51.76c0,2.29-.69,4.12-2.07,5.5-1.38,1.38-3.22,2.07-5.5,2.07ZM494.12,315.28c-2.29,0-4.15-.69-5.59-2.07-1.44-1.38-2.16-3.21-2.16-5.5v-51.76c0-8.3-2.1-14.73-6.31-19.3-4.21-4.57-9.68-6.85-16.41-6.85-7.1,0-12.89,2.41-17.4,7.21-4.51,4.81-6.76,11.12-6.76,18.94h-13.17c.12-8.05,1.86-15.12,5.23-21.19,3.37-6.07,8.03-10.79,13.98-14.16,5.95-3.36,12.71-5.05,20.29-5.05,6.97,0,13.17,1.62,18.58,4.87,5.41,3.25,9.65,7.91,12.71,13.98,3.07,6.07,4.6,13.26,4.6,21.55v51.76c0,2.29-.72,4.12-2.16,5.5-1.44,1.38-3.25,2.07-5.41,2.07Z"/>
+        <path fill="#1c2b74" d="M593.85,316.18c-9.14,0-17.31-2.19-24.53-6.58-7.21-4.39-12.93-10.37-17.13-17.94-4.21-7.57-6.31-16.11-6.31-25.61s2.19-18.22,6.58-25.79c4.39-7.57,10.37-13.55,17.94-17.94,7.57-4.39,16.11-6.58,25.61-6.58s17.82,2.2,25.34,6.58c7.51,4.39,13.46,10.37,17.85,17.94,4.39,7.57,6.64,16.17,6.76,25.79l-6.13,3.07c0,8.9-2.01,16.89-6.04,23.99-4.03,7.1-9.5,12.71-16.41,16.86-6.92,4.15-14.76,6.22-23.53,6.22ZM596.01,302.47c6.73,0,12.72-1.59,17.95-4.78,5.23-3.18,9.38-7.54,12.44-13.08,3.07-5.53,4.6-11.72,4.6-18.58s-1.53-13.19-4.6-18.67c-3.07-5.47-7.21-9.83-12.44-13.08-5.23-3.25-11.21-4.87-17.95-4.87s-12.59,1.62-17.94,4.87c-5.35,3.25-9.59,7.61-12.71,13.08-3.13,5.47-4.69,11.69-4.69,18.67s1.56,13.05,4.69,18.58c3.13,5.53,7.36,9.89,12.71,13.08,5.35,3.19,11.33,4.78,17.94,4.78ZM638.21,315.28c-2.16,0-4-.69-5.5-2.07-1.51-1.38-2.25-3.21-2.25-5.5v-29.76l3.43-15.69,12.08,3.79v41.66c0,2.29-.72,4.12-2.16,5.5-1.44,1.38-3.31,2.07-5.59,2.07Z"/>
+        <path fill="#1c2b74" d="M699.71,315.28c-2.41,0-4.3-.69-5.68-2.07-1.38-1.38-2.07-3.21-2.07-5.5v-83.32c0-2.4.69-4.3,2.07-5.68,1.38-1.38,3.27-2.07,5.68-2.07,2.28,0,4.12.69,5.5,2.07,1.38,1.38,2.07,3.28,2.07,5.68v83.32c0,2.29-.69,4.12-2.07,5.5-1.38,1.38-3.22,2.07-5.5,2.07ZM776.18,315.28c-2.29,0-4.15-.72-5.59-2.16-1.44-1.44-2.16-3.25-2.16-5.41v-45.99c0-7.33-1.35-13.31-4.06-17.94-2.71-4.63-6.4-8.12-11.09-10.46-4.69-2.34-10.04-3.52-16.05-3.52-5.65,0-10.73,1.11-15.24,3.34-4.51,2.23-8.09,5.23-10.73,9.02-2.65,3.79-3.97,8.15-3.97,13.08h-10.46c.24-7.57,2.25-14.34,6.04-20.29,3.79-5.95,8.86-10.67,15.24-14.16,6.37-3.49,13.47-5.23,21.28-5.23,8.41,0,15.96,1.78,22.63,5.32,6.67,3.55,11.96,8.75,15.87,15.6,3.91,6.85,5.86,15.27,5.86,25.25v45.99c0,2.16-.72,3.97-2.16,5.41-1.44,1.44-3.25,2.16-5.41,2.16Z"/>
+        <path fill="#1c2b74" d="M878.25,316.18c-9.5,0-18.03-2.19-25.61-6.58-7.57-4.39-13.56-10.37-17.94-17.94-4.39-7.57-6.58-16.17-6.58-25.79s2.1-18.03,6.31-25.61c4.21-7.57,9.92-13.55,17.13-17.94,7.21-4.39,15.39-6.58,24.53-6.58,7.81,0,14.88,1.65,21.19,4.96,6.31,3.31,11.45,7.66,15.42,13.08v-51.58c0-2.4.75-4.3,2.25-5.68,1.5-1.38,3.34-2.07,5.5-2.07,2.28,0,4.15.69,5.59,2.07,1.44,1.38,2.16,3.28,2.16,5.68v84.22c-.24,9.38-2.56,17.83-6.94,25.34-4.39,7.52-10.31,13.47-17.77,17.85-7.46,4.39-15.87,6.58-25.25,6.58ZM878.25,302.47c6.73,0,12.72-1.62,17.95-4.87,5.23-3.25,9.38-7.6,12.44-13.08,3.07-5.47,4.6-11.69,4.6-18.67s-1.53-13.04-4.6-18.58c-3.07-5.53-7.21-9.89-12.44-13.08-5.23-3.18-11.21-4.78-17.95-4.78s-12.59,1.59-17.94,4.78c-5.35,3.19-9.59,7.55-12.71,13.08-3.13,5.53-4.69,11.72-4.69,18.58s1.56,13.2,4.69,18.67c3.13,5.47,7.36,9.83,12.71,13.08,5.35,3.25,11.33,4.87,17.94,4.87Z"/>
+      </svg>
+    </div>
+    <h1 class="header-title"><strong>Updates</strong><br>de producto</h1>
+  </div>
+
+  <div class="cards">
+
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#eeeffe;">
+            <div class="card-visual-icon">
+              <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+                <rect x="4" y="2" width="12" height="16" rx="2" stroke="#6f93eb" stroke-width="1.5"/>
+                <path d="M8 7h6M8 10h4" stroke="#6f93eb" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="16" cy="16" r="4" fill="#eff2ff" stroke="#6f93eb" stroke-width="1.5"/>
+                <path d="M14.5 16h3M16 14.5v3" stroke="#6f93eb" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Legajo Digital</p>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#b0bef8,#6f93eb)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#c4b5fd,#8b5cf6)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w40"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#93c5fd,#3b82f6)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Legajo Digital</span>
+            <h2 class="card-title">Nueva vista de legajo digital</h2>
+            <p class="card-cta">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#6f93eb;"></span>
+              Legajo Digital
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body">Gestiona los datos de tus colaboradores con una interfaz más rápida, clara y eficiente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#e3f2ec;">
+            <div class="card-visual-icon">
+              <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#0ea5a0" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="19" cy="17" r="3" fill="#ecfdf5" stroke="#0ea5a0" stroke-width="1.5"/>
+                <path d="M18 17l1 1 1.5-1.5" stroke="#0ea5a0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Librerías</p>
+              <div class="mock-nav">
+                <div class="mock-icon" style="background:#d1fae5;">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#0ea5a0" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div class="mock-lines"><div class="mock-bar d w70"></div></div>
+                <span class="mock-badge-new">NUEVO</span>
+              </div>
+              <div class="mock-nav">
+                <div class="mock-icon" style="background:#d1fae5;">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#0ea5a0" stroke-width="2"/><path d="M8 12h8M8 8h5" stroke="#0ea5a0" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+                <div class="mock-lines"><div class="mock-bar d w90"></div></div>
+              </div>
+              <div class="mock-nav">
+                <div class="mock-icon" style="background:#d1fae5;">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="#0ea5a0" stroke-width="2"/><path d="M12 8v4l2 2" stroke="#0ea5a0" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div class="mock-lines"><div class="mock-bar d w55"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Librerías de Conocimiento</span>
+            <h2 class="card-title">Rediseño y nuevas funcionalidades</h2>
+            <p class="card-cta">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#0ea5a0;"></span>
+              Librerías de Conocimiento
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body">Explora una navegación más intuitiva, nueva pantalla de inicio y permisos de edición ampliados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#fdecea;">
+            <div class="card-visual-icon">
+              <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#e05c5c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2v6h6M12 18v-4M10 16h4" stroke="#e05c5c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Comprobantes</p>
+              <div class="mock-file">
+                <div class="mock-check on"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+                <div class="mock-dl">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="mock-file">
+                <div class="mock-check on"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w40"></div>
+                </div>
+                <div class="mock-dl">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="mock-file">
+                <div class="mock-check off"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+                <div class="mock-dl">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#d0d3e0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#d0d3e0" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Gestión de Servicios</span>
+            <h2 class="card-title">Descarga masiva de comprobantes</h2>
+            <p class="card-cta">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#e05c5c;"></span>
+              Gestión de Servicios
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body">Baja múltiples constancias en PDF de una sola vez para agilizar tus registros.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">humand · Novedades de producto</div>
+
+  <script>
+    // Config por módulo — acá agregás color e ícono cuando los tengas
+    const MODULE_CONFIG = {
+      "Legajo Digital":            { color: "#eeeffe" },
+      "Librerías de Conocimiento": { color: "#e3f2ec" },
+      "Gestión de Servicios":      { color: "#fdecea" }
+    };
+
+    // Stack scroll effect
+    const cards  = Array.from(document.querySelectorAll('.card-wrapper'));
+    const CARD_H = 380;
+    const GAP    = 24;
+
+    function getDocTop(i) {
+      // approx doc position of each card
+      return cards[i].getBoundingClientRect().top + window.scrollY;
+    }
+
+    function updateStack() {
+      const scroll = window.scrollY;
+      cards.forEach((card, i) => {
+        if (i === cards.length - 1) return;
+        const nextTop    = getDocTop(i + 1);
+        const stickyBot  = card.offsetHeight;
+        const nextVP     = nextTop - scroll;
+        const progress   = Math.max(0, Math.min(1, (stickyBot - nextVP) / CARD_H));
+        card.style.transform = `scale(${1 - progress * 0.04})`;
+        card.style.filter    = `brightness(${1 - progress * 0.18})`;
+      });
+    }
+
+    window.addEventListener('scroll', updateStack, { passive: true });
+    updateStack();
+  </script>
+</body>
+</html>
