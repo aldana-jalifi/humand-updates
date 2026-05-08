@@ -10,6 +10,8 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    p, h1, h2, h3 { text-wrap: pretty; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
       background: #fafafc;
@@ -55,6 +57,16 @@
 
     .header-title strong {
       font-weight: 700;
+    }
+
+    .header-sub {
+      font-size: 16px;
+      font-weight: 400;
+      color: #636271;
+      letter-spacing: -0.2px;
+      line-height: 1.5;
+      margin-top: 16px;
+      margin-bottom: 28px;
     }
 
     /* ── Cards ── */
@@ -209,7 +221,7 @@
     }
 
     .mock-badge-new {
-      margin-left: auto; background: #eff2ff; color: #6f93eb;
+      margin-left: auto; background: #c5e8e1; color: #35A48E;
       font-size: 7px; font-weight: 600; letter-spacing: 0.2px;
       padding: 2px 5px; border-radius: 999px; font-family: 'Roboto', sans-serif;
     }
@@ -224,7 +236,7 @@
     .mock-check {
       width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0;
     }
-    .mock-check.on  { background: #6f93eb; }
+    .mock-check.on  { background: #886BFF; }
     .mock-check.off { background: #fff; border: 1.5px solid #d0d3e0; }
 
     .mock-dl { margin-left: auto; flex-shrink: 0; }
@@ -323,6 +335,43 @@
       letter-spacing: -0.1px;
     }
 
+    /* ── Mobile — sticky card stack, fixed proportional height ── */
+    @media (max-width: 699px) {
+      .cards {
+        padding: 0 16px 64px;
+      }
+
+      .card-wrapper {
+        position: sticky;
+        top: 0;
+        height: 78svh;
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .card-scene,
+      .card-inner {
+        height: 100%;
+      }
+
+      .card-front {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-back {
+        height: 100%;
+      }
+
+      .card-visual {
+        flex: 1;
+        height: auto;
+      }
+    }
+
     /* ── Desktop ── */
     @media (min-width: 700px) {
       body {
@@ -370,6 +419,7 @@
 </head>
 <body>
 
+  <div class="page-wrap">
   <div class="header">
     <div class="header-top">
       <span class="header-date">5 - 9 de Mayo | 2026</span>
@@ -383,6 +433,7 @@
       </svg>
     </div>
     <h1 class="header-title"><strong>Updates</strong><br>de producto</h1>
+    <p class="header-sub">Ya están disponibles en tu cuenta nuevas actualizaciones de producto. Te compartimos las principales novedades y mejoras incorporadas esta semana en Humand.</p>
   </div>
 
   <div class="cards">
@@ -391,33 +442,33 @@
       <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
-          <div class="card-visual" style="background:#eeeffe;">
+          <div class="card-visual" style="background:#E4F4E6;">
             <div class="card-visual-icon">
               <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
-                <rect x="4" y="2" width="12" height="16" rx="2" stroke="#6f93eb" stroke-width="1.5"/>
-                <path d="M8 7h6M8 10h4" stroke="#6f93eb" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="16" cy="16" r="4" fill="#eff2ff" stroke="#6f93eb" stroke-width="1.5"/>
-                <path d="M14.5 16h3M16 14.5v3" stroke="#6f93eb" stroke-width="1.2" stroke-linecap="round"/>
+                <rect x="4" y="2" width="12" height="16" rx="2" stroke="#1CA332" stroke-width="1.5"/>
+                <path d="M8 7h6M8 10h4" stroke="#1CA332" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="16" cy="16" r="4" fill="#e4f4e6" stroke="#1CA332" stroke-width="1.5"/>
+                <path d="M14.5 16h3M16 14.5v3" stroke="#1CA332" stroke-width="1.2" stroke-linecap="round"/>
               </svg>
             </div>
             <div class="mock">
               <p class="mock-head">Legajo Digital</p>
               <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#b0bef8,#6f93eb)"></div>
+                <div class="mock-av" style="background:linear-gradient(135deg,#a3d9a9,#1CA332)"></div>
                 <div class="mock-lines">
                   <div class="mock-bar d w90"></div>
                   <div class="mock-bar w55"></div>
                 </div>
               </div>
               <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#c4b5fd,#8b5cf6)"></div>
+                <div class="mock-av" style="background:linear-gradient(135deg,#6ee27a,#16a34a)"></div>
                 <div class="mock-lines">
                   <div class="mock-bar d w70"></div>
                   <div class="mock-bar w40"></div>
                 </div>
               </div>
               <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#93c5fd,#3b82f6)"></div>
+                <div class="mock-av" style="background:linear-gradient(135deg,#bbf7c8,#1CA332)"></div>
                 <div class="mock-lines">
                   <div class="mock-bar d w90"></div>
                   <div class="mock-bar w55"></div>
@@ -434,7 +485,7 @@
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
-              <span class="back-module-dot" style="background:#6f93eb;"></span>
+              <span class="back-module-dot" style="background:#1CA332;"></span>
               Legajo Digital
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
@@ -451,32 +502,32 @@
       <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
-          <div class="card-visual" style="background:#e3f2ec;">
+          <div class="card-visual" style="background:#E7F4F1;">
             <div class="card-visual-icon">
               <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#0ea5a0" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="19" cy="17" r="3" fill="#ecfdf5" stroke="#0ea5a0" stroke-width="1.5"/>
-                <path d="M18 17l1 1 1.5-1.5" stroke="#0ea5a0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#35A48E" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="19" cy="17" r="3" fill="#e7f4f1" stroke="#35A48E" stroke-width="1.5"/>
+                <path d="M18 17l1 1 1.5-1.5" stroke="#35A48E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div class="mock">
               <p class="mock-head">Librerías</p>
               <div class="mock-nav">
-                <div class="mock-icon" style="background:#d1fae5;">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#0ea5a0" stroke-width="2" stroke-linecap="round"/></svg>
+                <div class="mock-icon" style="background:#c5e8e1;">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#35A48E" stroke-width="2" stroke-linecap="round"/></svg>
                 </div>
                 <div class="mock-lines"><div class="mock-bar d w70"></div></div>
                 <span class="mock-badge-new">NUEVO</span>
               </div>
               <div class="mock-nav">
-                <div class="mock-icon" style="background:#d1fae5;">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#0ea5a0" stroke-width="2"/><path d="M8 12h8M8 8h5" stroke="#0ea5a0" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <div class="mock-icon" style="background:#c5e8e1;">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#35A48E" stroke-width="2"/><path d="M8 12h8M8 8h5" stroke="#35A48E" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </div>
                 <div class="mock-lines"><div class="mock-bar d w90"></div></div>
               </div>
               <div class="mock-nav">
-                <div class="mock-icon" style="background:#d1fae5;">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="#0ea5a0" stroke-width="2"/><path d="M12 8v4l2 2" stroke="#0ea5a0" stroke-width="2" stroke-linecap="round"/></svg>
+                <div class="mock-icon" style="background:#c5e8e1;">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="#35A48E" stroke-width="2"/><path d="M12 8v4l2 2" stroke="#35A48E" stroke-width="2" stroke-linecap="round"/></svg>
                 </div>
                 <div class="mock-lines"><div class="mock-bar d w55"></div></div>
               </div>
@@ -491,7 +542,7 @@
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
-              <span class="back-module-dot" style="background:#0ea5a0;"></span>
+              <span class="back-module-dot" style="background:#35A48E;"></span>
               Librerías de Conocimiento
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
@@ -508,11 +559,11 @@
       <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
-          <div class="card-visual" style="background:#fdecea;">
+          <div class="card-visual" style="background:#F1EDFF;">
             <div class="card-visual-icon">
               <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#e05c5c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14 2v6h6M12 18v-4M10 16h4" stroke="#e05c5c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#886BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2v6h6M12 18v-4M10 16h4" stroke="#886BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div class="mock">
@@ -524,7 +575,7 @@
                   <div class="mock-bar w55"></div>
                 </div>
                 <div class="mock-dl">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </div>
               </div>
               <div class="mock-file">
@@ -534,7 +585,7 @@
                   <div class="mock-bar w40"></div>
                 </div>
                 <div class="mock-dl">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#e05c5c" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </div>
               </div>
               <div class="mock-file">
@@ -558,7 +609,7 @@
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
-              <span class="back-module-dot" style="background:#e05c5c;"></span>
+              <span class="back-module-dot" style="background:#886BFF;"></span>
               Gestión de Servicios
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
@@ -572,15 +623,16 @@
     </div>
 
   </div>
+  </div>
 
   <div class="footer">humand · Novedades de producto</div>
 
   <script>
     // Config por módulo — acá agregás color e ícono cuando los tengas
     const MODULE_CONFIG = {
-      "Legajo Digital":            { color: "#eeeffe" },
-      "Librerías de Conocimiento": { color: "#e3f2ec" },
-      "Gestión de Servicios":      { color: "#fdecea" }
+      "Legajo Digital":            { color: "#E4F4E6", accent: "#1CA332" },
+      "Librerías de Conocimiento": { color: "#E7F4F1", accent: "#35A48E" },
+      "Gestión de Servicios":      { color: "#F1EDFF", accent: "#886BFF" }
     };
 
     // Stack scroll effect — transform applied to .card-scene to avoid breaking 3D flip context
@@ -608,6 +660,15 @@
 
     window.addEventListener('scroll', updateStack, { passive: true });
     updateStack();
+
+    function setHeaderHeight() {
+      if (window.innerWidth < 700) {
+        const h = document.querySelector('.header').offsetHeight;
+        document.documentElement.style.setProperty('--header-h', h + 'px');
+      }
+    }
+    setHeaderHeight();
+    window.addEventListener('resize', setHeaderHeight);
   </script>
 </body>
 </html>
