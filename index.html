@@ -1120,23 +1120,27 @@
     };
 
     // Stack scroll effect — transform applied to .card-scene to avoid breaking 3D flip context
-    const cards  = Array.from(document.querySelectorAll('.card-wrapper'));
-    const scenes = Array.from(document.querySelectorAll('.card-scene'));
     const CARD_H = 380;
-
-    function getDocTop(i) {
-      return cards[i].getBoundingClientRect().top + window.scrollY;
-    }
 
     function updateStack() {
       if (window.innerWidth >= 700) return;
+      // Reset all cards first
+      document.querySelectorAll('.card-scene').forEach(s => {
+        s.style.transform = '';
+        s.style.filter    = '';
+      });
+      // Only apply effect to visible cards in the active tab
+      const activePanel = document.querySelector('.tab-panel.active');
+      if (!activePanel) return;
+      const cards  = Array.from(activePanel.querySelectorAll('.card-wrapper'));
+      const scenes = Array.from(activePanel.querySelectorAll('.card-scene'));
       const scroll = window.scrollY;
       cards.forEach((card, i) => {
         if (i === cards.length - 1) return;
-        const nextTop  = getDocTop(i + 1);
+        const nextTop   = cards[i + 1].getBoundingClientRect().top + window.scrollY;
         const stickyBot = card.offsetHeight;
-        const nextVP   = nextTop - scroll;
-        const progress = Math.max(0, Math.min(1, (stickyBot - nextVP) / CARD_H));
+        const nextVP    = nextTop - scroll;
+        const progress  = Math.max(0, Math.min(1, (stickyBot - nextVP) / CARD_H));
         scenes[i].style.transform = `scale(${1 - progress * 0.04})`;
         scenes[i].style.filter    = `brightness(${1 - progress * 0.18})`;
       });
@@ -1161,6 +1165,7 @@
         document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
         document.querySelector('[data-tab="' + btn.dataset.target + '"]').classList.add('active');
+        updateStack();
       });
     });
   </script>
