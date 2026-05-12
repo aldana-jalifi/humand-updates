@@ -459,19 +459,25 @@
 
       .tabs-wrap {
         padding: 16px 16px 0;
+        overflow: hidden;
       }
 
       .tabs {
         display: flex;
         width: 100%;
+        box-sizing: border-box;
       }
 
       .tab-btn {
         flex: 1;
+        min-width: 0;
         text-align: center;
-        font-size: 12px;
-        padding: 8px 2px;
-        letter-spacing: -0.2px;
+        font-size: 11px;
+        padding: 8px 4px;
+        letter-spacing: -0.3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .mock {
