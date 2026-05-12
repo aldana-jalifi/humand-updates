@@ -221,8 +221,8 @@
     }
 
     .mock-bar.d { background: #c8cde0; }
-    .mock-bar.w90 { width: 90%; } .mock-bar.w70 { width: 70%; }
-    .mock-bar.w55 { width: 55%; } .mock-bar.w40 { width: 40%; }
+    .mock-bar.w90 { width: 90%; } .mock-bar.w80 { width: 80%; } .mock-bar.w70 { width: 70%; }
+    .mock-bar.w55 { width: 55%; } .mock-bar.w50 { width: 50%; } .mock-bar.w40 { width: 40%; }
 
     /* Nav rows (librerías) */
     .mock-nav {
@@ -331,7 +331,7 @@
       flex: 1;
       display: flex;
       align-items: flex-start;
-      padding: 16px 24px 24px;
+      padding: 16px 24px 16px;
       overflow: hidden;
     }
 
@@ -341,6 +341,105 @@
       color: #1a1a2e;
       letter-spacing: -0.2px;
       line-height: 1.5;
+    }
+
+    .back-cta {
+      padding: 0 24px 24px;
+      flex-shrink: 0;
+    }
+
+    .back-cta a {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #213478;
+      letter-spacing: -0.1px;
+      padding: 9px 18px;
+      border: 1.5px solid #CAD5FE;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #EFF2FF;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .back-cta a:hover {
+      background: #e0e6ff;
+      border-color: #aab8fd;
+    }
+
+    /* ── Tabs ── */
+    .tabs-wrap {
+      padding: 24px 20px 0;
+    }
+
+    .tabs {
+      display: inline-flex;
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 4px;
+      gap: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .tab-btn {
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      color: #9e9dab;
+      cursor: pointer;
+      letter-spacing: -0.1px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: #ebebed;
+      color: #1a1a2e;
+    }
+
+    /* ── Tab panels ── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Flat card (Próximamente) ── */
+    .card-flat {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: -1px 4px 8px 0px rgba(233,233,244,1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-flat .card-content {
+      padding: 16px 20px 8px;
+    }
+
+    .card-flat .card-sub {
+      font-size: 14px;
+      font-weight: 400;
+      color: #636271;
+      letter-spacing: -0.1px;
+      line-height: 1.5;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+
+    .card-flat .card-cta {
+      color: #f59e0b;
+      font-weight: 500;
+    }
+
+    /* ── Empty state ── */
+    .tab-empty {
+      text-align: center;
+      padding: 80px 24px;
+      color: #b0b0c0;
+      font-size: 15px;
     }
 
     /* ── Footer ── */
@@ -356,6 +455,23 @@
     @media (max-width: 699px) {
       .header-title {
         font-size: 54px;
+      }
+
+      .tabs-wrap {
+        padding: 16px 16px 0;
+      }
+
+      .tabs {
+        display: flex;
+        width: 100%;
+      }
+
+      .tab-btn {
+        flex: 1;
+        text-align: center;
+        font-size: 12px;
+        padding: 8px 2px;
+        letter-spacing: -0.2px;
       }
 
       .mock {
@@ -445,6 +561,17 @@
         font-size: 13px;
       }
 
+      .tabs-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 24px 48px 0;
+      }
+
+      .tab-btn {
+        font-size: 14px;
+        padding: 8px 22px;
+      }
+
       .footer {
         max-width: 1080px;
         margin: 0 auto;
@@ -472,6 +599,198 @@
     <p class="header-sub">Te compartimos las actualizaciones semanales de la plataforma: mejoras implementadas en los módulos y nuevas features disponibles. Haz click en cada tarjeta para acceder a más detalle.</p>
   </div>
 
+  <!-- Tab bar -->
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn" data-target="lanzadas">Lanzadas</button>
+      <button class="tab-btn active" data-target="esta-semana">Esta semana</button>
+      <button class="tab-btn" data-target="proximamente">Próximamente</button>
+    </div>
+  </div>
+
+  <!-- Panel: Lanzadas -->
+  <div class="tab-panel" data-tab="lanzadas">
+  <div class="cards">
+
+    <!-- Card: Chat -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#EBF9EE;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M101.409 115.671C97.3214 115.671 94.0227 112.372 94.0227 108.284C94.0227 104.197 97.3214 100.826 101.409 100.826C105.497 100.826 108.867 104.197 108.867 108.284C108.867 112.372 105.497 115.671 101.409 115.671ZM67.8479 115.671C63.7603 115.671 60.3899 112.372 60.3899 108.284C60.3899 104.197 63.7603 100.826 67.8479 100.826C71.9354 100.826 75.2341 104.197 75.2341 108.284C75.2341 112.372 71.9354 115.671 67.8479 115.671ZM113.815 64.3972H57.6648C44.6133 64.3972 34 75.0105 34 88.0618V126.427C34 139.407 44.6133 150.021 57.6648 150.021H63.5452C66.2702 150.021 68.8518 151.096 70.788 153.032L78.6763 160.921C80.5408 162.785 83.0507 163.861 85.7042 163.861C88.3575 163.861 90.8674 162.785 92.8036 160.921L100.692 153.032C102.556 151.096 105.138 150.021 107.863 150.021H113.815C126.795 150.021 137.408 139.407 137.408 126.427V88.0618C137.408 75.0105 126.795 64.3972 113.815 64.3972Z" fill="#4ED364"/><path fill-rule="evenodd" clip-rule="evenodd" d="M101.41 115.668C97.3229 115.668 94.0242 112.37 94.0242 108.282C94.0242 104.194 97.3229 100.824 101.41 100.824C105.498 100.824 108.868 104.194 108.868 108.282C108.868 112.37 105.498 115.668 101.41 115.668ZM67.8492 115.668C63.7617 115.668 60.3912 112.37 60.3912 108.282C60.3912 104.194 63.7617 100.824 67.8492 100.824C71.9368 100.824 75.2355 104.194 75.2355 108.282C75.2355 112.37 71.9368 115.668 67.8492 115.668Z" fill="#4ED364"/><path fill-rule="evenodd" clip-rule="evenodd" d="M143.076 37H86.926C76.2897 37 67.2536 44.04 64.352 53.7063C64.089 54.5827 64.7715 55.4299 65.6865 55.4299H113.818C131.746 55.4299 146.375 70.059 146.375 88.0588V120.692C146.375 121.562 147.145 122.234 147.996 122.055C158.669 119.811 166.669 110.296 166.669 98.959V60.5931C166.669 47.6133 156.056 37 143.076 37Z" fill="#4ED364"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Chat</p>
+              <div style="background:#f0faf1;border-radius:6px;padding:4px 8px;margin-bottom:7px;display:flex;align-items:center;gap:6px;">
+                <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="#4ED364" stroke-width="2.5"/><path d="M16.5 16.5l3.5 3.5" stroke="#4ED364" stroke-width="2.5" stroke-linecap="round"/></svg>
+                <div class="mock-bar" style="width:60%;height:4px;background:#c5eacc;"></div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#a8f0b5,#4ED364)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#78e090,#2bc55e)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w40"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Chat</span>
+            <h2 class="card-title">Buscador, menciones @all y nuevas mejoras</h2>
+            <p class="card-cta">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#4ED364;"></span>
+              Chat
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body"><strong>Buscador de mensajes interno:</strong> encuentra palabras o frases específicas dentro de cualquier chat.<br><br><strong>Menciones grupales con @all:</strong> etiqueta a todos los miembros de un grupo a la vez.<br><br><strong>Cámara integrada en la aplicación:</strong> Captura fotos y videos directamente desde la conversación.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Muro -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#E5F3FD;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M161.289 67.7678L116.402 31.9852C106.387 24.01 92.4155 23.9948 82.3857 32.0004L37.8471 67.7299C32.366 71.8085 29.0606 78.3434 29 85.2571V144.708C29.0303 152.547 32.1082 159.9 37.6803 165.412C43.1917 170.878 50.4847 173.88 58.2022 173.88H74.221H124.771H140.737C156.786 173.88 169.901 160.871 170 144.799V85.0827C169.886 78.2221 166.68 71.8843 161.289 67.7678Z" fill="#0182D2"/><path d="M74.2227 132.242V173.87H124.773V132.227C124.75 123.752 117.814 116.86 109.315 116.86H89.5364C81.1366 116.982 74.2682 123.865 74.2227 132.242Z" fill="#0182D2"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Muro</p>
+              <div style="background:#e8f4fd;border-radius:6px;padding:5px 8px;margin-bottom:7px;display:flex;align-items:center;gap:6px;">
+                <div class="mock-av" style="background:linear-gradient(135deg,#7ec8f0,#0182D2);width:16px;height:16px;flex-shrink:0;"></div>
+                <div class="mock-bar" style="width:50%;height:4px;background:#9dcfed;"></div>
+                <span style="font-size:7px;font-weight:600;color:#0182D2;margin-left:auto;background:#cce6f8;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;white-space:nowrap;">DEST.</span>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#90cfef,#0182D2)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#6bbee8,#016cb5)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w40"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Muro</span>
+            <h2 class="card-title">Nuevo panel de novedades destacadas</h2>
+            <p class="card-cta">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#0182D2;"></span>
+              Muro
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body"><strong>Integración total en el Muro:</strong> Visualiza los posteos destacados en un componente desplegable al inicio.<br><br>Configuración personalizada: Los administradores pueden activar la vista previa y definir un tiempo de permanencia.<br><br><strong>Orden inteligente:</strong> El sistema prioriza automáticamente las novedades según su fecha de vencimiento.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Grupos -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F0E3EE;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M99.9214 118.934C74.739 118.934 53.4912 123.049 53.4912 138.93C53.4912 154.818 74.8763 158.788 99.9214 158.788C125.104 158.788 146.352 154.673 146.352 138.792C146.352 122.904 124.966 118.934 99.9214 118.934Z" fill="#801973"/><path opacity="0.4" d="M99.9211 103.803C116.973 103.803 130.646 90.0515 130.646 72.9015C130.646 55.745 116.973 42 99.9211 42C82.8693 42 69.1964 55.745 69.1964 72.9015C69.1964 90.0515 82.8693 103.803 99.9211 103.803Z" fill="#801973"/><path opacity="0.4" d="M166.63 80.0949C171.041 62.7412 158.107 47.1556 141.637 47.1556C139.846 47.1556 138.134 47.3528 136.46 47.6881C136.238 47.7407 135.99 47.8524 135.859 48.0496C135.709 48.2994 135.82 48.6347 135.983 48.8516C140.931 55.8325 143.774 64.3319 143.774 73.4558C143.774 82.1984 141.166 90.3494 136.591 97.1134C136.121 97.8102 136.539 98.7502 137.369 98.8948C138.519 99.0986 139.696 99.2038 140.898 99.2366C152.891 99.5522 163.656 91.789 166.63 80.0949Z" fill="#801973"/><path d="M179.191 120.947C176.995 116.241 171.695 113.013 163.636 111.429C159.832 110.495 149.538 109.181 139.964 109.358C139.82 109.378 139.741 109.476 139.728 109.542C139.709 109.634 139.748 109.792 139.937 109.891C144.362 112.093 161.466 121.67 159.316 141.87C159.225 142.744 159.924 143.5 160.793 143.369C165.002 142.764 175.832 140.424 179.191 133.134C181.047 129.282 181.047 124.806 179.191 120.947Z" fill="#801973"/><path opacity="0.4" d="M64.1228 47.6881C62.4562 47.3463 60.7373 47.1556 58.9465 47.1556C42.4763 47.1556 29.542 62.7412 33.9602 80.0949C36.9274 91.789 47.6919 99.5522 59.685 99.2366C60.8876 99.2038 62.0706 99.092 63.2143 98.8948C64.0444 98.7502 64.4627 97.8102 63.9921 97.1134C59.417 90.3428 56.8093 82.1984 56.8093 73.4558C56.8093 64.3253 59.6589 55.8259 64.6065 48.8516C64.7633 48.6347 64.881 48.2994 64.7241 48.0496C64.5934 47.8458 64.3516 47.7407 64.1228 47.6881Z" fill="#801973"/><path d="M36.9456 111.442C28.887 113.026 23.593 116.254 21.397 120.96C19.5343 124.819 19.5343 129.295 21.397 133.154C24.7564 140.437 35.5862 142.784 39.7952 143.382C40.6645 143.514 41.3573 142.764 41.2658 141.883C39.1155 121.69 56.2196 112.113 60.6509 109.91C60.8339 109.805 60.8731 109.654 60.8535 109.555C60.8404 109.49 60.7685 109.391 60.6248 109.378C51.0433 109.194 40.756 110.509 36.9456 111.442Z" fill="#801973"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Grupos</p>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+                <span style="font-size:7px;font-weight:600;color:#801973;background:#f0e3ee;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;margin-left:auto;flex-shrink:0;">EXT.</span>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#c76dbb,#6b1260)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w40"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w80"></div>
+                  <div class="mock-bar w50"></div>
+                </div>
+                <span style="font-size:7px;font-weight:600;color:#801973;background:#f0e3ee;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;margin-left:auto;flex-shrink:0;">EXT.</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Grupos</span>
+            <h2 class="card-title">Grupos multiempresa: Conectando compañías</h2>
+            <p class="card-cta">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#801973;"></span>
+              Grupos
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body"><strong>Espacios compartidos entre comunidades:</strong> Interactúa y trabaja con otras organizaciones en un mismo grupo.<br><br><strong>Privacidad garantizada:</strong> Mantén el grupo visible solo para miembros invitados.<br><br><strong>Identificación clara de usuarios:</strong> Etiquetas visuales de «externo» junto al nombre para reconocer fácilmente a los miembros de otras comunidades.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- Panel: Esta semana -->
+  <div class="tab-panel active" data-tab="esta-semana">
   <div class="cards">
 
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
@@ -524,6 +843,9 @@
           <div class="back-content">
             <p class="back-body"><strong>Navegación por pestañas:</strong> Accede a información, segmentación, roles y trámites en una misma ventana lateral.<br><br><strong>Organización por categorías:</strong> Los datos y documentos se agrupan en tarjetas.<br><br><strong>Acciones rápidas:</strong> Gestiona bajas, reactivaciones o cambios de clave directamente desde el perfil del colaborador.</p>
           </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+          </div>
         </div>
       </div>
       </div>
@@ -575,7 +897,10 @@
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
           </div>
           <div class="back-content">
-            <p class="back-body"><strong>Home personalizada:</strong> Configura una imagen de portada y descripción propia para darle identidad al módulo.<br><br><strong>Autonomía para editores:</strong> Ahora pueden crear, duplicar y reordenar subartículos en borrador.<br><br><strong>Notificaciones automáticas:</strong> Los editores pueden avisar cambios a la audiencia vía email o enviar notificaciones al actualizar contenidos.</p>
+            <p class="back-body"><strong>Home personalizada:</strong> Configura una imagen de portada y descripción propia para darle identidad al módulo.<br><br><strong>Autonomía para editores:</strong> Ahora pueden crear, duplicar y reordenar subartículos en borrador.<br><br><strong>Notificaciones automáticas:</strong> Los editores pueden enviar notificaciones al actualizar contenidos.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
           </div>
         </div>
       </div>
@@ -641,6 +966,137 @@
           <div class="back-content">
             <p class="back-body"><strong>Exportación masiva en PDF:</strong> Descarga múltiples constancias en un solo paso para agilizar tus registros.<br><br><strong>Procesamiento en segundo plano:</strong> Recibe un archivo en tu correo con todos los documentos solicitados.<br><br><strong>Organización automática:</strong> Los documentos mantienen sus nombres originales, facilitando el control.</p>
           </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- Panel: Próximamente -->
+  <div class="tab-panel" data-tab="proximamente">
+  <div class="cards">
+
+    <!-- Card: Reclutamiento -->
+    <div class="card-wrapper" style="cursor:default;">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F1EDFF;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.5528 35.4924C139.786 27.5484 132.133 118.592 79.8946 102.246C48.1603 92.3061 51.9867 40.1922 84.5528 35.4924Z" fill="#886BFF"/><path opacity="0.4" d="M45.9171 155.234C33.3982 143.131 42.4651 127.327 57.1052 122.419C63.9261 120.131 84.0147 115.806 88.5482 121.837C91.8339 126.204 92.1666 155.401 90.0455 160.309C85.2625 171.538 52.9877 162.097 45.9171 155.276V155.234Z" fill="#886BFF"/><path d="M157.962 152.826L152.555 147.419C153.969 144.341 154.801 140.889 154.801 137.27C154.801 123.836 143.862 112.939 130.47 112.939C117.077 112.939 106.139 123.878 106.139 137.27C106.139 150.663 117.077 161.601 130.47 161.601C135.336 161.601 139.869 160.146 143.696 157.65L148.437 162.392C149.768 163.722 151.473 164.388 153.22 164.388C154.967 164.388 156.672 163.722 158.003 162.392C160.665 159.73 160.665 155.446 158.003 152.826H157.962ZM119.656 137.27C119.656 131.323 124.522 126.457 130.47 126.457C136.417 126.457 141.284 131.323 141.284 137.27C141.284 139.683 140.493 141.887 139.162 143.717C138.913 143.967 138.705 144.216 138.538 144.507C136.542 146.712 133.672 148.126 130.511 148.126C124.564 148.126 119.698 143.26 119.698 137.312L119.656 137.27Z" fill="#886BFF"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Reclutamiento</p>
+              <div style="background:#f5f1ff;border-radius:6px;padding:6px 8px;margin-bottom:6px;">
+                <div class="mock-bar" style="width:60%;height:4px;background:#c9b8fd;margin-bottom:5px;"></div>
+                <div class="mock-bar" style="width:100%;height:13px;background:#ede8ff;border-radius:3px;"></div>
+              </div>
+              <div style="background:#f5f1ff;border-radius:6px;padding:6px 8px;">
+                <div class="mock-bar" style="width:45%;height:4px;background:#c9b8fd;margin-bottom:5px;"></div>
+                <div class="mock-bar" style="width:100%;height:13px;background:#ede8ff;border-radius:3px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Reclutamiento</span>
+            <h2 class="card-title">Formulario de aplicación</h2>
+            <p class="card-cta" style="color:#b0b0c0;font-style:italic;">Próximamente</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Gestión del tiempo -->
+    <div class="card-wrapper" style="cursor:default;">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#E4F4E6;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Gestión del tiempo</p>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
+                <div style="width:26px;height:26px;border-radius:50%;border:2.5px solid #1CA332;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><path d="M12 7v5l3 3" stroke="#1CA332" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w40" style="background:#b8e8c0;"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#a8f0b5,#1CA332)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#78e090,#19912b)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w40"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Gestión del tiempo</span>
+            <h2 class="card-title">Nuevas reglas de cierre automático</h2>
+            <p class="card-cta" style="color:#b0b0c0;font-style:italic;">Próximamente</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Grupos (Próximamente) -->
+    <div class="card-wrapper" style="cursor:default;">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F0E3EE;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M99.9214 118.934C74.739 118.934 53.4912 123.049 53.4912 138.93C53.4912 154.818 74.8763 158.788 99.9214 158.788C125.104 158.788 146.352 154.673 146.352 138.792C146.352 122.904 124.966 118.934 99.9214 118.934Z" fill="#801973"/><path opacity="0.4" d="M99.9211 103.803C116.973 103.803 130.646 90.0515 130.646 72.9015C130.646 55.745 116.973 42 99.9211 42C82.8693 42 69.1964 55.745 69.1964 72.9015C69.1964 90.0515 82.8693 103.803 99.9211 103.803Z" fill="#801973"/><path opacity="0.4" d="M166.63 80.0949C171.041 62.7412 158.107 47.1556 141.637 47.1556C139.846 47.1556 138.134 47.3528 136.46 47.6881C136.238 47.7407 135.99 47.8524 135.859 48.0496C135.709 48.2994 135.82 48.6347 135.983 48.8516C140.931 55.8325 143.774 64.3319 143.774 73.4558C143.774 82.1984 141.166 90.3494 136.591 97.1134C136.121 97.8102 136.539 98.7502 137.369 98.8948C138.519 99.0986 139.696 99.2038 140.898 99.2366C152.891 99.5522 163.656 91.789 166.63 80.0949Z" fill="#801973"/><path d="M179.191 120.947C176.995 116.241 171.695 113.013 163.636 111.429C159.832 110.495 149.538 109.181 139.964 109.358C139.82 109.378 139.741 109.476 139.728 109.542C139.709 109.634 139.748 109.792 139.937 109.891C144.362 112.093 161.466 121.67 159.316 141.87C159.225 142.744 159.924 143.5 160.793 143.369C165.002 142.764 175.832 140.424 179.191 133.134C181.047 129.282 181.047 124.806 179.191 120.947Z" fill="#801973"/><path opacity="0.4" d="M64.1228 47.6881C62.4562 47.3463 60.7373 47.1556 58.9465 47.1556C42.4763 47.1556 29.542 62.7412 33.9602 80.0949C36.9274 91.789 47.6919 99.5522 59.685 99.2366C60.8876 99.2038 62.0706 99.092 63.2143 98.8948C64.0444 98.7502 64.4627 97.8102 63.9921 97.1134C59.417 90.3428 56.8093 82.1984 56.8093 73.4558C56.8093 64.3253 59.6589 55.8259 64.6065 48.8516C64.7633 48.6347 64.881 48.2994 64.7241 48.0496C64.5934 47.8458 64.3516 47.7407 64.1228 47.6881Z" fill="#801973"/><path d="M36.9456 111.442C28.887 113.026 23.593 116.254 21.397 120.96C19.5343 124.819 19.5343 129.295 21.397 133.154C24.7564 140.437 35.5862 142.784 39.7952 143.382C40.6645 143.514 41.3573 142.764 41.2658 141.883C39.1155 121.69 56.2196 112.113 60.6509 109.91C60.8339 109.805 60.8731 109.654 60.8535 109.555C60.8404 109.49 60.7685 109.391 60.6248 109.378C51.0433 109.194 40.756 110.509 36.9456 111.442Z" fill="#801973"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Grupos</p>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w90"></div>
+                  <div class="mock-bar w55"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#c76dbb,#6b1260)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w70"></div>
+                  <div class="mock-bar w40"></div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
+                <div class="mock-lines">
+                  <div class="mock-bar d w80"></div>
+                  <div class="mock-bar w50"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Grupos</span>
+            <h2 class="card-title">Compartir posteos en diferentes grupos</h2>
+            <p class="card-cta" style="color:#b0b0c0;font-style:italic;">Próximamente</p>
+          </div>
         </div>
       </div>
       </div>
@@ -656,7 +1112,10 @@
     const MODULE_CONFIG = {
       "Legajo Digital":            { color: "#E4F4E6", accent: "#1CA332" },
       "Librerías de Conocimiento": { color: "#E7F4F1", accent: "#35A48E" },
-      "Gestión de Servicios":      { color: "#F1EDFF", accent: "#886BFF" }
+      "Gestión de Servicios":      { color: "#F1EDFF", accent: "#886BFF" },
+      "Chat":                      { color: "#EBF9EE", accent: "#4ED364" },
+      "Muro":                      { color: "#E5F3FD", accent: "#0182D2" },
+      "Grupos":                    { color: "#F0E3EE", accent: "#801973" }
     };
 
     // Stack scroll effect — transform applied to .card-scene to avoid breaking 3D flip context
@@ -693,6 +1152,16 @@
     }
     setHeaderHeight();
     window.addEventListener('resize', setHeaderHeight);
+
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelector('[data-tab="' + btn.dataset.target + '"]').classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
