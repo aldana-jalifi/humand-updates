@@ -105,6 +105,7 @@
     .card-wrapper:nth-child(1) { z-index: 10; }
     .card-wrapper:nth-child(2) { z-index: 20; }
     .card-wrapper:nth-child(3) { z-index: 30; }
+    .card-wrapper:nth-child(4) { z-index: 40; }
 
     /* ── Flip ── */
     .card-scene {
@@ -265,6 +266,7 @@
     .card-badge {
       display: inline-flex;
       align-items: center;
+      align-self: flex-start;
       background: #f0f2fa;
       color: #636271;
       font-size: 12px;
@@ -281,7 +283,16 @@
       color: #1a1a2e;
       letter-spacing: -0.8px;
       line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-sub {
+      font-size: 13px;
+      font-weight: 400;
+      color: #636271;
+      letter-spacing: -0.1px;
+      line-height: 1.5;
+      margin-bottom: 10px;
     }
 
     .card-cta {
@@ -552,10 +563,37 @@
       .card-wrapper {
         position: relative;
         margin-bottom: 0;
+        height: 400px;
+      }
+
+      .card-scene,
+      .card-inner {
+        height: 100%;
+      }
+
+      .card-front {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-back {
+        height: 100%;
+      }
+
+      .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-cta {
+        margin-top: auto;
       }
 
       .card-visual {
         height: 200px;
+        flex-shrink: 0;
       }
 
       .back-body {
@@ -579,6 +617,46 @@
         padding-bottom: 80px;
       }
     }
+
+    /* ── Language switcher ── */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.1px;
+      background: transparent;
+      color: #9e9dab;
+      transition: background 0.18s, color 0.18s;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .lang-btn.active {
+      background: #ebebed;
+      color: #1a1a2e;
+    }
+
+    .lang-flag {
+      font-size: 14px;
+      line-height: 1;
+    }
   </style>
 </head>
 <body>
@@ -586,7 +664,6 @@
   <div class="page-wrap">
   <div class="header">
     <div class="header-top">
-      <span class="header-date">Semana del 5 al 9 de Mayo | 2026</span>
       <svg width="80" height="40" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="humand">
         <path fill="#1c2b74" d="M86.89,276.32c-2.41,0-4.3-.72-5.68-2.16-1.38-1.44-2.07-3.25-2.07-5.41v-86.57c0-2.4.69-4.3,2.07-5.68,1.38-1.38,3.27-2.07,5.68-2.07,2.28,0,4.12.69,5.5,2.07,1.38,1.38,2.07,3.28,2.07,5.68v86.57c0,2.16-.69,3.97-2.07,5.41-1.38,1.44-3.22,2.16-5.5,2.16ZM86.89,315.28c-2.41,0-4.3-.69-5.68-2.07-1.38-1.38-2.07-3.21-2.07-5.5v-83.32c0-2.4.69-4.3,2.07-5.68,1.38-1.38,3.27-2.07,5.68-2.07,2.28,0,4.12.69,5.5,2.07,1.38,1.38,2.07,3.28,2.07,5.68v83.32c0,2.29-.69,4.12-2.07,5.5-1.38,1.38-3.22,2.07-5.5,2.07ZM163.36,315.28c-2.29,0-4.15-.72-5.59-2.16-1.44-1.44-2.16-3.25-2.16-5.41v-45.99c0-7.33-1.35-13.31-4.06-17.94-2.71-4.63-6.4-8.12-11.09-10.46-4.69-2.34-10.04-3.52-16.05-3.52-5.65,0-10.73,1.11-15.24,3.34-4.51,2.23-8.09,5.23-10.73,9.02-2.65,3.79-3.97,8.15-3.97,13.08h-10.46c.24-7.57,2.25-14.34,6.04-20.29,3.79-5.95,8.86-10.67,15.24-14.16,6.37-3.49,13.47-5.23,21.28-5.23,8.41,0,15.96,1.78,22.63,5.32,6.67,3.55,11.96,8.75,15.87,15.6,3.91,6.85,5.86,15.27,5.86,25.25v45.99c0,2.16-.72,3.97-2.16,5.41-1.44,1.44-3.25,2.16-5.41,2.16Z"/>
         <path fill="#1c2b74" d="M263.09,316.36c-8.54,0-16.14-1.77-22.81-5.32-6.67-3.54-11.93-8.75-15.78-15.6-3.85-6.85-5.77-15.27-5.77-25.25v-45.99c0-2.16.72-3.97,2.16-5.41,1.44-1.44,3.25-2.16,5.41-2.16s3.97.72,5.41,2.16c1.44,1.44,2.16,3.25,2.16,5.41v45.99c0,7.34,1.38,13.32,4.15,17.94,2.76,4.63,6.49,8.12,11.18,10.46,4.69,2.34,9.98,3.52,15.87,3.52s10.76-1.11,15.33-3.34c4.57-2.22,8.18-5.23,10.82-9.02,2.64-3.79,3.97-8.14,3.97-13.08h10.28c-.24,7.57-2.23,14.34-5.95,20.29-3.73,5.95-8.78,10.67-15.15,14.16-6.37,3.49-13.47,5.23-21.28,5.23ZM302.77,315.28c-2.29,0-4.12-.69-5.5-2.07-1.38-1.38-2.07-3.27-2.07-5.68v-83.32c0-2.28.69-4.12,2.07-5.5,1.38-1.38,3.21-2.07,5.5-2.07s4.15.69,5.59,2.07c1.44,1.38,2.16,3.22,2.16,5.5v83.32c0,2.41-.72,4.3-2.16,5.68-1.44,1.38-3.31,2.07-5.59,2.07Z"/>
@@ -595,17 +672,22 @@
         <path fill="#1c2b74" d="M699.71,315.28c-2.41,0-4.3-.69-5.68-2.07-1.38-1.38-2.07-3.21-2.07-5.5v-83.32c0-2.4.69-4.3,2.07-5.68,1.38-1.38,3.27-2.07,5.68-2.07,2.28,0,4.12.69,5.5,2.07,1.38,1.38,2.07,3.28,2.07,5.68v83.32c0,2.29-.69,4.12-2.07,5.5-1.38,1.38-3.22,2.07-5.5,2.07ZM776.18,315.28c-2.29,0-4.15-.72-5.59-2.16-1.44-1.44-2.16-3.25-2.16-5.41v-45.99c0-7.33-1.35-13.31-4.06-17.94-2.71-4.63-6.4-8.12-11.09-10.46-4.69-2.34-10.04-3.52-16.05-3.52-5.65,0-10.73,1.11-15.24,3.34-4.51,2.23-8.09,5.23-10.73,9.02-2.65,3.79-3.97,8.15-3.97,13.08h-10.46c.24-7.57,2.25-14.34,6.04-20.29,3.79-5.95,8.86-10.67,15.24-14.16,6.37-3.49,13.47-5.23,21.28-5.23,8.41,0,15.96,1.78,22.63,5.32,6.67,3.55,11.96,8.75,15.87,15.6,3.91,6.85,5.86,15.27,5.86,25.25v45.99c0,2.16-.72,3.97-2.16,5.41-1.44,1.44-3.25,2.16-5.41,2.16Z"/>
         <path fill="#1c2b74" d="M878.25,316.18c-9.5,0-18.03-2.19-25.61-6.58-7.57-4.39-13.56-10.37-17.94-17.94-4.39-7.57-6.58-16.17-6.58-25.79s2.1-18.03,6.31-25.61c4.21-7.57,9.92-13.55,17.13-17.94,7.21-4.39,15.39-6.58,24.53-6.58,7.81,0,14.88,1.65,21.19,4.96,6.31,3.31,11.45,7.66,15.42,13.08v-51.58c0-2.4.75-4.3,2.25-5.68,1.5-1.38,3.34-2.07,5.5-2.07,2.28,0,4.15.69,5.59,2.07,1.44,1.38,2.16,3.28,2.16,5.68v84.22c-.24,9.38-2.56,17.83-6.94,25.34-4.39,7.52-10.31,13.47-17.77,17.85-7.46,4.39-15.87,6.58-25.25,6.58ZM878.25,302.47c6.73,0,12.72-1.62,17.95-4.87,5.23-3.25,9.38-7.6,12.44-13.08,3.07-5.47,4.6-11.69,4.6-18.67s-1.53-13.04-4.6-18.58c-3.07-5.53-7.21-9.89-12.44-13.08-5.23-3.18-11.21-4.78-17.95-4.78s-12.59,1.59-17.94,4.78c-5.35,3.19-9.59,7.55-12.71,13.08-3.13,5.53-4.69,11.72-4.69,18.58s1.56,13.2,4.69,18.67c3.13,5.47,7.36,9.83,12.71,13.08,5.35,3.25,11.33,4.87,17.94,4.87Z"/>
       </svg>
+      <div class="lang-switcher" role="group" aria-label="Idioma">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')"><span class="lang-flag">🇪🇸</span> ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')"><span class="lang-flag">🇺🇸</span> EN</button>
+        <button class="lang-btn" data-lang="pt" onclick="setLang('pt')"><span class="lang-flag">🇧🇷</span> PT</button>
+      </div>
     </div>
-    <h1 class="header-title"><strong>Novedades</strong> en Humand</h1>
-    <p class="header-sub">Te compartimos las actualizaciones semanales de la plataforma: mejoras implementadas en los módulos y nuevas features disponibles. Haz click en cada tarjeta para acceder a más detalle.</p>
+    <h1 class="header-title" data-i18n-html="header-title"><strong>Novedades</strong> en Humand</h1>
+    <p class="header-sub" data-i18n="header-sub">Te compartimos las actualizaciones semanales de la plataforma: mejoras implementadas en los módulos y nuevas features disponibles. Haz click en cada tarjeta para acceder a más detalle.</p>
   </div>
 
   <!-- Tab bar -->
   <div class="tabs-wrap">
     <div class="tabs">
-      <button class="tab-btn" data-target="lanzadas">Lanzadas</button>
-      <button class="tab-btn active" data-target="esta-semana">Esta semana</button>
-      <button class="tab-btn" data-target="proximamente">Próximamente</button>
+      <button class="tab-btn" data-target="lanzadas" data-i18n="tab-lanzadas">Lanzadas</button>
+      <button class="tab-btn active" data-target="esta-semana" data-i18n="tab-esta-semana">Esta semana</button>
+      <button class="tab-btn" data-target="proximamente" data-i18n="tab-proximamente">Próximamente</button>
     </div>
   </div>
 
@@ -613,7 +695,62 @@
   <div class="tab-panel" data-tab="lanzadas">
   <div class="cards">
 
-    <!-- Card: Chat -->
+    <!-- Card: Workflows (Gestión de Servicios) -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F1EDFF;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M66.7821 98.0814C75.1112 98.0814 82.5729 102.729 86.2757 110.205C88.8781 115.48 94.1393 118.76 100 118.76C105.861 118.76 111.122 115.48 113.724 110.205C117.434 102.722 124.896 98.0814 133.218 98.0814H165.589C166.368 98.0814 167 97.4502 167 96.6709V72.0927C167 48.7132 152.027 33 129.748 33H70.259C47.9727 33 33 48.7132 33 72.0927V96.6709C33 97.4502 33.6315 98.0814 34.4105 98.0814H66.7821Z" fill="#886BFF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M133.218 108.652C128.951 108.652 125.122 111.036 123.21 114.886C118.816 123.794 109.916 129.33 100 129.33C90.0841 129.33 81.1835 123.794 76.7827 114.879C74.8855 111.036 71.056 108.652 66.7821 108.652H34.4105C33.6315 108.652 33 109.283 33 110.063V128.322C33 151.708 47.9727 167.421 70.259 167.421H129.741C152.027 167.421 167 151.708 167 128.322V110.063C167 109.283 166.368 108.652 165.589 108.652H133.218Z" fill="#886BFF"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Workflows</p>
+              <!-- Workflow original -->
+              <div style="border:1.5px solid #d8d0f7;border-radius:7px;padding:5px 7px;display:flex;align-items:center;gap:6px;background:#faf8ff;margin-bottom:5px;">
+                <div style="width:5px;height:22px;border-radius:2px;background:#886BFF;flex-shrink:0;"></div>
+                <div style="flex:1;"><div class="mock-bar d w80"></div><div class="mock-bar w50" style="margin-top:3px;"></div></div>
+                <span style="font-size:6px;font-weight:600;color:#886BFF;background:#ede8ff;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;">Copiar</span>
+              </div>
+              <!-- Arrow -->
+              <div style="display:flex;align-items:center;gap:3px;padding:0 8px;margin-bottom:5px;">
+                <div style="flex:1;height:1px;border-top:1.5px dashed #c9b8fd;"></div>
+                <svg width="8" height="8" fill="none" viewBox="0 0 8 8"><path d="M8 4H2M5.5 1.5L8 4l-2.5 2.5" stroke="#c9b8fd" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <!-- Workflow duplicado -->
+              <div style="border:1.5px dashed #c9b8fd;border-radius:7px;padding:5px 7px;display:flex;align-items:center;gap:6px;background:#faf8ff;">
+                <div style="width:5px;height:22px;border-radius:2px;background:#c9b8fd;flex-shrink:0;"></div>
+                <div style="flex:1;"><div class="mock-bar w70" style="background:#ddd6ff;"></div><div class="mock-bar w40" style="margin-top:3px;background:#ede8ff;"></div></div>
+                <span style="font-size:6px;color:#9e8ecc;background:#f5f1ff;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;">Copia</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-gestion">Gestión de Servicios</span>
+            <h2 class="card-title" data-i18n="title-workflows">Workflows: Duplicado y segmentación</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#886BFF;"></span>
+              <span data-i18n="badge-gestion">Gestión de Servicios</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-workflows"><strong>Duplicado de flujos:</strong> Copia workflows existentes para crear variantes rápido sin necesidad de empezar desde cero.<br><br><strong>Edición ágil:</strong> La copia mantiene todos los componentes y deja el disparador libre para asignar un nuevo servicio.<br><br><strong>Bifurcación avanzada:</strong> Ramifica tus flujos usando segmentaciones de usuario además de los datos de la solicitud.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Chat (Mensajes fijados) -->
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
       <div class="card-scene">
       <div class="card-inner">
@@ -624,168 +761,183 @@
             </div>
             <div class="mock">
               <p class="mock-head">Chat</p>
-              <div style="background:#f0faf1;border-radius:6px;padding:4px 8px;margin-bottom:7px;display:flex;align-items:center;gap:6px;">
-                <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="#4ED364" stroke-width="2.5"/><path d="M16.5 16.5l3.5 3.5" stroke="#4ED364" stroke-width="2.5" stroke-linecap="round"/></svg>
-                <div class="mock-bar" style="width:60%;height:4px;background:#c5eacc;"></div>
+              <!-- Pinned banner -->
+              <div style="background:#d3f5da;border-radius:6px;padding:4px 8px;margin-bottom:7px;display:flex;align-items:center;gap:5px;">
+                <svg width="8" height="8" fill="none" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" fill="#4ED364"/></svg>
+                <span style="font-size:6.5px;font-weight:600;color:#219e40;font-family:Roboto,sans-serif;">Fijado</span>
+                <div class="mock-bar" style="flex:1;height:3px;background:#a8e8b5;margin-left:2px;"></div>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#a8f0b5,#4ED364)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w55"></div>
+              <!-- Bubble derecha -->
+              <div style="display:flex;justify-content:flex-end;margin-bottom:5px;">
+                <div style="background:#4ED364;border-radius:9px 9px 2px 9px;padding:5px 8px;">
+                  <div class="mock-bar" style="width:72px;height:3.5px;background:rgba(255,255,255,0.55);margin-bottom:2px;"></div>
+                  <div class="mock-bar" style="width:48px;height:3.5px;background:rgba(255,255,255,0.35);"></div>
                 </div>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#78e090,#2bc55e)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w40"></div>
+              <!-- Bubble izquierda -->
+              <div style="display:flex;align-items:flex-end;gap:5px;">
+                <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a8f0b5,#2bc55e);flex-shrink:0;"></div>
+                <div style="background:#f0faf1;border-radius:9px 9px 9px 2px;padding:5px 8px;border:1px solid #d3f5da;">
+                  <div class="mock-bar d" style="width:65px;height:3.5px;margin-bottom:2px;"></div>
+                  <div class="mock-bar" style="width:42px;height:3.5px;background:#c5eacc;"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Chat</span>
-            <h2 class="card-title">Buscador, menciones @all y nuevas mejoras</h2>
-            <p class="card-cta">→ Ver detalle</p>
+            <span class="card-badge" data-i18n="badge-chat">Chat</span>
+            <h2 class="card-title" data-i18n="title-mensajes">Mensajes fijados: resalta lo importante</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
           </div>
         </div>
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
               <span class="back-module-dot" style="background:#4ED364;"></span>
-              Chat
+              <span data-i18n="badge-chat">Chat</span>
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
           </div>
           <div class="back-content">
-            <p class="back-body"><strong>Buscador de mensajes interno:</strong> encuentra palabras o frases específicas dentro de cualquier chat.<br><br><strong>Menciones grupales con @all:</strong> etiqueta a todos los miembros de un grupo a la vez.<br><br><strong>Cámara integrada en la aplicación:</strong> Captura fotos y videos directamente desde la conversación.</p>
+            <p class="back-body" data-i18n-html="body-mensajes"><strong>Destaca información:</strong> Pinnea hasta tres mensajes en la parte superior del chat para tenerlos siempre a mano.<br><br><strong>Control de tiempo:</strong> Elige fijar el contenido por 24 horas, 30 días o de forma permanente según tu necesidad.<br><br><strong>Sincronización total:</strong> Los mensajes se fijan para todos los participantes y se reflejan en Web y Mobile.</p>
           </div>
           <div class="back-cta">
-            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
           </div>
         </div>
       </div>
       </div>
     </div>
 
-    <!-- Card: Muro -->
+    <!-- Card: Turnos laborales (Cierre automático) -->
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
       <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
-          <div class="card-visual" style="background:#E5F3FD;">
+          <div class="card-visual" style="background:#E4F4E6;">
             <div class="card-visual-icon">
-              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M161.289 67.7678L116.402 31.9852C106.387 24.01 92.4155 23.9948 82.3857 32.0004L37.8471 67.7299C32.366 71.8085 29.0606 78.3434 29 85.2571V144.708C29.0303 152.547 32.1082 159.9 37.6803 165.412C43.1917 170.878 50.4847 173.88 58.2022 173.88H74.221H124.771H140.737C156.786 173.88 169.901 160.871 170 144.799V85.0827C169.886 78.2221 166.68 71.8843 161.289 67.7678Z" fill="#0182D2"/><path d="M74.2227 132.242V173.87H124.773V132.227C124.75 123.752 117.814 116.86 109.315 116.86H89.5364C81.1366 116.982 74.2682 123.865 74.2227 132.242Z" fill="#0182D2"/></svg>
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Muro</p>
-              <div style="background:#e8f4fd;border-radius:6px;padding:5px 8px;margin-bottom:7px;display:flex;align-items:center;gap:6px;">
-                <div class="mock-av" style="background:linear-gradient(135deg,#7ec8f0,#0182D2);width:16px;height:16px;flex-shrink:0;"></div>
-                <div class="mock-bar" style="width:50%;height:4px;background:#9dcfed;"></div>
-                <span style="font-size:7px;font-weight:600;color:#0182D2;margin-left:auto;background:#cce6f8;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;white-space:nowrap;">DEST.</span>
-              </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#90cfef,#0182D2)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
+              <p class="mock-head">Turnos laborales</p>
+              <!-- Reloj digital -->
+              <div style="background:#e4f4e6;border-radius:8px;padding:7px 10px;margin-bottom:7px;display:flex;align-items:center;gap:8px;">
+                <div>
+                  <div style="font-size:21px;font-weight:700;color:#1CA332;font-family:Roboto,sans-serif;letter-spacing:-0.5px;line-height:1;">18:00</div>
+                  <div style="font-size:5.5px;color:#35a84c;font-family:Roboto,sans-serif;font-weight:600;margin-top:1px;">Cierre automático</div>
+                </div>
+                <div style="margin-left:auto;">
+                  <div style="width:26px;height:26px;border-radius:50%;border:2.5px solid #1CA332;display:flex;align-items:center;justify-content:center;">
+                    <svg width="11" height="11" fill="none" viewBox="0 0 24 24"><path d="M12 7v5l3 3" stroke="#1CA332" stroke-width="2.5" stroke-linecap="round"/></svg>
+                  </div>
                 </div>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#6bbee8,#016cb5)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w40"></div>
-                </div>
+              <!-- Employees con check -->
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #f0f1f7;">
+                <div class="mock-av" style="background:linear-gradient(135deg,#a8f0b5,#1CA332);width:18px;height:18px;"></div>
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w80"></div></div>
+                <svg width="10" height="10" fill="none" viewBox="0 0 24 24" style="flex-shrink:0;"><circle cx="12" cy="12" r="8" fill="#1CA332"/><path d="M8 12l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;">
+                <div class="mock-av" style="background:linear-gradient(135deg,#78e090,#19912b);width:18px;height:18px;"></div>
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w70"></div></div>
+                <svg width="10" height="10" fill="none" viewBox="0 0 24 24" style="flex-shrink:0;"><circle cx="12" cy="12" r="8" fill="#1CA332"/><path d="M8 12l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Muro</span>
-            <h2 class="card-title">Nuevo panel de novedades destacadas</h2>
-            <p class="card-cta">→ Ver detalle</p>
+            <span class="card-badge" data-i18n="badge-turnos">Turnos laborales</span>
+            <h2 class="card-title" data-i18n="title-cierre">Cierre automático de jornada</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
           </div>
         </div>
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
-              <span class="back-module-dot" style="background:#0182D2;"></span>
-              Muro
+              <span class="back-module-dot" style="background:#1CA332;"></span>
+              <span data-i18n="badge-turnos">Turnos laborales</span>
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
           </div>
           <div class="back-content">
-            <p class="back-body"><strong>Integración total en el Muro:</strong> Visualiza los posteos destacados en un componente desplegable al inicio.<br><br>Configuración personalizada: Los administradores pueden activar la vista previa y definir un tiempo de permanencia.<br><br><strong>Orden inteligente:</strong> El sistema prioriza automáticamente las novedades según su fecha de vencimiento.</p>
+            <p class="back-body" data-i18n-html="body-cierre"><strong>Reglas de cierre:</strong> Automatiza el fin del reloj para que coincida con el fin del horario laboral programado.<br><br><strong>Horas programadas:</strong> Ajusta el cierre a las horas previstas para evitar que los registros excedan lo pautado.<br><br><strong>Gestión de olvidos:</strong> Reduce las correcciones manuales por fichajes que quedaron abiertos por error o descuido.</p>
           </div>
           <div class="back-cta">
-            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
           </div>
         </div>
       </div>
       </div>
     </div>
 
-    <!-- Card: Grupos -->
+    <!-- Card: Vacaciones y Permisos (Reglas de múltiplos) -->
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
       <div class="card-scene">
       <div class="card-inner">
         <div class="card-front">
-          <div class="card-visual" style="background:#F0E3EE;">
+          <div class="card-visual" style="background:#FEF8E9;">
             <div class="card-visual-icon">
-              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M99.9214 118.934C74.739 118.934 53.4912 123.049 53.4912 138.93C53.4912 154.818 74.8763 158.788 99.9214 158.788C125.104 158.788 146.352 154.673 146.352 138.792C146.352 122.904 124.966 118.934 99.9214 118.934Z" fill="#801973"/><path opacity="0.4" d="M99.9211 103.803C116.973 103.803 130.646 90.0515 130.646 72.9015C130.646 55.745 116.973 42 99.9211 42C82.8693 42 69.1964 55.745 69.1964 72.9015C69.1964 90.0515 82.8693 103.803 99.9211 103.803Z" fill="#801973"/><path opacity="0.4" d="M166.63 80.0949C171.041 62.7412 158.107 47.1556 141.637 47.1556C139.846 47.1556 138.134 47.3528 136.46 47.6881C136.238 47.7407 135.99 47.8524 135.859 48.0496C135.709 48.2994 135.82 48.6347 135.983 48.8516C140.931 55.8325 143.774 64.3319 143.774 73.4558C143.774 82.1984 141.166 90.3494 136.591 97.1134C136.121 97.8102 136.539 98.7502 137.369 98.8948C138.519 99.0986 139.696 99.2038 140.898 99.2366C152.891 99.5522 163.656 91.789 166.63 80.0949Z" fill="#801973"/><path d="M179.191 120.947C176.995 116.241 171.695 113.013 163.636 111.429C159.832 110.495 149.538 109.181 139.964 109.358C139.82 109.378 139.741 109.476 139.728 109.542C139.709 109.634 139.748 109.792 139.937 109.891C144.362 112.093 161.466 121.67 159.316 141.87C159.225 142.744 159.924 143.5 160.793 143.369C165.002 142.764 175.832 140.424 179.191 133.134C181.047 129.282 181.047 124.806 179.191 120.947Z" fill="#801973"/><path opacity="0.4" d="M64.1228 47.6881C62.4562 47.3463 60.7373 47.1556 58.9465 47.1556C42.4763 47.1556 29.542 62.7412 33.9602 80.0949C36.9274 91.789 47.6919 99.5522 59.685 99.2366C60.8876 99.2038 62.0706 99.092 63.2143 98.8948C64.0444 98.7502 64.4627 97.8102 63.9921 97.1134C59.417 90.3428 56.8093 82.1984 56.8093 73.4558C56.8093 64.3253 59.6589 55.8259 64.6065 48.8516C64.7633 48.6347 64.881 48.2994 64.7241 48.0496C64.5934 47.8458 64.3516 47.7407 64.1228 47.6881Z" fill="#801973"/><path d="M36.9456 111.442C28.887 113.026 23.593 116.254 21.397 120.96C19.5343 124.819 19.5343 129.295 21.397 133.154C24.7564 140.437 35.5862 142.784 39.7952 143.382C40.6645 143.514 41.3573 142.764 41.2658 141.883C39.1155 121.69 56.2196 112.113 60.6509 109.91C60.8339 109.805 60.8731 109.654 60.8535 109.555C60.8404 109.49 60.7685 109.391 60.6248 109.378C51.0433 109.194 40.756 110.509 36.9456 111.442Z" fill="#801973"/></svg>
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M82.3671 116.835C79.5339 116.835 77.1728 114.474 77.1728 111.574C77.1728 108.673 79.5339 106.312 82.3671 106.312C85.2675 106.312 87.6285 108.673 87.6285 111.574C87.6285 114.474 85.2675 116.835 82.3671 116.835ZM57.5427 116.835C54.642 116.835 52.281 114.474 52.281 111.574C52.281 108.673 54.642 106.312 57.5427 106.312C60.4434 106.312 62.8044 108.673 62.8044 111.574C62.8044 114.474 60.4434 116.835 57.5427 116.835ZM57.5427 139.434C54.642 139.434 52.281 137.073 52.281 134.172C52.281 131.271 54.642 128.978 57.5427 128.978C60.4434 128.978 62.8044 131.271 62.8044 134.172C62.8044 137.073 60.4434 139.434 57.5427 139.434ZM135.254 98.9591C139.417 98.9591 143.431 99.6532 147.169 100.871C148.068 101.164 149.015 100.51 149.015 99.5648V90.1896C149.015 89.4442 148.411 88.8404 147.666 88.8404H35.3492C34.604 88.8404 34 89.4442 34 90.1896V127.898C34 147.798 46.0074 159.738 66.0423 159.738H99.47C100.535 159.738 101.188 158.556 100.672 157.625C97.5306 151.954 95.7234 145.435 95.7234 138.489C95.7234 116.7 113.397 98.9591 135.254 98.9591Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M149.044 73.4645C149.044 64.034 146.238 56.1414 140.821 50.7246C135.937 45.9149 129.049 43.1693 120.887 42.4341V36.0121C120.887 33.2733 118.614 31 115.875 31C113.069 31 110.856 33.2733 110.856 36.0121V59.7572C110.391 59.8921 109.993 60.0202 109.52 60.0202C106.714 60.0202 104.508 57.7469 104.508 55.0081V43.5134C104.508 42.7682 103.905 42.1642 103.159 42.1642H72.2033V36.0121C72.2033 33.2733 69.9974 31 67.1912 31C64.4457 31 62.1723 33.2733 62.1723 36.0121V59.7572C61.7743 59.8921 61.3089 60.0202 60.8367 60.0202C58.0979 60.0202 55.8246 57.7469 55.8246 55.0081V45.2298C55.8246 44.3536 54.9995 43.7095 54.1601 43.9612C41.3993 47.7883 34.0223 58.1385 34.0223 73.4645V77.4648C34.0223 78.2098 34.6263 78.8139 35.3715 78.8139H147.695C148.44 78.8139 149.044 78.2098 149.044 77.4648V73.4645Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M148.001 148.542C147.056 150.093 145.37 150.97 143.683 150.97C142.806 150.97 141.862 150.768 141.053 150.228L132.823 145.304C131.339 144.427 130.394 142.807 130.394 140.986V130.395C130.394 127.629 132.62 125.336 135.454 125.336C138.219 125.336 140.513 127.629 140.513 130.395V138.153L146.247 141.593C148.675 143.01 149.417 146.113 148.001 148.542ZM135.589 109.686C119.331 109.686 106.177 122.907 106.177 139.165C106.177 155.354 119.331 168.576 135.589 168.576C151.778 168.576 165 155.354 165 139.165C165 122.907 151.778 109.686 135.589 109.686Z" fill="#F0B623"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Grupos</p>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
-                </div>
-                <span style="font-size:7px;font-weight:600;color:#801973;background:#f0e3ee;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;margin-left:auto;flex-shrink:0;">EXT.</span>
+              <p class="mock-head">Vacaciones</p>
+              <!-- Calendar: días de semana header -->
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;">
+                <span style="font-size:5.5px;font-weight:600;color:#F0B623;text-align:center;font-family:Roboto,sans-serif;">L</span>
+                <span style="font-size:5.5px;color:#9e9dab;text-align:center;font-family:Roboto,sans-serif;">M</span>
+                <span style="font-size:5.5px;color:#9e9dab;text-align:center;font-family:Roboto,sans-serif;">M</span>
+                <span style="font-size:5.5px;color:#9e9dab;text-align:center;font-family:Roboto,sans-serif;">J</span>
+                <span style="font-size:5.5px;color:#9e9dab;text-align:center;font-family:Roboto,sans-serif;">V</span>
+                <span style="font-size:5.5px;color:#c8c7d0;text-align:center;font-family:Roboto,sans-serif;">S</span>
+                <span style="font-size:5.5px;color:#c8c7d0;text-align:center;font-family:Roboto,sans-serif;">D</span>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#c76dbb,#6b1260)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w40"></div>
-                </div>
+              <!-- Semana 1 — bloque de 7 resaltado -->
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:2px;">
+                <span style="font-size:6px;font-weight:700;color:#fff;text-align:center;background:#F0B623;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">5</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">6</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">7</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">8</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">9</span>
+                <span style="font-size:6px;color:#c8c7d0;text-align:center;background:#f5f5f7;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">10</span>
+                <span style="font-size:6px;color:#c8c7d0;text-align:center;background:#f5f5f7;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">11</span>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w80"></div>
-                  <div class="mock-bar w50"></div>
-                </div>
-                <span style="font-size:7px;font-weight:600;color:#801973;background:#f0e3ee;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;margin-left:auto;flex-shrink:0;">EXT.</span>
+              <!-- Semana 2 -->
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;">
+                <span style="font-size:6px;font-weight:700;color:#fff;text-align:center;background:#F0B623;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">12</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">13</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">14</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">15</span>
+                <span style="font-size:6px;color:#1a1a2e;text-align:center;background:#fff8e1;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">16</span>
+                <span style="font-size:6px;color:#c8c7d0;text-align:center;background:#f5f5f7;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">17</span>
+                <span style="font-size:6px;color:#c8c7d0;text-align:center;background:#f5f5f7;border-radius:3px;padding:2px 1px;font-family:Roboto,sans-serif;">18</span>
               </div>
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Grupos</span>
-            <h2 class="card-title">Grupos multiempresa: Conectando compañías</h2>
-            <p class="card-cta">→ Ver detalle</p>
+            <span class="card-badge" data-i18n="badge-vacaciones">Vacaciones y Permisos</span>
+            <h2 class="card-title" data-i18n="title-multiplos">Reglas de múltiplos y comienzo en lunes</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
           </div>
         </div>
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
-              <span class="back-module-dot" style="background:#801973;"></span>
-              Grupos
+              <span class="back-module-dot" style="background:#F0B623;"></span>
+              <span data-i18n="badge-vacaciones">Vacaciones y Permisos</span>
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
           </div>
           <div class="back-content">
-            <p class="back-body"><strong>Espacios compartidos entre comunidades:</strong> Interactúa y trabaja con otras organizaciones en un mismo grupo.<br><br><strong>Privacidad garantizada:</strong> Mantén el grupo visible solo para miembros invitados.<br><br><strong>Identificación clara de usuarios:</strong> Etiquetas visuales de «externo» junto al nombre para reconocer fácilmente a los miembros de otras comunidades.</p>
+            <p class="back-body" data-i18n-html="body-multiplos"><strong>Múltiplos de siete:</strong> Permite configurar solicitudes en periodos de 7 días, contemplando los festivos en el cálculo.<br><br><strong>Inicio en lunes:</strong> Define que las solicitudes deban comenzar siempre un día lunes o el siguiente día hábil.<br><br><strong>Gestión de políticas:</strong> Activa estas nuevas reglas de validación directamente desde el módulo Vacaciones y Permisos.</p>
           </div>
           <div class="back-cta">
-            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
           </div>
         </div>
       </div>
       </div>
     </div>
+
 
   </div>
   </div>
@@ -804,48 +956,56 @@
             </div>
             <div class="mock">
               <p class="mock-head">Legajo Digital</p>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#a3d9a9,#1CA332)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
+              <!-- Tab bar -->
+              <div style="display:flex;gap:2px;background:#edf7ee;border-radius:6px;padding:2px;margin-bottom:6px;">
+                <div style="flex:1;background:#fff;border-radius:5px;padding:3px 2px;text-align:center;box-shadow:0 1px 3px rgba(28,163,50,0.12);">
+                  <span style="font-size:5.5px;font-weight:600;color:#1CA332;font-family:Roboto,sans-serif;">Info</span>
+                </div>
+                <div style="flex:1;padding:3px 2px;text-align:center;">
+                  <span style="font-size:5.5px;color:#9e9dab;font-family:Roboto,sans-serif;">Roles</span>
+                </div>
+                <div style="flex:1;padding:3px 2px;text-align:center;">
+                  <span style="font-size:5.5px;color:#9e9dab;font-family:Roboto,sans-serif;">Trámites</span>
                 </div>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#6ee27a,#16a34a)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w40"></div>
-                </div>
+              <!-- Profile row -->
+              <div style="display:flex;align-items:center;gap:6px;padding-bottom:5px;border-bottom:1px solid #f0f1f7;margin-bottom:5px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#a3d9a9,#1CA332);flex-shrink:0;"></div>
+                <div style="flex:1;"><div class="mock-bar d w80" style="margin-bottom:3px;"></div><div class="mock-bar w50" style="background:#b8e8c0;"></div></div>
+                <svg width="9" height="9" fill="none" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M9 18l6-6-6-6" stroke="#d0d3e0" stroke-width="2.5" stroke-linecap="round"/></svg>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#bbf7c8,#1CA332)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
+              <!-- Category cards -->
+              <div style="display:flex;gap:4px;">
+                <div style="flex:1;background:#e4f4e6;border-radius:6px;padding:4px 5px;">
+                  <div class="mock-bar" style="width:75%;height:3px;background:#a3d9a9;margin-bottom:3px;"></div>
+                  <div class="mock-bar" style="width:55%;height:3px;background:#b8e8c0;"></div>
+                </div>
+                <div style="flex:1;background:#f0f2fa;border-radius:6px;padding:4px 5px;">
+                  <div class="mock-bar" style="width:65%;height:3px;background:#d0d3e0;margin-bottom:3px;"></div>
+                  <div class="mock-bar" style="width:45%;height:3px;background:#e0e2ee;"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Legajo Digital</span>
-            <h2 class="card-title">Nueva vista unificada de Legajo Digital</h2>
-            <p class="card-cta">→ Ver detalle</p>
+            <span class="card-badge" data-i18n="badge-legajo">Legajo Digital</span>
+            <h2 class="card-title" data-i18n="title-legajo">Nueva vista unificada de Legajo Digital</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
           </div>
         </div>
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
               <span class="back-module-dot" style="background:#1CA332;"></span>
-              Legajo Digital
+              <span data-i18n="badge-legajo">Legajo Digital</span>
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
           </div>
           <div class="back-content">
-            <p class="back-body"><strong>Navegación por pestañas:</strong> Accede a información, segmentación, roles y trámites en una misma ventana lateral.<br><br><strong>Organización por categorías:</strong> Los datos y documentos se agrupan en tarjetas.<br><br><strong>Acciones rápidas:</strong> Gestiona bajas, reactivaciones o cambios de clave directamente desde el perfil del colaborador.</p>
+            <p class="back-body" data-i18n-html="body-legajo"><strong>Navegación por pestañas:</strong> Accede a información, segmentación, roles y trámites en una misma ventana lateral.<br><br><strong>Organización por categorías:</strong> Los datos y documentos se agrupan en tarjetas.<br><br><strong>Acciones rápidas:</strong> Gestiona bajas, reactivaciones o cambios de clave directamente desde el perfil del colaborador.</p>
           </div>
           <div class="back-cta">
-            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
           </div>
         </div>
       </div>
@@ -862,52 +1022,116 @@
             </div>
             <div class="mock">
               <p class="mock-head">Librerías</p>
+              <!-- Cover banner -->
+              <div style="background:linear-gradient(135deg,#35A48E,#4ac5a8);border-radius:7px;padding:7px 9px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;">
+                <div>
+                  <div class="mock-bar" style="width:55px;height:3.5px;background:rgba(255,255,255,0.55);margin-bottom:3px;"></div>
+                  <div class="mock-bar" style="width:35px;height:3px;background:rgba(255,255,255,0.35);"></div>
+                </div>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="rgba(255,255,255,0.25)"/><path d="M8 12h8M8 8h5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <!-- Article list -->
               <div class="mock-nav">
                 <div class="mock-icon" style="background:#c5e8e1;">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#35A48E" stroke-width="2" stroke-linecap="round"/></svg>
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#35A48E" stroke-width="2.2" stroke-linecap="round"/></svg>
                 </div>
-                <div class="mock-lines"><div class="mock-bar d w70"></div></div>
+                <div class="mock-lines"><div class="mock-bar d w80"></div></div>
                 <span class="mock-badge-new">NUEVO</span>
               </div>
-              <div class="mock-nav">
+              <div class="mock-nav" style="border-bottom:none;">
                 <div class="mock-icon" style="background:#c5e8e1;">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#35A48E" stroke-width="2"/><path d="M8 12h8M8 8h5" stroke="#35A48E" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#35A48E" stroke-width="2.2" stroke-linecap="round"/></svg>
                 </div>
-                <div class="mock-lines"><div class="mock-bar d w90"></div></div>
-              </div>
-              <div class="mock-nav">
-                <div class="mock-icon" style="background:#c5e8e1;">
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="#35A48E" stroke-width="2"/><path d="M12 8v4l2 2" stroke="#35A48E" stroke-width="2" stroke-linecap="round"/></svg>
-                </div>
-                <div class="mock-lines"><div class="mock-bar d w55"></div></div>
+                <div class="mock-lines"><div class="mock-bar d w65"></div></div>
               </div>
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Librerías de Conocimiento</span>
-            <h2 class="card-title">Rediseño y nuevas funcionalidades</h2>
-            <p class="card-cta">→ Ver detalle</p>
+            <span class="card-badge" data-i18n="badge-librerias">Librerías de Conocimiento</span>
+            <h2 class="card-title" data-i18n="title-librerias">Rediseño y nuevas funcionalidades</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
           </div>
         </div>
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
               <span class="back-module-dot" style="background:#35A48E;"></span>
-              Librerías de Conocimiento
+              <span data-i18n="badge-librerias">Librerías de Conocimiento</span>
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
           </div>
           <div class="back-content">
-            <p class="back-body"><strong>Home personalizada:</strong> Configura una imagen de portada y descripción propia para darle identidad al módulo.<br><br><strong>Autonomía para editores:</strong> Ahora pueden crear, duplicar y reordenar subartículos en borrador.<br><br><strong>Notificaciones automáticas:</strong> Los editores pueden enviar notificaciones al actualizar contenidos.</p>
+            <p class="back-body" data-i18n-html="body-librerias"><strong>Home personalizada:</strong> Configura una imagen de portada y descripción propia para darle identidad al módulo.<br><br><strong>Autonomía para editores:</strong> Ahora pueden crear, duplicar y reordenar subartículos en borrador.<br><br><strong>Notificaciones automáticas:</strong> Los editores pueden enviar notificaciones al actualizar contenidos.</p>
           </div>
           <div class="back-cta">
-            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
           </div>
         </div>
       </div>
       </div>
     </div>
 
+    <!-- Card: Vacaciones y Permisos (Control de saldos) -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#FEF8E9;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M82.3671 116.835C79.5339 116.835 77.1728 114.474 77.1728 111.574C77.1728 108.673 79.5339 106.312 82.3671 106.312C85.2675 106.312 87.6285 108.673 87.6285 111.574C87.6285 114.474 85.2675 116.835 82.3671 116.835ZM57.5427 116.835C54.642 116.835 52.281 114.474 52.281 111.574C52.281 108.673 54.642 106.312 57.5427 106.312C60.4434 106.312 62.8044 108.673 62.8044 111.574C62.8044 114.474 60.4434 116.835 57.5427 116.835ZM57.5427 139.434C54.642 139.434 52.281 137.073 52.281 134.172C52.281 131.271 54.642 128.978 57.5427 128.978C60.4434 128.978 62.8044 131.271 62.8044 134.172C62.8044 137.073 60.4434 139.434 57.5427 139.434ZM135.254 98.9591C139.417 98.9591 143.431 99.6532 147.169 100.871C148.068 101.164 149.015 100.51 149.015 99.5648V90.1896C149.015 89.4442 148.411 88.8404 147.666 88.8404H35.3492C34.604 88.8404 34 89.4442 34 90.1896V127.898C34 147.798 46.0074 159.738 66.0423 159.738H99.47C100.535 159.738 101.188 158.556 100.672 157.625C97.5306 151.954 95.7234 145.435 95.7234 138.489C95.7234 116.7 113.397 98.9591 135.254 98.9591Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M149.044 73.4645C149.044 64.034 146.238 56.1414 140.821 50.7246C135.937 45.9149 129.049 43.1693 120.887 42.4341V36.0121C120.887 33.2733 118.614 31 115.875 31C113.069 31 110.856 33.2733 110.856 36.0121V59.7572C110.391 59.8921 109.993 60.0202 109.52 60.0202C106.714 60.0202 104.508 57.7469 104.508 55.0081V43.5134C104.508 42.7682 103.905 42.1642 103.159 42.1642H72.2033V36.0121C72.2033 33.2733 69.9974 31 67.1912 31C64.4457 31 62.1723 33.2733 62.1723 36.0121V59.7572C61.7743 59.8921 61.3089 60.0202 60.8367 60.0202C58.0979 60.0202 55.8246 57.7469 55.8246 55.0081V45.2298C55.8246 44.3536 54.9995 43.7095 54.1601 43.9612C41.3993 47.7883 34.0223 58.1385 34.0223 73.4645V77.4648C34.0223 78.2098 34.6263 78.8139 35.3715 78.8139H147.695C148.44 78.8139 149.044 78.2098 149.044 77.4648V73.4645Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M148.001 148.542C147.056 150.093 145.37 150.97 143.683 150.97C142.806 150.97 141.862 150.768 141.053 150.228L132.823 145.304C131.339 144.427 130.394 142.807 130.394 140.986V130.395C130.394 127.629 132.62 125.336 135.454 125.336C138.219 125.336 140.513 127.629 140.513 130.395V138.153L146.247 141.593C148.675 143.01 149.417 146.113 148.001 148.542ZM135.589 109.686C119.331 109.686 106.177 122.907 106.177 139.165C106.177 155.354 119.331 168.576 135.589 168.576C151.778 168.576 165 155.354 165 139.165C165 122.907 151.778 109.686 135.589 109.686Z" fill="#F0B623"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Vacaciones</p>
+              <!-- Header ciclo + label -->
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
+                <span style="font-size:6px;color:#636271;font-family:Roboto,sans-serif;">Ciclo futuro · Jul–Dic</span>
+                <span style="font-size:6px;font-weight:600;color:#F0B623;font-family:Roboto,sans-serif;background:#fff8e1;padding:1px 5px;border-radius:999px;">Activo</span>
+              </div>
+              <!-- Big balance -->
+              <div style="background:#fff8e1;border-radius:8px;padding:6px 8px;margin-bottom:6px;display:flex;align-items:center;gap:7px;">
+                <div>
+                  <div style="font-size:22px;font-weight:700;color:#F0B623;font-family:Roboto,sans-serif;line-height:1;">15</div>
+                  <div style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;margin-top:1px;">días disponibles</div>
+                </div>
+                <div style="flex:1;">
+                  <div style="height:5px;background:#f0e0a8;border-radius:999px;margin-bottom:3px;"><div style="width:80%;height:100%;background:#F0B623;border-radius:999px;"></div></div>
+                  <div style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">3 comprometidos</div>
+                </div>
+              </div>
+              <!-- One request row -->
+              <div style="display:flex;align-items:center;gap:5px;">
+                <div style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#ffe59a,#F0B623);flex-shrink:0;"></div>
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w80"></div></div>
+                <span style="font-size:6px;font-weight:600;color:#1CA332;background:#e4f4e6;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;">−3</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-vacaciones">Vacaciones y Permisos</span>
+            <h2 class="card-title" data-i18n="title-saldos">Control de saldos en ciclos futuros</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#F0B623;"></span>
+              <span data-i18n="badge-vacaciones">Vacaciones y Permisos</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-saldos"><strong>Descuento inmediato:</strong> Descuenta el saldo de solicitudes para ciclos futuros al momento de ser aprobadas, sin esperar a que inicie el periodo.<br><br><strong>Visibilidad real:</strong> Permite que admins y colaboradores vean el saldo disponible actualizado, considerando los días que ya están comprometidos.<br><br><strong>Control opcional:</strong> Activa esta función para asegurar que el saldo refleje la disponibilidad real del equipo.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Gestión de Servicios (Descarga masiva) -->
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
       <div class="card-scene">
       <div class="card-inner">
@@ -951,24 +1175,24 @@
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Gestión de Servicios</span>
-            <h2 class="card-title">Descarga masiva de comprobantes en PDF</h2>
-            <p class="card-cta">→ Ver detalle</p>
+            <span class="card-badge" data-i18n="badge-gestion">Gestión de Servicios</span>
+            <h2 class="card-title" data-i18n="title-comprobantes">Descarga masiva de comprobantes en PDF</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
           </div>
         </div>
         <div class="card-back">
           <div class="back-header">
             <span class="back-module">
               <span class="back-module-dot" style="background:#886BFF;"></span>
-              Gestión de Servicios
+              <span data-i18n="badge-gestion">Gestión de Servicios</span>
             </span>
             <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
           </div>
           <div class="back-content">
-            <p class="back-body"><strong>Exportación masiva en PDF:</strong> Descarga múltiples constancias en un solo paso para agilizar tus registros.<br><br><strong>Procesamiento en segundo plano:</strong> Recibe un archivo en tu correo con todos los documentos solicitados.<br><br><strong>Organización automática:</strong> Los documentos mantienen sus nombres originales, facilitando el control.</p>
+            <p class="back-body" data-i18n-html="body-comprobantes"><strong>Exportación masiva en PDF:</strong> Descarga múltiples constancias en un solo paso para agilizar tus registros.<br><br><strong>Procesamiento en segundo plano:</strong> Recibe un archivo en tu correo con todos los documentos solicitados.<br><br><strong>Organización automática:</strong> Los documentos mantienen sus nombres originales, facilitando el control.</p>
           </div>
           <div class="back-cta">
-            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()">Accede a más información</a>
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
           </div>
         </div>
       </div>
@@ -982,38 +1206,7 @@
   <div class="tab-panel" data-tab="proximamente">
   <div class="cards">
 
-    <!-- Card: Reclutamiento -->
-    <div class="card-wrapper" style="cursor:default;">
-      <div class="card-scene">
-      <div class="card-inner">
-        <div class="card-front">
-          <div class="card-visual" style="background:#F1EDFF;">
-            <div class="card-visual-icon">
-              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.5528 35.4924C139.786 27.5484 132.133 118.592 79.8946 102.246C48.1603 92.3061 51.9867 40.1922 84.5528 35.4924Z" fill="#886BFF"/><path opacity="0.4" d="M45.9171 155.234C33.3982 143.131 42.4651 127.327 57.1052 122.419C63.9261 120.131 84.0147 115.806 88.5482 121.837C91.8339 126.204 92.1666 155.401 90.0455 160.309C85.2625 171.538 52.9877 162.097 45.9171 155.276V155.234Z" fill="#886BFF"/><path d="M157.962 152.826L152.555 147.419C153.969 144.341 154.801 140.889 154.801 137.27C154.801 123.836 143.862 112.939 130.47 112.939C117.077 112.939 106.139 123.878 106.139 137.27C106.139 150.663 117.077 161.601 130.47 161.601C135.336 161.601 139.869 160.146 143.696 157.65L148.437 162.392C149.768 163.722 151.473 164.388 153.22 164.388C154.967 164.388 156.672 163.722 158.003 162.392C160.665 159.73 160.665 155.446 158.003 152.826H157.962ZM119.656 137.27C119.656 131.323 124.522 126.457 130.47 126.457C136.417 126.457 141.284 131.323 141.284 137.27C141.284 139.683 140.493 141.887 139.162 143.717C138.913 143.967 138.705 144.216 138.538 144.507C136.542 146.712 133.672 148.126 130.511 148.126C124.564 148.126 119.698 143.26 119.698 137.312L119.656 137.27Z" fill="#886BFF"/></svg>
-            </div>
-            <div class="mock">
-              <p class="mock-head">Reclutamiento</p>
-              <div style="background:#f5f1ff;border-radius:6px;padding:6px 8px;margin-bottom:6px;">
-                <div class="mock-bar" style="width:60%;height:4px;background:#c9b8fd;margin-bottom:5px;"></div>
-                <div class="mock-bar" style="width:100%;height:13px;background:#ede8ff;border-radius:3px;"></div>
-              </div>
-              <div style="background:#f5f1ff;border-radius:6px;padding:6px 8px;">
-                <div class="mock-bar" style="width:45%;height:4px;background:#c9b8fd;margin-bottom:5px;"></div>
-                <div class="mock-bar" style="width:100%;height:13px;background:#ede8ff;border-radius:3px;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <span class="card-badge">Reclutamiento</span>
-            <h2 class="card-title">Formulario de aplicación</h2>
-            <p class="card-cta" style="color:#b0b0c0;font-style:italic;">Próximamente</p>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-
-    <!-- Card: Gestión del tiempo -->
+    <!-- Card: Control de Asistencia — Aprobación de horas extra -->
     <div class="card-wrapper" style="cursor:default;">
       <div class="card-scene">
       <div class="card-inner">
@@ -1023,36 +1216,80 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Gestión del tiempo</p>
-              <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
-                <div style="width:26px;height:26px;border-radius:50%;border:2.5px solid #1CA332;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><path d="M12 7v5l3 3" stroke="#1CA332" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w40" style="background:#b8e8c0;"></div>
-                </div>
-              </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#a8f0b5,#1CA332)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
+              <p class="mock-head">Control de Asistencia</p>
+              <!-- Overtime request rows -->
+              <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
+                <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a8ddb5,#1CA332);flex-shrink:0;"></div>
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w65"></div><div class="mock-bar w45" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div style="display:flex;gap:3px;flex-shrink:0;">
+                  <div style="width:18px;height:14px;border-radius:3px;background:#E4F4E6;border:1.5px solid #1CA332;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#1CA332;font-weight:700;">✓</span></div>
+                  <div style="width:18px;height:14px;border-radius:3px;background:#fff0f0;border:1.5px solid #e54241;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#e54241;font-weight:700;">✕</span></div>
                 </div>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#78e090,#19912b)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w40"></div>
+              <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
+                <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a8ddb5,#2e9e4a);flex-shrink:0;"></div>
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w75"></div><div class="mock-bar w40" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div style="display:flex;gap:3px;flex-shrink:0;">
+                  <div style="width:18px;height:14px;border-radius:3px;background:#E4F4E6;border:1.5px solid #1CA332;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#1CA332;font-weight:700;">✓</span></div>
+                  <div style="width:18px;height:14px;border-radius:3px;background:#fff0f0;border:1.5px solid #e54241;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#e54241;font-weight:700;">✕</span></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;padding:5px 0;">
+                <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#c8eed0,#1CA332);flex-shrink:0;"></div>
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w55"></div><div class="mock-bar w35" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div style="display:flex;gap:3px;flex-shrink:0;">
+                  <div style="width:18px;height:14px;border-radius:3px;background:#E4F4E6;border:1.5px solid #1CA332;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#1CA332;font-weight:700;">✓</span></div>
+                  <div style="width:18px;height:14px;border-radius:3px;background:#fff0f0;border:1.5px solid #e54241;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#e54241;font-weight:700;">✕</span></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Gestión del tiempo</span>
-            <h2 class="card-title">Nuevas reglas de cierre automático</h2>
-            <p class="card-cta" style="color:#b0b0c0;font-style:italic;">Próximamente</p>
+            <span class="card-badge" data-i18n="badge-asistencia">Control de Asistencia</span>
+            <h2 class="card-title" data-i18n="title-aprobacion">Aprobación de horas extra en la app</h2>
+            <p class="card-sub" data-i18n="sub-aprobacion">Los aprobadores pueden revisar, aprobar y rechazar solicitudes desde el celular.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Control de Asistencia — Reglas de cierre automático -->
+    <div class="card-wrapper" style="cursor:default;">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#E4F4E6;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head">Control de Asistencia</p>
+              <!-- Setting toggle rows -->
+              <div style="display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w70"></div><div class="mock-bar w50" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div style="width:26px;height:14px;background:#1CA332;border-radius:999px;position:relative;flex-shrink:0;">
+                  <div style="width:10px;height:10px;background:#fff;border-radius:50%;position:absolute;right:2px;top:2px;"></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w80"></div><div class="mock-bar w45" style="margin-top:3px;"></div></div>
+                <div style="width:26px;height:14px;background:#e0e2ee;border-radius:999px;position:relative;flex-shrink:0;">
+                  <div style="width:10px;height:10px;background:#fff;border-radius:50%;position:absolute;left:2px;top:2px;"></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:7px;padding:5px 0;">
+                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w60"></div><div class="mock-bar w40" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div style="width:26px;height:14px;background:#1CA332;border-radius:999px;position:relative;flex-shrink:0;">
+                  <div style="width:10px;height:10px;background:#fff;border-radius:50%;position:absolute;right:2px;top:2px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-asistencia">Control de Asistencia</span>
+            <h2 class="card-title" data-i18n="title-cierre-auto">Reglas de cierre automático</h2>
+            <p class="card-sub" data-i18n="sub-cierre-auto">Configura el cierre automático del reloj a partir del horario programado.</p>
           </div>
         </div>
       </div>
@@ -1070,33 +1307,33 @@
             </div>
             <div class="mock">
               <p class="mock-head">Grupos</p>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
+              <!-- Post con opción compartir -->
+              <div style="border:1.5px solid #e8d0e4;border-radius:7px;padding:6px 7px;margin-bottom:5px;">
+                <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+                  <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#d98acc,#801973);flex-shrink:0;"></div>
+                  <div class="mock-lines" style="flex:1;"><div class="mock-bar d w70"></div></div>
                 </div>
+                <div class="mock-bar" style="width:90%;height:3.5px;background:#e8eaf0;margin-bottom:2px;"></div>
+                <div class="mock-bar" style="width:65%;height:3.5px;background:#e8eaf0;"></div>
               </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#c76dbb,#6b1260)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w40"></div>
-                </div>
-              </div>
-              <div class="mock-row">
-                <div class="mock-av" style="background:linear-gradient(135deg,#d98acc,#801973)"></div>
-                <div class="mock-lines">
-                  <div class="mock-bar d w80"></div>
-                  <div class="mock-bar w50"></div>
+              <!-- Compartir a grupos -->
+              <div style="display:flex;align-items:center;gap:5px;padding:4px 0;border-top:1px solid #f0f1f7;">
+                <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" stroke="#801973" stroke-width="2"/><circle cx="6" cy="12" r="3" stroke="#801973" stroke-width="2"/><circle cx="18" cy="19" r="3" stroke="#801973" stroke-width="2"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49" stroke="#801973" stroke-width="2" stroke-linecap="round"/></svg>
+                <span style="font-size:6.5px;font-weight:600;color:#801973;font-family:Roboto,sans-serif;">Compartir en</span>
+                <div style="display:flex;gap:3px;margin-left:auto;">
+                  <div style="width:14px;height:14px;border-radius:3px;background:#f0e3ee;border:1px solid #d98acc;"></div>
+                  <div style="width:14px;height:14px;border-radius:3px;background:#f0e3ee;border:1px solid #d98acc;"></div>
+                  <div style="width:14px;height:14px;border-radius:3px;background:#e8d0e4;display:flex;align-items:center;justify-content:center;">
+                    <span style="font-size:6px;color:#801973;font-family:Roboto,sans-serif;font-weight:700;">+</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="card-content">
-            <span class="card-badge">Grupos</span>
-            <h2 class="card-title">Compartir posteos en diferentes grupos</h2>
-            <p class="card-cta" style="color:#b0b0c0;font-style:italic;">Próximamente</p>
+            <span class="card-badge" data-i18n="badge-grupos">Grupos</span>
+            <h2 class="card-title" data-i18n="title-compartir">Compartir posteos en diferentes grupos</h2>
+            <p class="card-sub" data-i18n="sub-compartir">Los usuarios podrán compartir publicaciones de un grupo en otros grupos.</p>
           </div>
         </div>
       </div>
@@ -1116,7 +1353,10 @@
       "Gestión de Servicios":      { color: "#F1EDFF", accent: "#886BFF" },
       "Chat":                      { color: "#EBF9EE", accent: "#4ED364" },
       "Muro":                      { color: "#E5F3FD", accent: "#0182D2" },
-      "Grupos":                    { color: "#F0E3EE", accent: "#801973" }
+      "Grupos":                    { color: "#F0E3EE", accent: "#801973" },
+      "Turnos laborales":          { color: "#E4F4E6", accent: "#1CA332" },
+      "Vacaciones y Permisos":     { color: "#FEF8E9", accent: "#F0B623" },
+      "Reclutamiento":             { color: "#F1EDFF", accent: "#886BFF" }
     };
 
     // Stack scroll effect — transform applied to .card-scene to avoid breaking 3D flip context
@@ -1157,6 +1397,157 @@
     }
     setHeaderHeight();
     window.addEventListener('resize', setHeaderHeight);
+
+    // ── Translations ──────────────────────────────────────────────
+    const TRANSLATIONS = {
+      es: {
+        'header-title':    '<strong>Novedades</strong> en Humand',
+        'header-sub':      'Te compartimos las actualizaciones semanales de la plataforma: mejoras implementadas en los módulos y nuevas features disponibles. Haz click en cada tarjeta para acceder a más detalle.',
+        'tab-lanzadas':    'Lanzadas',
+        'tab-esta-semana': 'Esta semana',
+        'tab-proximamente':'Próximamente',
+        'badge-gestion':   'Gestión de Servicios',
+        'badge-chat':      'Chat',
+        'badge-turnos':    'Turnos laborales',
+        'badge-vacaciones':'Vacaciones y Permisos',
+        'badge-legajo':    'Legajo Digital',
+        'badge-librerias': 'Librerías de Conocimiento',
+        'badge-reclutamiento': 'Reclutamiento',
+        'badge-grupos':    'Grupos',
+        'badge-asistencia':'Control de Asistencia',
+        'cta-ver-detalle': '→ Ver detalle',
+        'cta-proximamente':'Próximamente',
+        'cta-accede':      'Accede a más información',
+        'title-workflows': 'Workflows: Duplicado y segmentación',
+        'title-mensajes':  'Mensajes fijados: resalta lo importante',
+        'title-cierre':    'Cierre automático de jornada',
+        'title-multiplos': 'Reglas de múltiplos y comienzo en lunes',
+        'title-legajo':    'Nueva vista unificada de Legajo Digital',
+        'title-librerias': 'Rediseño y nuevas funcionalidades',
+        'title-saldos':    'Control de saldos en ciclos futuros',
+        'title-comprobantes': 'Descarga masiva de comprobantes en PDF',
+        'title-formulario':'Formulario de aplicación',
+        'title-reglas-cierre': 'Nuevas reglas de cierre automático',
+        'title-compartir': 'Compartir posteos en diferentes grupos',
+        'title-aprobacion':'Aprobación de horas extra en la app',
+        'title-cierre-auto':'Reglas de cierre automático',
+        'sub-aprobacion':  'Los aprobadores pueden revisar, aprobar y rechazar solicitudes desde el celular.',
+        'sub-cierre-auto': 'Configura el cierre automático del reloj a partir del horario programado.',
+        'sub-compartir':   'Los usuarios podrán compartir publicaciones de un grupo en otros grupos.',
+        'body-workflows':  '<strong>Duplicado de flujos:</strong> Copia workflows existentes para crear variantes rápido sin necesidad de empezar desde cero.<br><br><strong>Edición ágil:</strong> La copia mantiene todos los componentes y deja el disparador libre para asignar un nuevo servicio.<br><br><strong>Bifurcación avanzada:</strong> Ramifica tus flujos usando segmentaciones de usuario además de los datos de la solicitud.',
+        'body-mensajes':   '<strong>Destaca información:</strong> Pinnea hasta tres mensajes en la parte superior del chat para tenerlos siempre a mano.<br><br><strong>Control de tiempo:</strong> Elige fijar el contenido por 24 horas, 30 días o de forma permanente según tu necesidad.<br><br><strong>Sincronización total:</strong> Los mensajes se fijan para todos los participantes y se reflejan en Web y Mobile.',
+        'body-cierre':     '<strong>Reglas de cierre:</strong> Automatiza el fin del reloj para que coincida con el fin del horario laboral programado.<br><br><strong>Horas programadas:</strong> Ajusta el cierre a las horas previstas para evitar que los registros excedan lo pautado.<br><br><strong>Gestión de olvidos:</strong> Reduce las correcciones manuales por fichajes que quedaron abiertos por error o descuido.',
+        'body-multiplos':  '<strong>Múltiplos de siete:</strong> Permite configurar solicitudes en periodos de 7 días, contemplando los festivos en el cálculo.<br><br><strong>Inicio en lunes:</strong> Define que las solicitudes deban comenzar siempre un día lunes o el siguiente día hábil.<br><br><strong>Gestión de políticas:</strong> Activa estas nuevas reglas de validación directamente desde el módulo Vacaciones y Permisos.',
+        'body-legajo':     '<strong>Navegación por pestañas:</strong> Accede a información, segmentación, roles y trámites en una misma ventana lateral.<br><br><strong>Organización por categorías:</strong> Los datos y documentos se agrupan en tarjetas.<br><br><strong>Acciones rápidas:</strong> Gestiona bajas, reactivaciones o cambios de clave directamente desde el perfil del colaborador.',
+        'body-librerias':  '<strong>Home personalizada:</strong> Configura una imagen de portada y descripción propia para darle identidad al módulo.<br><br><strong>Autonomía para editores:</strong> Ahora pueden crear, duplicar y reordenar subartículos en borrador.<br><br><strong>Notificaciones automáticas:</strong> Los editores pueden enviar notificaciones al actualizar contenidos.',
+        'body-saldos':     '<strong>Descuento inmediato:</strong> Descuenta el saldo de solicitudes para ciclos futuros al momento de ser aprobadas, sin esperar a que inicie el periodo.<br><br><strong>Visibilidad real:</strong> Permite que admins y colaboradores vean el saldo disponible actualizado, considerando los días que ya están comprometidos.<br><br><strong>Control opcional:</strong> Activa esta función para asegurar que el saldo refleje la disponibilidad real del equipo.',
+        'body-comprobantes':'<strong>Exportación masiva en PDF:</strong> Descarga múltiples constancias en un solo paso para agilizar tus registros.<br><br><strong>Procesamiento en segundo plano:</strong> Recibe un archivo en tu correo con todos los documentos solicitados.<br><br><strong>Organización automática:</strong> Los documentos mantienen sus nombres originales, facilitando el control.',
+      },
+      en: {
+        'header-title':    '<strong>What\'s new</strong> in Humand',
+        'header-sub':      'We share weekly platform updates: improvements across modules and new features available. Click on each card to learn more.',
+        'tab-lanzadas':    'Launched',
+        'tab-esta-semana': 'This week',
+        'tab-proximamente':'Coming soon',
+        'badge-gestion':   'Service Management',
+        'badge-chat':      'Chat',
+        'badge-turnos':    'Time Tracking',
+        'badge-vacaciones':'Time Off',
+        'badge-legajo':    'Digital Employee File',
+        'badge-librerias': 'Knowledge Libraries',
+        'badge-reclutamiento': 'Internal Job Postings',
+        'badge-grupos':    'Groups',
+        'badge-asistencia':'Time Tracking',
+        'cta-ver-detalle': '→ See details',
+        'cta-proximamente':'Coming soon',
+        'cta-accede':      'Access more information',
+        'title-workflows': 'Workflows: Duplication & segmentation',
+        'title-mensajes':  'Pinned messages: highlight what matters',
+        'title-cierre':    'Automatic shift close',
+        'title-multiplos': 'Multiple rules and Monday start',
+        'title-legajo':    'New unified Digital Employee File view',
+        'title-librerias': 'Redesign and new features',
+        'title-saldos':    'Balance control in future cycles',
+        'title-comprobantes': 'Bulk PDF receipt download',
+        'title-formulario':'Application form',
+        'title-reglas-cierre': 'New auto-close rules',
+        'title-compartir': 'Share posts across different groups',
+        'title-aprobacion':'Overtime approval in the app',
+        'title-cierre-auto':'Auto-close rules',
+        'sub-aprobacion':  'Approvers can review, approve, and reject requests directly from their phone.',
+        'sub-cierre-auto': 'Set up automatic clock-out based on the work shift or scheduled hours.',
+        'sub-compartir':   'Users will be able to share posts from one group to other groups.',
+        'body-workflows':  '<strong>Workflow duplication:</strong> Copy existing workflows to create variants quickly without starting from scratch.<br><br><strong>Agile editing:</strong> The copy preserves all components and leaves the trigger open to assign a new service.<br><br><strong>Advanced branching:</strong> Branch your flows using user segmentation in addition to request data.',
+        'body-mensajes':   '<strong>Highlight information:</strong> Pin up to three messages at the top of the chat to keep them always at hand.<br><br><strong>Time control:</strong> Choose to pin content for 24 hours, 30 days, or permanently based on your needs.<br><br><strong>Full sync:</strong> Messages are pinned for all participants and reflected on Web and Mobile.',
+        'body-cierre':     '<strong>Close rules:</strong> Automate the end of the clock to match the end of the scheduled work shift.<br><br><strong>Scheduled hours:</strong> Adjust the close to the planned hours to prevent records from exceeding what was scheduled.<br><br><strong>Oversight management:</strong> Reduce manual corrections for time entries that were left open by mistake.',
+        'body-multiplos':  '<strong>Multiples of seven:</strong> Configure requests in 7-day periods, including holidays in the calculation.<br><br><strong>Monday start:</strong> Requests must always begin on a Monday or the next business day.<br><br><strong>Policy management:</strong> Enable these new validation rules directly from the Time Off module.',
+        'body-legajo':     '<strong>Tab navigation:</strong> Access information, segmentation, roles, and requests in a single side panel.<br><br><strong>Category organization:</strong> Data and documents are grouped into cards.<br><br><strong>Quick actions:</strong> Manage offboarding, reactivations, or password changes directly from the employee profile.',
+        'body-librerias':  '<strong>Custom home:</strong> Set a cover image and description to give the module its own identity.<br><br><strong>Editor autonomy:</strong> Editors can now create, duplicate, and reorder draft sub-articles.<br><br><strong>Automatic notifications:</strong> Editors can send notifications when updating content.',
+        'body-saldos':     '<strong>Immediate deduction:</strong> Deducts the balance for future cycle requests as soon as they are approved, without waiting for the period to start.<br><br><strong>Real visibility:</strong> Allows admins and employees to see the updated available balance, accounting for already committed days.<br><br><strong>Optional control:</strong> Enable this feature to ensure the balance reflects the team\'s actual availability.',
+        'body-comprobantes':'<strong>Bulk PDF export:</strong> Download multiple receipts in a single step to streamline your records.<br><br><strong>Background processing:</strong> Receive a file in your email with all the requested documents.<br><br><strong>Automatic organization:</strong> Documents retain their original names, making control easier.',
+      },
+      pt: {
+        'header-title':    '<strong>Novidades</strong> no Humand',
+        'header-sub':      'Compartilhamos as atualizações semanais da plataforma: melhorias nos módulos e novos recursos disponíveis. Clique em cada card para saber mais.',
+        'tab-lanzadas':    'Lançadas',
+        'tab-esta-semana': 'Esta semana',
+        'tab-proximamente':'Em breve',
+        'badge-gestion':   'Gerenciamento de serviços',
+        'badge-chat':      'Chat',
+        'badge-turnos':    'Controle de Presença',
+        'badge-vacaciones':'Férias e Licenças',
+        'badge-legajo':    'Arquivo Digital de Funcionários',
+        'badge-librerias': 'Biblioteca de Conhecimento',
+        'badge-reclutamiento': 'Anúncios de emprego internos',
+        'badge-grupos':    'Grupos',
+        'badge-asistencia':'Controle de Presença',
+        'cta-ver-detalle': '→ Ver detalhes',
+        'cta-proximamente':'Em breve',
+        'cta-accede':      'Acesse mais informações',
+        'title-workflows': 'Workflows: Duplicação e segmentação',
+        'title-mensajes':  'Mensagens fixadas: destaque o que importa',
+        'title-cierre':    'Encerramento automático de jornada',
+        'title-multiplos': 'Regras de múltiplos e início na segunda-feira',
+        'title-legajo':    'Nova visão unificada do Arquivo Digital de Funcionários',
+        'title-librerias': 'Redesign e novas funcionalidades',
+        'title-saldos':    'Controle de saldos em ciclos futuros',
+        'title-comprobantes': 'Download em massa de comprovantes em PDF',
+        'title-formulario':'Formulário de candidatura',
+        'title-reglas-cierre': 'Novas regras de encerramento automático',
+        'title-compartir': 'Compartilhar postagens em diferentes grupos',
+        'title-aprobacion':'Aprovação de horas extras no app',
+        'title-cierre-auto':'Regras de encerramento automático',
+        'sub-aprobacion':  'Os aprovadores podem revisar, aprovar e rejeitar solicitações diretamente pelo celular.',
+        'sub-cierre-auto': 'Configure o encerramento automático do relógio com base na jornada ou horário programado.',
+        'sub-compartir':   'Os usuários poderão compartilhar publicações de um grupo em outros grupos.',
+        'body-workflows':  '<strong>Duplicação de fluxos:</strong> Copie workflows existentes para criar variantes rapidamente sem precisar começar do zero.<br><br><strong>Edição ágil:</strong> A cópia mantém todos os componentes e deixa o gatilho livre para atribuir um novo serviço.<br><br><strong>Bifurcação avançada:</strong> Ramifique seus fluxos usando segmentações de usuário além dos dados da solicitação.',
+        'body-mensajes':   '<strong>Destaque informações:</strong> Fixe até três mensagens no topo do chat para tê-las sempre à mão.<br><br><strong>Controle de tempo:</strong> Escolha fixar o conteúdo por 24 horas, 30 dias ou permanentemente conforme sua necessidade.<br><br><strong>Sincronização total:</strong> As mensagens são fixadas para todos os participantes e refletidas no Web e Mobile.',
+        'body-cierre':     '<strong>Regras de encerramento:</strong> Automatize o fim do relógio para coincidir com o fim do horário de trabalho programado.<br><br><strong>Horas programadas:</strong> Ajuste o encerramento às horas previstas para evitar que os registros excedam o planejado.<br><br><strong>Gestão de esquecimentos:</strong> Reduza as correções manuais de registros que ficaram abertos por engano.',
+        'body-multiplos':  '<strong>Múltiplos de sete:</strong> Configure solicitações em períodos de 7 dias, considerando os feriados no cálculo.<br><br><strong>Início na segunda-feira:</strong> As solicitações devem sempre começar numa segunda-feira ou no próximo dia útil.<br><br><strong>Gestão de políticas:</strong> Ative essas novas regras de validação diretamente no módulo Férias e Licenças.',
+        'body-legajo':     '<strong>Navegação por abas:</strong> Acesse informações, segmentação, funções e solicitações em um único painel lateral.<br><br><strong>Organização por categorias:</strong> Dados e documentos são agrupados em cards.<br><br><strong>Ações rápidas:</strong> Gerencie desligamentos, reativações ou alterações de senha diretamente do perfil do colaborador.',
+        'body-librerias':  '<strong>Home personalizada:</strong> Configure uma imagem de capa e descrição própria para dar identidade ao módulo.<br><br><strong>Autonomia para editores:</strong> Agora podem criar, duplicar e reordenar subartigos em rascunho.<br><br><strong>Notificações automáticas:</strong> Os editores podem enviar notificações ao atualizar conteúdos.',
+        'body-saldos':     '<strong>Desconto imediato:</strong> Desconta o saldo de solicitações para ciclos futuros no momento em que são aprovadas, sem aguardar o início do período.<br><br><strong>Visibilidade real:</strong> Permite que admins e colaboradores vejam o saldo disponível atualizado, considerando os dias já comprometidos.<br><br><strong>Controle opcional:</strong> Ative esta função para garantir que o saldo reflita a disponibilidade real da equipe.',
+        'body-comprobantes':'<strong>Exportação em massa em PDF:</strong> Baixe múltiplos comprovantes em um único passo para agilizar seus registros.<br><br><strong>Processamento em segundo plano:</strong> Receba um arquivo no seu e-mail com todos os documentos solicitados.<br><br><strong>Organização automática:</strong> Os documentos mantêm seus nomes originais, facilitando o controle.',
+      }
+    };
+
+    function setLang(lang) {
+      const t = TRANSLATIONS[lang];
+      if (!t) return;
+      // Plain text elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (t[el.dataset.i18n] !== undefined) el.textContent = t[el.dataset.i18n];
+      });
+      // HTML elements (bold, br)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        if (t[el.dataset.i18nHtml] !== undefined) el.innerHTML = t[el.dataset.i18nHtml];
+      });
+      // Update lang switcher buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang;
+    }
 
     // Tab switching
     document.querySelectorAll('.tab-btn').forEach(btn => {
