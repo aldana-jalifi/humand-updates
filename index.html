@@ -705,23 +705,35 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M66.7821 98.0814C75.1112 98.0814 82.5729 102.729 86.2757 110.205C88.8781 115.48 94.1393 118.76 100 118.76C105.861 118.76 111.122 115.48 113.724 110.205C117.434 102.722 124.896 98.0814 133.218 98.0814H165.589C166.368 98.0814 167 97.4502 167 96.6709V72.0927C167 48.7132 152.027 33 129.748 33H70.259C47.9727 33 33 48.7132 33 72.0927V96.6709C33 97.4502 33.6315 98.0814 34.4105 98.0814H66.7821Z" fill="#886BFF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M133.218 108.652C128.951 108.652 125.122 111.036 123.21 114.886C118.816 123.794 109.916 129.33 100 129.33C90.0841 129.33 81.1835 123.794 76.7827 114.879C74.8855 111.036 71.056 108.652 66.7821 108.652H34.4105C33.6315 108.652 33 109.283 33 110.063V128.322C33 151.708 47.9727 167.421 70.259 167.421H129.741C152.027 167.421 167 151.708 167 128.322V110.063C167 109.283 166.368 108.652 165.589 108.652H133.218Z" fill="#886BFF"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Workflows</p>
+              <p class="mock-head" data-i18n="mock-head-workflows">Workflows</p>
               <!-- Workflow original -->
-              <div style="border:1.5px solid #d8d0f7;border-radius:7px;padding:5px 7px;display:flex;align-items:center;gap:6px;background:#faf8ff;margin-bottom:5px;">
+              <div style="border:1.5px solid #d8d0f7;border-radius:7px;padding:5px 7px;display:flex;align-items:center;gap:6px;background:#faf8ff;margin-bottom:4px;">
                 <div style="width:5px;height:22px;border-radius:2px;background:#886BFF;flex-shrink:0;"></div>
-                <div style="flex:1;"><div class="mock-bar d w80"></div><div class="mock-bar w50" style="margin-top:3px;"></div></div>
-                <span style="font-size:6px;font-weight:600;color:#886BFF;background:#ede8ff;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;">Copiar</span>
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-solicitud">Solicitud de vacaciones</span>
+                  <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;padding:1px 4px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-activo">Activo</span>
+                </div>
+                <span style="font-size:6px;font-weight:600;color:#886BFF;background:#ede8ff;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;" data-i18n="mock-copiar">Copiar</span>
               </div>
               <!-- Arrow -->
-              <div style="display:flex;align-items:center;gap:3px;padding:0 8px;margin-bottom:5px;">
+              <div style="display:flex;align-items:center;gap:3px;padding:0 8px;margin-bottom:4px;">
                 <div style="flex:1;height:1px;border-top:1.5px dashed #c9b8fd;"></div>
                 <svg width="8" height="8" fill="none" viewBox="0 0 8 8"><path d="M8 4H2M5.5 1.5L8 4l-2.5 2.5" stroke="#c9b8fd" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <!-- Workflow duplicado -->
-              <div style="border:1.5px dashed #c9b8fd;border-radius:7px;padding:5px 7px;display:flex;align-items:center;gap:6px;background:#faf8ff;">
-                <div style="width:5px;height:22px;border-radius:2px;background:#c9b8fd;flex-shrink:0;"></div>
-                <div style="flex:1;"><div class="mock-bar w70" style="background:#ddd6ff;"></div><div class="mock-bar w40" style="margin-top:3px;background:#ede8ff;"></div></div>
-                <span style="font-size:6px;color:#9e8ecc;background:#f5f1ff;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;">Copia</span>
+              <div style="border:1.5px dashed #c9b8fd;border-radius:7px;padding:5px 7px;background:#faf8ff;margin-bottom:5px;">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                  <div style="width:5px;height:16px;border-radius:2px;background:#c9b8fd;flex-shrink:0;"></div>
+                  <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;flex:1;"><span data-i18n="mock-solicitud">Solicitud de vacaciones</span> <span style="color:#9e8ecc;" data-i18n="mock-copia">(copia)</span></span>
+                </div>
+                <div style="border:1px solid #d8d0f7;border-radius:4px;padding:3px 6px;background:#fff;">
+                  <span style="font-size:5.5px;color:#9e8ecc;font-family:Roboto,sans-serif;" data-i18n="mock-seleccionar-servicio">Seleccionar servicio…</span>
+                </div>
+              </div>
+              <!-- Segmentation tag -->
+              <div style="display:flex;align-items:center;gap:4px;">
+                <svg width="8" height="8" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#886BFF" stroke-width="2" stroke-linecap="round"/></svg>
+                <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;padding:2px 6px;border-radius:999px;font-family:Roboto,sans-serif;">Empleados · Buenos Aires</span>
               </div>
             </div>
           </div>
@@ -760,26 +772,23 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M101.409 115.671C97.3214 115.671 94.0227 112.372 94.0227 108.284C94.0227 104.197 97.3214 100.826 101.409 100.826C105.497 100.826 108.867 104.197 108.867 108.284C108.867 112.372 105.497 115.671 101.409 115.671ZM67.8479 115.671C63.7603 115.671 60.3899 112.372 60.3899 108.284C60.3899 104.197 63.7603 100.826 67.8479 100.826C71.9354 100.826 75.2341 104.197 75.2341 108.284C75.2341 112.372 71.9354 115.671 67.8479 115.671ZM113.815 64.3972H57.6648C44.6133 64.3972 34 75.0105 34 88.0618V126.427C34 139.407 44.6133 150.021 57.6648 150.021H63.5452C66.2702 150.021 68.8518 151.096 70.788 153.032L78.6763 160.921C80.5408 162.785 83.0507 163.861 85.7042 163.861C88.3575 163.861 90.8674 162.785 92.8036 160.921L100.692 153.032C102.556 151.096 105.138 150.021 107.863 150.021H113.815C126.795 150.021 137.408 139.407 137.408 126.427V88.0618C137.408 75.0105 126.795 64.3972 113.815 64.3972Z" fill="#4ED364"/><path fill-rule="evenodd" clip-rule="evenodd" d="M101.41 115.668C97.3229 115.668 94.0242 112.37 94.0242 108.282C94.0242 104.194 97.3229 100.824 101.41 100.824C105.498 100.824 108.868 104.194 108.868 108.282C108.868 112.37 105.498 115.668 101.41 115.668ZM67.8492 115.668C63.7617 115.668 60.3912 112.37 60.3912 108.282C60.3912 104.194 63.7617 100.824 67.8492 100.824C71.9368 100.824 75.2355 104.194 75.2355 108.282C75.2355 112.37 71.9368 115.668 67.8492 115.668Z" fill="#4ED364"/><path fill-rule="evenodd" clip-rule="evenodd" d="M143.076 37H86.926C76.2897 37 67.2536 44.04 64.352 53.7063C64.089 54.5827 64.7715 55.4299 65.6865 55.4299H113.818C131.746 55.4299 146.375 70.059 146.375 88.0588V120.692C146.375 121.562 147.145 122.234 147.996 122.055C158.669 119.811 166.669 110.296 166.669 98.959V60.5931C166.669 47.6133 156.056 37 143.076 37Z" fill="#4ED364"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Chat</p>
+              <p class="mock-head" data-i18n="mock-head-chat">Chat</p>
               <!-- Pinned banner -->
               <div style="background:#d3f5da;border-radius:6px;padding:4px 8px;margin-bottom:7px;display:flex;align-items:center;gap:5px;">
                 <svg width="8" height="8" fill="none" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" fill="#4ED364"/></svg>
-                <span style="font-size:6.5px;font-weight:600;color:#219e40;font-family:Roboto,sans-serif;">Fijado</span>
-                <div class="mock-bar" style="flex:1;height:3px;background:#a8e8b5;margin-left:2px;"></div>
+                <span style="font-size:6.5px;font-weight:600;color:#219e40;font-family:Roboto,sans-serif;" data-i18n="mock-pin-reunion">📌 Reunión lunes · 9:00 hs</span>
               </div>
               <!-- Bubble derecha -->
               <div style="display:flex;justify-content:flex-end;margin-bottom:5px;">
-                <div style="background:#4ED364;border-radius:9px 9px 2px 9px;padding:5px 8px;">
-                  <div class="mock-bar" style="width:72px;height:3.5px;background:rgba(255,255,255,0.55);margin-bottom:2px;"></div>
-                  <div class="mock-bar" style="width:48px;height:3.5px;background:rgba(255,255,255,0.35);"></div>
+                <div style="background:#4ED364;border-radius:9px 9px 2px 9px;padding:5px 9px;">
+                  <span style="font-size:6px;color:#fff;font-family:Roboto,sans-serif;white-space:nowrap;" data-i18n="mock-lo-viste">¿Lo viste ya?</span>
                 </div>
               </div>
               <!-- Bubble izquierda -->
               <div style="display:flex;align-items:flex-end;gap:5px;">
                 <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a8f0b5,#2bc55e);flex-shrink:0;"></div>
-                <div style="background:#f0faf1;border-radius:9px 9px 9px 2px;padding:5px 8px;border:1px solid #d3f5da;">
-                  <div class="mock-bar d" style="width:65px;height:3.5px;margin-bottom:2px;"></div>
-                  <div class="mock-bar" style="width:42px;height:3.5px;background:#c5eacc;"></div>
+                <div style="background:#f0faf1;border-radius:9px 9px 9px 2px;padding:5px 9px;border:1px solid #d3f5da;">
+                  <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;white-space:nowrap;" data-i18n="mock-si-gracias">Sí, gracias 👍</span>
                 </div>
               </div>
             </div>
@@ -819,12 +828,12 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Turnos laborales</p>
+              <p class="mock-head" data-i18n="mock-head-turnos">Turnos laborales</p>
               <!-- Reloj digital -->
               <div style="background:#e4f4e6;border-radius:8px;padding:7px 10px;margin-bottom:7px;display:flex;align-items:center;gap:8px;">
                 <div>
                   <div style="font-size:21px;font-weight:700;color:#1CA332;font-family:Roboto,sans-serif;letter-spacing:-0.5px;line-height:1;">18:00</div>
-                  <div style="font-size:5.5px;color:#35a84c;font-family:Roboto,sans-serif;font-weight:600;margin-top:1px;">Cierre automático</div>
+                  <div style="font-size:5.5px;color:#35a84c;font-family:Roboto,sans-serif;font-weight:600;margin-top:1px;" data-i18n="mock-cierre-auto-label">Cierre automático</div>
                 </div>
                 <div style="margin-left:auto;">
                   <div style="width:26px;height:26px;border-radius:50%;border:2.5px solid #1CA332;display:flex;align-items:center;justify-content:center;">
@@ -835,13 +844,13 @@
               <!-- Employees con check -->
               <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #f0f1f7;">
                 <div class="mock-av" style="background:linear-gradient(135deg,#a8f0b5,#1CA332);width:18px;height:18px;"></div>
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w80"></div></div>
-                <svg width="10" height="10" fill="none" viewBox="0 0 24 24" style="flex-shrink:0;"><circle cx="12" cy="12" r="8" fill="#1CA332"/><path d="M8 12l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span style="flex:1;font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">M. García</span>
+                <span style="font-size:5.5px;color:#1CA332;background:#e4f4e6;padding:1px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;" data-i18n="mock-cerrado">Cerrado ✓</span>
               </div>
               <div style="display:flex;align-items:center;gap:6px;padding:4px 0;">
                 <div class="mock-av" style="background:linear-gradient(135deg,#78e090,#19912b);width:18px;height:18px;"></div>
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w70"></div></div>
-                <svg width="10" height="10" fill="none" viewBox="0 0 24 24" style="flex-shrink:0;"><circle cx="12" cy="12" r="8" fill="#1CA332"/><path d="M8 12l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span style="flex:1;font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">C. Rodríguez</span>
+                <span style="font-size:5.5px;color:#1CA332;background:#e4f4e6;padding:1px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;" data-i18n="mock-cerrado">Cerrado ✓</span>
               </div>
             </div>
           </div>
@@ -880,7 +889,12 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M82.3671 116.835C79.5339 116.835 77.1728 114.474 77.1728 111.574C77.1728 108.673 79.5339 106.312 82.3671 106.312C85.2675 106.312 87.6285 108.673 87.6285 111.574C87.6285 114.474 85.2675 116.835 82.3671 116.835ZM57.5427 116.835C54.642 116.835 52.281 114.474 52.281 111.574C52.281 108.673 54.642 106.312 57.5427 106.312C60.4434 106.312 62.8044 108.673 62.8044 111.574C62.8044 114.474 60.4434 116.835 57.5427 116.835ZM57.5427 139.434C54.642 139.434 52.281 137.073 52.281 134.172C52.281 131.271 54.642 128.978 57.5427 128.978C60.4434 128.978 62.8044 131.271 62.8044 134.172C62.8044 137.073 60.4434 139.434 57.5427 139.434ZM135.254 98.9591C139.417 98.9591 143.431 99.6532 147.169 100.871C148.068 101.164 149.015 100.51 149.015 99.5648V90.1896C149.015 89.4442 148.411 88.8404 147.666 88.8404H35.3492C34.604 88.8404 34 89.4442 34 90.1896V127.898C34 147.798 46.0074 159.738 66.0423 159.738H99.47C100.535 159.738 101.188 158.556 100.672 157.625C97.5306 151.954 95.7234 145.435 95.7234 138.489C95.7234 116.7 113.397 98.9591 135.254 98.9591Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M149.044 73.4645C149.044 64.034 146.238 56.1414 140.821 50.7246C135.937 45.9149 129.049 43.1693 120.887 42.4341V36.0121C120.887 33.2733 118.614 31 115.875 31C113.069 31 110.856 33.2733 110.856 36.0121V59.7572C110.391 59.8921 109.993 60.0202 109.52 60.0202C106.714 60.0202 104.508 57.7469 104.508 55.0081V43.5134C104.508 42.7682 103.905 42.1642 103.159 42.1642H72.2033V36.0121C72.2033 33.2733 69.9974 31 67.1912 31C64.4457 31 62.1723 33.2733 62.1723 36.0121V59.7572C61.7743 59.8921 61.3089 60.0202 60.8367 60.0202C58.0979 60.0202 55.8246 57.7469 55.8246 55.0081V45.2298C55.8246 44.3536 54.9995 43.7095 54.1601 43.9612C41.3993 47.7883 34.0223 58.1385 34.0223 73.4645V77.4648C34.0223 78.2098 34.6263 78.8139 35.3715 78.8139H147.695C148.44 78.8139 149.044 78.2098 149.044 77.4648V73.4645Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M148.001 148.542C147.056 150.093 145.37 150.97 143.683 150.97C142.806 150.97 141.862 150.768 141.053 150.228L132.823 145.304C131.339 144.427 130.394 142.807 130.394 140.986V130.395C130.394 127.629 132.62 125.336 135.454 125.336C138.219 125.336 140.513 127.629 140.513 130.395V138.153L146.247 141.593C148.675 143.01 149.417 146.113 148.001 148.542ZM135.589 109.686C119.331 109.686 106.177 122.907 106.177 139.165C106.177 155.354 119.331 168.576 135.589 168.576C151.778 168.576 165 155.354 165 139.165C165 122.907 151.778 109.686 135.589 109.686Z" fill="#F0B623"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Vacaciones</p>
+              <p class="mock-head" data-i18n="mock-head-vacaciones">Vacaciones</p>
+              <!-- Regla activa -->
+              <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+                <span style="font-size:6px;font-weight:600;color:#F0B623;font-family:Roboto,sans-serif;" data-i18n="mock-inicio-lunes">Inicio: lunes</span>
+                <span style="font-size:5.5px;color:#8E8EA0;font-family:Roboto,sans-serif;" data-i18n="mock-multiplos-7">· Múltiplos de 7 días</span>
+              </div>
               <!-- Calendar: días de semana header -->
               <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;">
                 <span style="font-size:5.5px;font-weight:600;color:#F0B623;text-align:center;font-family:Roboto,sans-serif;">L</span>
@@ -955,7 +969,7 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M49.1955 171.499H150.804C154.522 171.499 157 169.021 157 165.304C157 144.238 139.652 121.934 100 121.934C60.3477 121.934 43 144.238 43 165.304C43 169.021 45.4782 171.499 49.1955 171.499Z" fill="#1CA332"/><path opacity="0.4" d="M138.412 67.4131C138.412 46.348 121.065 29 99.9993 29C78.9342 29 61.5862 46.348 61.5862 67.4131C61.5862 88.4782 78.9342 105.826 99.9993 105.826C121.065 105.826 138.412 88.4782 138.412 67.4131Z" fill="#1CA332"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Legajo Digital</p>
+              <p class="mock-head" data-i18n="mock-head-legajo">Legajo Digital</p>
               <!-- Tab bar -->
               <div style="display:flex;gap:2px;background:#edf7ee;border-radius:6px;padding:2px;margin-bottom:6px;">
                 <div style="flex:1;background:#fff;border-radius:5px;padding:3px 2px;text-align:center;box-shadow:0 1px 3px rgba(28,163,50,0.12);">
@@ -965,24 +979,27 @@
                   <span style="font-size:5.5px;color:#9e9dab;font-family:Roboto,sans-serif;">Roles</span>
                 </div>
                 <div style="flex:1;padding:3px 2px;text-align:center;">
-                  <span style="font-size:5.5px;color:#9e9dab;font-family:Roboto,sans-serif;">Trámites</span>
+                  <span style="font-size:5.5px;color:#9e9dab;font-family:Roboto,sans-serif;" data-i18n="mock-tramites">Trámites</span>
                 </div>
               </div>
               <!-- Profile row -->
               <div style="display:flex;align-items:center;gap:6px;padding-bottom:5px;border-bottom:1px solid #f0f1f7;margin-bottom:5px;">
                 <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#a3d9a9,#1CA332);flex-shrink:0;"></div>
-                <div style="flex:1;"><div class="mock-bar d w80" style="margin-bottom:3px;"></div><div class="mock-bar w50" style="background:#b8e8c0;"></div></div>
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-legajo-num">Legajo #4821</span>
+                  <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">Tecnología</span>
+                </div>
                 <svg width="9" height="9" fill="none" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M9 18l6-6-6-6" stroke="#d0d3e0" stroke-width="2.5" stroke-linecap="round"/></svg>
               </div>
               <!-- Category cards -->
               <div style="display:flex;gap:4px;">
                 <div style="flex:1;background:#e4f4e6;border-radius:6px;padding:4px 5px;">
-                  <div class="mock-bar" style="width:75%;height:3px;background:#a3d9a9;margin-bottom:3px;"></div>
-                  <div class="mock-bar" style="width:55%;height:3px;background:#b8e8c0;"></div>
+                  <span style="font-size:5.5px;font-weight:600;color:#1CA332;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-inf-personal">Inf. personal</span>
+                  <div class="mock-bar" style="width:60%;height:3px;background:#b8e8c0;"></div>
                 </div>
                 <div style="flex:1;background:#f0f2fa;border-radius:6px;padding:4px 5px;">
-                  <div class="mock-bar" style="width:65%;height:3px;background:#d0d3e0;margin-bottom:3px;"></div>
-                  <div class="mock-bar" style="width:45%;height:3px;background:#e0e2ee;"></div>
+                  <span style="font-size:5.5px;font-weight:600;color:#636271;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-documentos">Documentos</span>
+                  <div class="mock-bar" style="width:50%;height:3px;background:#d0d3e0;"></div>
                 </div>
               </div>
             </div>
@@ -1021,13 +1038,10 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M81.3005 129.045C81.3005 130.117 82.1693 130.985 83.241 130.985H141.328C142.399 130.985 143.267 131.852 143.269 132.922L143.298 150.571C143.291 152.142 141.991 153.43 140.394 153.43H67.9374C61.7409 153.43 56.7022 148.378 56.7022 142.169C56.7022 135.998 61.7409 130.985 67.9374 130.985H69.6579C70.7295 130.985 71.5983 130.117 71.5983 129.045V38.9404C71.5983 37.8687 70.7295 37 69.6579 37H68.6114C56.6971 37 47.0014 46.6893 47.0014 58.6036V141.927L47 142.169C47 153.734 56.3917 163.132 67.9374 163.132H140.394C147.321 163.132 152.981 157.511 153 150.577L152.955 126.245L152.956 126.137V49.6129C152.956 42.6596 147.303 37 140.35 37H83.241C82.1693 37 81.3005 37.8687 81.3005 38.9404V129.045Z" fill="#35A48E"/><path d="M99.8702 73.4037H109.398C112.076 73.4037 114.249 71.2304 114.249 68.5526C114.249 65.8748 112.076 63.7015 109.398 63.7015H99.8702C97.1924 63.7015 95.0191 65.8748 95.0191 68.5526C95.0191 71.2304 97.1924 73.4037 99.8702 73.4037Z" fill="#35A48E"/><path d="M99.8702 92.0996H121.396C124.08 92.0996 126.247 89.9263 126.247 87.2485C126.247 84.5706 124.08 82.3973 121.396 82.3973H99.8702C97.1924 82.3973 95.0191 84.5706 95.0191 87.2485C95.0191 89.9263 97.1924 92.0996 99.8702 92.0996Z" fill="#35A48E"/><path d="M73.4696 147.344H143.267V137.641H73.4696C70.7918 137.641 68.6185 139.815 68.6185 142.493C68.6185 145.17 70.7918 147.344 73.4696 147.344Z" fill="#35A48E"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Librerías</p>
+              <p class="mock-head" data-i18n="mock-head-librerias">Librerías</p>
               <!-- Cover banner -->
               <div style="background:linear-gradient(135deg,#35A48E,#4ac5a8);border-radius:7px;padding:7px 9px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;">
-                <div>
-                  <div class="mock-bar" style="width:55px;height:3.5px;background:rgba(255,255,255,0.55);margin-bottom:3px;"></div>
-                  <div class="mock-bar" style="width:35px;height:3px;background:rgba(255,255,255,0.35);"></div>
-                </div>
+                <span style="font-size:7px;font-weight:600;color:#fff;font-family:Roboto,sans-serif;">Onboarding 2025</span>
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="rgba(255,255,255,0.25)"/><path d="M8 12h8M8 8h5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/></svg>
               </div>
               <!-- Article list -->
@@ -1035,14 +1049,14 @@
                 <div class="mock-icon" style="background:#c5e8e1;">
                   <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#35A48E" stroke-width="2.2" stroke-linecap="round"/></svg>
                 </div>
-                <div class="mock-lines"><div class="mock-bar d w80"></div></div>
-                <span class="mock-badge-new">NUEVO</span>
+                <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-politicas-acceso">Políticas de acceso</span>
+                <span class="mock-badge-new" data-i18n="mock-nuevo">NUEVO</span>
               </div>
               <div class="mock-nav" style="border-bottom:none;">
                 <div class="mock-icon" style="background:#c5e8e1;">
                   <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h12M4 18h8" stroke="#35A48E" stroke-width="2.2" stroke-linecap="round"/></svg>
                 </div>
-                <div class="mock-lines"><div class="mock-bar d w65"></div></div>
+                <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-guia-remoto">Guía de trabajo remoto</span>
               </div>
             </div>
           </div>
@@ -1081,27 +1095,27 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M82.3671 116.835C79.5339 116.835 77.1728 114.474 77.1728 111.574C77.1728 108.673 79.5339 106.312 82.3671 106.312C85.2675 106.312 87.6285 108.673 87.6285 111.574C87.6285 114.474 85.2675 116.835 82.3671 116.835ZM57.5427 116.835C54.642 116.835 52.281 114.474 52.281 111.574C52.281 108.673 54.642 106.312 57.5427 106.312C60.4434 106.312 62.8044 108.673 62.8044 111.574C62.8044 114.474 60.4434 116.835 57.5427 116.835ZM57.5427 139.434C54.642 139.434 52.281 137.073 52.281 134.172C52.281 131.271 54.642 128.978 57.5427 128.978C60.4434 128.978 62.8044 131.271 62.8044 134.172C62.8044 137.073 60.4434 139.434 57.5427 139.434ZM135.254 98.9591C139.417 98.9591 143.431 99.6532 147.169 100.871C148.068 101.164 149.015 100.51 149.015 99.5648V90.1896C149.015 89.4442 148.411 88.8404 147.666 88.8404H35.3492C34.604 88.8404 34 89.4442 34 90.1896V127.898C34 147.798 46.0074 159.738 66.0423 159.738H99.47C100.535 159.738 101.188 158.556 100.672 157.625C97.5306 151.954 95.7234 145.435 95.7234 138.489C95.7234 116.7 113.397 98.9591 135.254 98.9591Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M149.044 73.4645C149.044 64.034 146.238 56.1414 140.821 50.7246C135.937 45.9149 129.049 43.1693 120.887 42.4341V36.0121C120.887 33.2733 118.614 31 115.875 31C113.069 31 110.856 33.2733 110.856 36.0121V59.7572C110.391 59.8921 109.993 60.0202 109.52 60.0202C106.714 60.0202 104.508 57.7469 104.508 55.0081V43.5134C104.508 42.7682 103.905 42.1642 103.159 42.1642H72.2033V36.0121C72.2033 33.2733 69.9974 31 67.1912 31C64.4457 31 62.1723 33.2733 62.1723 36.0121V59.7572C61.7743 59.8921 61.3089 60.0202 60.8367 60.0202C58.0979 60.0202 55.8246 57.7469 55.8246 55.0081V45.2298C55.8246 44.3536 54.9995 43.7095 54.1601 43.9612C41.3993 47.7883 34.0223 58.1385 34.0223 73.4645V77.4648C34.0223 78.2098 34.6263 78.8139 35.3715 78.8139H147.695C148.44 78.8139 149.044 78.2098 149.044 77.4648V73.4645Z" fill="#F0B623"/><path fill-rule="evenodd" clip-rule="evenodd" d="M148.001 148.542C147.056 150.093 145.37 150.97 143.683 150.97C142.806 150.97 141.862 150.768 141.053 150.228L132.823 145.304C131.339 144.427 130.394 142.807 130.394 140.986V130.395C130.394 127.629 132.62 125.336 135.454 125.336C138.219 125.336 140.513 127.629 140.513 130.395V138.153L146.247 141.593C148.675 143.01 149.417 146.113 148.001 148.542ZM135.589 109.686C119.331 109.686 106.177 122.907 106.177 139.165C106.177 155.354 119.331 168.576 135.589 168.576C151.778 168.576 165 155.354 165 139.165C165 122.907 151.778 109.686 135.589 109.686Z" fill="#F0B623"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Vacaciones</p>
+              <p class="mock-head" data-i18n="mock-head-vacaciones">Vacaciones</p>
               <!-- Header ciclo + label -->
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
-                <span style="font-size:6px;color:#636271;font-family:Roboto,sans-serif;">Ciclo futuro · Jul–Dic</span>
-                <span style="font-size:6px;font-weight:600;color:#F0B623;font-family:Roboto,sans-serif;background:#fff8e1;padding:1px 5px;border-radius:999px;">Activo</span>
+                <span style="font-size:6px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-ciclo-futuro">Ciclo futuro · Jul–Dic</span>
+                <span style="font-size:6px;font-weight:600;color:#F0B623;font-family:Roboto,sans-serif;background:#fff8e1;padding:1px 5px;border-radius:999px;" data-i18n="mock-activo">Activo</span>
               </div>
               <!-- Big balance -->
               <div style="background:#fff8e1;border-radius:8px;padding:6px 8px;margin-bottom:6px;display:flex;align-items:center;gap:7px;">
                 <div>
                   <div style="font-size:22px;font-weight:700;color:#F0B623;font-family:Roboto,sans-serif;line-height:1;">15</div>
-                  <div style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;margin-top:1px;">días disponibles</div>
+                  <div style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;margin-top:1px;" data-i18n="mock-dias-disponibles">días disponibles</div>
                 </div>
                 <div style="flex:1;">
                   <div style="height:5px;background:#f0e0a8;border-radius:999px;margin-bottom:3px;"><div style="width:80%;height:100%;background:#F0B623;border-radius:999px;"></div></div>
-                  <div style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">3 comprometidos</div>
+                  <div style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;" data-i18n="mock-comprometidos">3 comprometidos</div>
                 </div>
               </div>
               <!-- One request row -->
               <div style="display:flex;align-items:center;gap:5px;">
                 <div style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#ffe59a,#F0B623);flex-shrink:0;"></div>
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w80"></div></div>
+                <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;">Ana M.</span>
                 <span style="font-size:6px;font-weight:600;color:#1CA332;background:#e4f4e6;padding:2px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;">−3</span>
               </div>
             </div>
@@ -1141,12 +1155,12 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M66.7821 98.0814C75.1112 98.0814 82.5729 102.729 86.2757 110.205C88.8781 115.48 94.1393 118.76 100 118.76C105.861 118.76 111.122 115.48 113.724 110.205C117.434 102.722 124.896 98.0814 133.218 98.0814H165.589C166.368 98.0814 167 97.4502 167 96.6709V72.0927C167 48.7132 152.027 33 129.748 33H70.259C47.9727 33 33 48.7132 33 72.0927V96.6709C33 97.4502 33.6315 98.0814 34.4105 98.0814H66.7821Z" fill="#886BFF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M133.218 108.652C128.951 108.652 125.122 111.036 123.21 114.886C118.816 123.794 109.916 129.33 100 129.33C90.0841 129.33 81.1835 123.794 76.7827 114.879C74.8855 111.036 71.056 108.652 66.7821 108.652H34.4105C33.6315 108.652 33 109.283 33 110.063V128.322C33 151.708 47.9727 167.421 70.259 167.421H129.741C152.027 167.421 167 151.708 167 128.322V110.063C167 109.283 166.368 108.652 165.589 108.652H133.218Z" fill="#886BFF"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Comprobantes</p>
+              <p class="mock-head" data-i18n="mock-head-comprobantes">Comprobantes</p>
               <div class="mock-file">
                 <div class="mock-check on"></div>
                 <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
+                  <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;">Recibo_abr_2025.pdf</span>
+                  <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">48 KB</span>
                 </div>
                 <div class="mock-dl">
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -1155,8 +1169,8 @@
               <div class="mock-file">
                 <div class="mock-check on"></div>
                 <div class="mock-lines">
-                  <div class="mock-bar d w70"></div>
-                  <div class="mock-bar w40"></div>
+                  <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;">Constancia_AFIP.pdf</span>
+                  <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">23 KB</span>
                 </div>
                 <div class="mock-dl">
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -1165,8 +1179,8 @@
               <div class="mock-file">
                 <div class="mock-check off"></div>
                 <div class="mock-lines">
-                  <div class="mock-bar d w90"></div>
-                  <div class="mock-bar w55"></div>
+                  <span style="font-size:6px;color:#8e8ea0;font-family:Roboto,sans-serif;">Liquidación_Q1.pdf</span>
+                  <span style="font-size:5.5px;color:#b0b0c0;font-family:Roboto,sans-serif;">61 KB</span>
                 </div>
                 <div class="mock-dl">
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 5v10M8 13l4 4 4-4" stroke="#d0d3e0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#d0d3e0" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -1216,11 +1230,14 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Control de Asistencia</p>
+              <p class="mock-head" data-i18n="mock-head-asistencia">Control de Asistencia</p>
               <!-- Overtime request rows -->
               <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
                 <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a8ddb5,#1CA332);flex-shrink:0;"></div>
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w65"></div><div class="mock-bar w45" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div class="mock-lines" style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;">M. García</span>
+                  <span style="font-size:5.5px;color:#1CA332;background:#b8e8c0;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-2hs-extra">2 hs extra</span>
+                </div>
                 <div style="display:flex;gap:3px;flex-shrink:0;">
                   <div style="width:18px;height:14px;border-radius:3px;background:#E4F4E6;border:1.5px solid #1CA332;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#1CA332;font-weight:700;">✓</span></div>
                   <div style="width:18px;height:14px;border-radius:3px;background:#fff0f0;border:1.5px solid #e54241;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#e54241;font-weight:700;">✕</span></div>
@@ -1228,7 +1245,10 @@
               </div>
               <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
                 <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a8ddb5,#2e9e4a);flex-shrink:0;"></div>
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w75"></div><div class="mock-bar w40" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div class="mock-lines" style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;">C. Pérez</span>
+                  <span style="font-size:5.5px;color:#1CA332;background:#b8e8c0;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-3hs-extra">3 hs extra</span>
+                </div>
                 <div style="display:flex;gap:3px;flex-shrink:0;">
                   <div style="width:18px;height:14px;border-radius:3px;background:#E4F4E6;border:1.5px solid #1CA332;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#1CA332;font-weight:700;">✓</span></div>
                   <div style="width:18px;height:14px;border-radius:3px;background:#fff0f0;border:1.5px solid #e54241;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#e54241;font-weight:700;">✕</span></div>
@@ -1236,7 +1256,10 @@
               </div>
               <div style="display:flex;align-items:center;gap:6px;padding:5px 0;">
                 <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#c8eed0,#1CA332);flex-shrink:0;"></div>
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w55"></div><div class="mock-bar w35" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div class="mock-lines" style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;">L. Torres</span>
+                  <span style="font-size:5.5px;color:#1CA332;background:#b8e8c0;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-1hs-extra">1 hs extra</span>
+                </div>
                 <div style="display:flex;gap:3px;flex-shrink:0;">
                   <div style="width:18px;height:14px;border-radius:3px;background:#E4F4E6;border:1.5px solid #1CA332;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#1CA332;font-weight:700;">✓</span></div>
                   <div style="width:18px;height:14px;border-radius:3px;background:#fff0f0;border:1.5px solid #e54241;display:flex;align-items:center;justify-content:center;"><span style="font-size:7px;color:#e54241;font-weight:700;">✕</span></div>
@@ -1264,22 +1287,28 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Control de Asistencia</p>
+              <p class="mock-head" data-i18n="mock-head-asistencia">Control de Asistencia</p>
               <!-- Setting toggle rows -->
               <div style="display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w70"></div><div class="mock-bar w50" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div class="mock-lines" style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-cierre-jornada">Cierre por jornada</span>
+                </div>
                 <div style="width:26px;height:14px;background:#1CA332;border-radius:999px;position:relative;flex-shrink:0;">
                   <div style="width:10px;height:10px;background:#fff;border-radius:50%;position:absolute;right:2px;top:2px;"></div>
                 </div>
               </div>
               <div style="display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w80"></div><div class="mock-bar w45" style="margin-top:3px;"></div></div>
+                <div class="mock-lines" style="flex:1;">
+                  <span style="font-size:6px;color:#8e8ea0;font-family:Roboto,sans-serif;" data-i18n="mock-aviso-15min">Aviso 15 min antes</span>
+                </div>
                 <div style="width:26px;height:14px;background:#e0e2ee;border-radius:999px;position:relative;flex-shrink:0;">
                   <div style="width:10px;height:10px;background:#fff;border-radius:50%;position:absolute;left:2px;top:2px;"></div>
                 </div>
               </div>
               <div style="display:flex;align-items:center;gap:7px;padding:5px 0;">
-                <div class="mock-lines" style="flex:1;"><div class="mock-bar d w60"></div><div class="mock-bar w40" style="margin-top:3px;background:#b8e8c0;"></div></div>
+                <div class="mock-lines" style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-registro-auto">Registro automático</span>
+                </div>
                 <div style="width:26px;height:14px;background:#1CA332;border-radius:999px;position:relative;flex-shrink:0;">
                   <div style="width:10px;height:10px;background:#fff;border-radius:50%;position:absolute;right:2px;top:2px;"></div>
                 </div>
@@ -1306,23 +1335,27 @@
               <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M99.9214 118.934C74.739 118.934 53.4912 123.049 53.4912 138.93C53.4912 154.818 74.8763 158.788 99.9214 158.788C125.104 158.788 146.352 154.673 146.352 138.792C146.352 122.904 124.966 118.934 99.9214 118.934Z" fill="#801973"/><path opacity="0.4" d="M99.9211 103.803C116.973 103.803 130.646 90.0515 130.646 72.9015C130.646 55.745 116.973 42 99.9211 42C82.8693 42 69.1964 55.745 69.1964 72.9015C69.1964 90.0515 82.8693 103.803 99.9211 103.803Z" fill="#801973"/><path opacity="0.4" d="M166.63 80.0949C171.041 62.7412 158.107 47.1556 141.637 47.1556C139.846 47.1556 138.134 47.3528 136.46 47.6881C136.238 47.7407 135.99 47.8524 135.859 48.0496C135.709 48.2994 135.82 48.6347 135.983 48.8516C140.931 55.8325 143.774 64.3319 143.774 73.4558C143.774 82.1984 141.166 90.3494 136.591 97.1134C136.121 97.8102 136.539 98.7502 137.369 98.8948C138.519 99.0986 139.696 99.2038 140.898 99.2366C152.891 99.5522 163.656 91.789 166.63 80.0949Z" fill="#801973"/><path d="M179.191 120.947C176.995 116.241 171.695 113.013 163.636 111.429C159.832 110.495 149.538 109.181 139.964 109.358C139.82 109.378 139.741 109.476 139.728 109.542C139.709 109.634 139.748 109.792 139.937 109.891C144.362 112.093 161.466 121.67 159.316 141.87C159.225 142.744 159.924 143.5 160.793 143.369C165.002 142.764 175.832 140.424 179.191 133.134C181.047 129.282 181.047 124.806 179.191 120.947Z" fill="#801973"/><path opacity="0.4" d="M64.1228 47.6881C62.4562 47.3463 60.7373 47.1556 58.9465 47.1556C42.4763 47.1556 29.542 62.7412 33.9602 80.0949C36.9274 91.789 47.6919 99.5522 59.685 99.2366C60.8876 99.2038 62.0706 99.092 63.2143 98.8948C64.0444 98.7502 64.4627 97.8102 63.9921 97.1134C59.417 90.3428 56.8093 82.1984 56.8093 73.4558C56.8093 64.3253 59.6589 55.8259 64.6065 48.8516C64.7633 48.6347 64.881 48.2994 64.7241 48.0496C64.5934 47.8458 64.3516 47.7407 64.1228 47.6881Z" fill="#801973"/><path d="M36.9456 111.442C28.887 113.026 23.593 116.254 21.397 120.96C19.5343 124.819 19.5343 129.295 21.397 133.154C24.7564 140.437 35.5862 142.784 39.7952 143.382C40.6645 143.514 41.3573 142.764 41.2658 141.883C39.1155 121.69 56.2196 112.113 60.6509 109.91C60.8339 109.805 60.8731 109.654 60.8535 109.555C60.8404 109.49 60.7685 109.391 60.6248 109.378C51.0433 109.194 40.756 110.509 36.9456 111.442Z" fill="#801973"/></svg>
             </div>
             <div class="mock">
-              <p class="mock-head">Grupos</p>
+              <p class="mock-head" data-i18n="mock-head-grupos">Grupos</p>
               <!-- Post con opción compartir -->
               <div style="border:1.5px solid #e8d0e4;border-radius:7px;padding:6px 7px;margin-bottom:5px;">
                 <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
                   <div style="width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#d98acc,#801973);flex-shrink:0;"></div>
                   <div class="mock-lines" style="flex:1;"><div class="mock-bar d w70"></div></div>
                 </div>
-                <div class="mock-bar" style="width:90%;height:3.5px;background:#e8eaf0;margin-bottom:2px;"></div>
+                <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:3px;" data-i18n="mock-actualizacion-politicas">Actualización de políticas</span>
                 <div class="mock-bar" style="width:65%;height:3.5px;background:#e8eaf0;"></div>
               </div>
               <!-- Compartir a grupos -->
               <div style="display:flex;align-items:center;gap:5px;padding:4px 0;border-top:1px solid #f0f1f7;">
                 <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" stroke="#801973" stroke-width="2"/><circle cx="6" cy="12" r="3" stroke="#801973" stroke-width="2"/><circle cx="18" cy="19" r="3" stroke="#801973" stroke-width="2"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49" stroke="#801973" stroke-width="2" stroke-linecap="round"/></svg>
-                <span style="font-size:6.5px;font-weight:600;color:#801973;font-family:Roboto,sans-serif;">Compartir en</span>
+                <span style="font-size:6.5px;font-weight:600;color:#801973;font-family:Roboto,sans-serif;" data-i18n="mock-compartir-en">Compartir en</span>
                 <div style="display:flex;gap:3px;margin-left:auto;">
-                  <div style="width:14px;height:14px;border-radius:3px;background:#f0e3ee;border:1px solid #d98acc;"></div>
-                  <div style="width:14px;height:14px;border-radius:3px;background:#f0e3ee;border:1px solid #d98acc;"></div>
+                  <div style="width:14px;height:14px;border-radius:3px;background:#f0e3ee;border:1px solid #d98acc;display:flex;align-items:center;justify-content:center;">
+                    <span style="font-size:5.5px;color:#801973;font-family:Roboto,sans-serif;font-weight:600;">RH</span>
+                  </div>
+                  <div style="width:14px;height:14px;border-radius:3px;background:#f0e3ee;border:1px solid #d98acc;display:flex;align-items:center;justify-content:center;">
+                    <span style="font-size:5.5px;color:#801973;font-family:Roboto,sans-serif;font-weight:600;">IT</span>
+                  </div>
                   <div style="width:14px;height:14px;border-radius:3px;background:#e8d0e4;display:flex;align-items:center;justify-content:center;">
                     <span style="font-size:6px;color:#801973;font-family:Roboto,sans-serif;font-weight:700;">+</span>
                   </div>
@@ -1442,6 +1475,45 @@
         'body-librerias':  '<strong>Home personalizada:</strong> Configura una imagen de portada y descripción propia para darle identidad al módulo.<br><br><strong>Autonomía para editores:</strong> Ahora pueden crear, duplicar y reordenar subartículos en borrador.<br><br><strong>Notificaciones automáticas:</strong> Los editores pueden enviar notificaciones al actualizar contenidos.',
         'body-saldos':     '<strong>Descuento inmediato:</strong> Descuenta el saldo de solicitudes para ciclos futuros al momento de ser aprobadas, sin esperar a que inicie el periodo.<br><br><strong>Visibilidad real:</strong> Permite que admins y colaboradores vean el saldo disponible actualizado, considerando los días que ya están comprometidos.<br><br><strong>Control opcional:</strong> Activa esta función para asegurar que el saldo refleje la disponibilidad real del equipo.',
         'body-comprobantes':'<strong>Exportación masiva en PDF:</strong> Descarga múltiples constancias en un solo paso para agilizar tus registros.<br><br><strong>Procesamiento en segundo plano:</strong> Recibe un archivo en tu correo con todos los documentos solicitados.<br><br><strong>Organización automática:</strong> Los documentos mantienen sus nombres originales, facilitando el control.',
+        'mock-solicitud':   'Solicitud de vacaciones',
+        'mock-activo':      'Activo',
+        'mock-copiar':      'Copiar',
+        'mock-copia':       '(copia)',
+        'mock-seleccionar-servicio': 'Seleccionar servicio…',
+        'mock-pin-reunion': '📌 Reunión lunes · 9:00 hs',
+        'mock-lo-viste':    '¿Lo viste ya?',
+        'mock-si-gracias':  'Sí, gracias 👍',
+        'mock-cierre-auto-label': 'Cierre automático',
+        'mock-cerrado':     'Cerrado ✓',
+        'mock-inicio-lunes':'Inicio: lunes',
+        'mock-multiplos-7': '· Múltiplos de 7 días',
+        'mock-tramites':    'Trámites',
+        'mock-legajo-num':  'Legajo #4821',
+        'mock-inf-personal':'Inf. personal',
+        'mock-documentos':  'Documentos',
+        'mock-politicas-acceso': 'Políticas de acceso',
+        'mock-nuevo':       'NUEVO',
+        'mock-guia-remoto': 'Guía de trabajo remoto',
+        'mock-ciclo-futuro':'Ciclo futuro · Jul–Dic',
+        'mock-dias-disponibles': 'días disponibles',
+        'mock-comprometidos':'3 comprometidos',
+        'mock-2hs-extra':   '2 hs extra',
+        'mock-3hs-extra':   '3 hs extra',
+        'mock-1hs-extra':   '1 hs extra',
+        'mock-cierre-jornada': 'Cierre por jornada',
+        'mock-aviso-15min': 'Aviso 15 min antes',
+        'mock-registro-auto': 'Registro automático',
+        'mock-actualizacion-politicas': 'Actualización de políticas',
+        'mock-compartir-en':'Compartir en',
+        'mock-head-workflows':    'Workflows',
+        'mock-head-chat':         'Chat',
+        'mock-head-turnos':       'Turnos laborales',
+        'mock-head-vacaciones':   'Vacaciones',
+        'mock-head-legajo':       'Legajo Digital',
+        'mock-head-librerias':    'Librerías',
+        'mock-head-comprobantes': 'Comprobantes',
+        'mock-head-asistencia':   'Control de Asistencia',
+        'mock-head-grupos':       'Grupos',
       },
       en: {
         'header-title':    '<strong>What\'s new</strong> in Humand',
@@ -1485,6 +1557,45 @@
         'body-librerias':  '<strong>Custom home:</strong> Set a cover image and description to give the module its own identity.<br><br><strong>Editor autonomy:</strong> Editors can now create, duplicate, and reorder draft sub-articles.<br><br><strong>Automatic notifications:</strong> Editors can send notifications when updating content.',
         'body-saldos':     '<strong>Immediate deduction:</strong> Deducts the balance for future cycle requests as soon as they are approved, without waiting for the period to start.<br><br><strong>Real visibility:</strong> Allows admins and employees to see the updated available balance, accounting for already committed days.<br><br><strong>Optional control:</strong> Enable this feature to ensure the balance reflects the team\'s actual availability.',
         'body-comprobantes':'<strong>Bulk PDF export:</strong> Download multiple receipts in a single step to streamline your records.<br><br><strong>Background processing:</strong> Receive a file in your email with all the requested documents.<br><br><strong>Automatic organization:</strong> Documents retain their original names, making control easier.',
+        'mock-solicitud':   'Leave request',
+        'mock-activo':      'Active',
+        'mock-copiar':      'Copy',
+        'mock-copia':       '(copy)',
+        'mock-seleccionar-servicio': 'Select service…',
+        'mock-pin-reunion': '📌 Monday meeting · 9:00 am',
+        'mock-lo-viste':    'Did you see it?',
+        'mock-si-gracias':  'Yes, thanks 👍',
+        'mock-cierre-auto-label': 'Auto-close',
+        'mock-cerrado':     'Closed ✓',
+        'mock-inicio-lunes':'Start: Monday',
+        'mock-multiplos-7': '· Multiples of 7 days',
+        'mock-tramites':    'Records',
+        'mock-legajo-num':  'File #4821',
+        'mock-inf-personal':'Personal info',
+        'mock-documentos':  'Documents',
+        'mock-politicas-acceso': 'Access policies',
+        'mock-nuevo':       'NEW',
+        'mock-guia-remoto': 'Remote work guide',
+        'mock-ciclo-futuro':'Future cycle · Jul–Dec',
+        'mock-dias-disponibles': 'days available',
+        'mock-comprometidos':'3 committed',
+        'mock-2hs-extra':   '2 extra hrs',
+        'mock-3hs-extra':   '3 extra hrs',
+        'mock-1hs-extra':   '1 extra hr',
+        'mock-cierre-jornada': 'Close by shift',
+        'mock-aviso-15min': 'Alert 15 min before',
+        'mock-registro-auto': 'Auto record',
+        'mock-actualizacion-politicas': 'Policy update',
+        'mock-compartir-en':'Share to',
+        'mock-head-workflows':    'Workflows',
+        'mock-head-chat':         'Chat',
+        'mock-head-turnos':       'Time Tracking',
+        'mock-head-vacaciones':   'Time Off',
+        'mock-head-legajo':       'Employee File',
+        'mock-head-librerias':    'Libraries',
+        'mock-head-comprobantes': 'Receipts',
+        'mock-head-asistencia':   'Attendance',
+        'mock-head-grupos':       'Groups',
       },
       pt: {
         'header-title':    '<strong>Novidades</strong> no Humand',
@@ -1528,6 +1639,45 @@
         'body-librerias':  '<strong>Home personalizada:</strong> Configure uma imagem de capa e descrição própria para dar identidade ao módulo.<br><br><strong>Autonomia para editores:</strong> Agora podem criar, duplicar e reordenar subartigos em rascunho.<br><br><strong>Notificações automáticas:</strong> Os editores podem enviar notificações ao atualizar conteúdos.',
         'body-saldos':     '<strong>Desconto imediato:</strong> Desconta o saldo de solicitações para ciclos futuros no momento em que são aprovadas, sem aguardar o início do período.<br><br><strong>Visibilidade real:</strong> Permite que admins e colaboradores vejam o saldo disponível atualizado, considerando os dias já comprometidos.<br><br><strong>Controle opcional:</strong> Ative esta função para garantir que o saldo reflita a disponibilidade real da equipe.',
         'body-comprobantes':'<strong>Exportação em massa em PDF:</strong> Baixe múltiplos comprovantes em um único passo para agilizar seus registros.<br><br><strong>Processamento em segundo plano:</strong> Receba um arquivo no seu e-mail com todos os documentos solicitados.<br><br><strong>Organização automática:</strong> Os documentos mantêm seus nomes originais, facilitando o controle.',
+        'mock-solicitud':   'Solicitação de férias',
+        'mock-activo':      'Ativo',
+        'mock-copiar':      'Copiar',
+        'mock-copia':       '(cópia)',
+        'mock-seleccionar-servicio': 'Selecionar serviço…',
+        'mock-pin-reunion': '📌 Reunião segunda · 9:00 hs',
+        'mock-lo-viste':    'Você viu?',
+        'mock-si-gracias':  'Sim, obrigado 👍',
+        'mock-cierre-auto-label': 'Encerramento auto.',
+        'mock-cerrado':     'Fechado ✓',
+        'mock-inicio-lunes':'Início: segunda',
+        'mock-multiplos-7': '· Múltiplos de 7 dias',
+        'mock-tramites':    'Processos',
+        'mock-legajo-num':  'Arquivo #4821',
+        'mock-inf-personal':'Info pessoal',
+        'mock-documentos':  'Documentos',
+        'mock-politicas-acceso': 'Políticas de acesso',
+        'mock-nuevo':       'NOVO',
+        'mock-guia-remoto': 'Guia de trabalho remoto',
+        'mock-ciclo-futuro':'Ciclo futuro · Jul–Dez',
+        'mock-dias-disponibles': 'dias disponíveis',
+        'mock-comprometidos':'3 comprometidos',
+        'mock-2hs-extra':   '2 hs extras',
+        'mock-3hs-extra':   '3 hs extras',
+        'mock-1hs-extra':   '1 hs extra',
+        'mock-cierre-jornada': 'Encerramento por jornada',
+        'mock-aviso-15min': 'Aviso 15 min antes',
+        'mock-registro-auto': 'Registro automático',
+        'mock-actualizacion-politicas': 'Atualização de políticas',
+        'mock-compartir-en':'Compartilhar em',
+        'mock-head-workflows':    'Workflows',
+        'mock-head-chat':         'Chat',
+        'mock-head-turnos':       'Controle de Presença',
+        'mock-head-vacaciones':   'Férias',
+        'mock-head-legajo':       'Arquivo Digital',
+        'mock-head-librerias':    'Bibliotecas',
+        'mock-head-comprobantes': 'Comprovantes',
+        'mock-head-asistencia':   'Presença',
+        'mock-head-grupos':       'Grupos',
       }
     };
 
