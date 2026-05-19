@@ -1213,6 +1213,106 @@
       </div>
     </div>
 
+    <!-- Card: Chat (Permisos de conversación) -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#EBF9EE;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M101.409 115.671C97.3214 115.671 94.0227 112.372 94.0227 108.284C94.0227 104.197 97.3214 100.826 101.409 100.826C105.497 100.826 108.867 104.197 108.867 108.284C108.867 112.372 105.497 115.671 101.409 115.671ZM67.8479 115.671C63.7603 115.671 60.3899 112.372 60.3899 108.284C60.3899 104.197 63.7603 100.826 67.8479 100.826C71.9354 100.826 75.2341 104.197 75.2341 108.284C75.2341 112.372 71.9354 115.671 67.8479 115.671ZM113.815 64.3972H57.6648C44.6133 64.3972 34 75.0105 34 88.0618V126.427C34 139.407 44.6133 150.021 57.6648 150.021H63.5452C66.2702 150.021 68.8518 151.096 70.788 153.032L78.6763 160.921C80.5408 162.785 83.0507 163.861 85.7042 163.861C88.3575 163.861 90.8674 162.785 92.8036 160.921L100.692 153.032C102.556 151.096 105.138 150.021 107.863 150.021H113.815C126.795 150.021 137.408 139.407 137.408 126.427V88.0618C137.408 75.0105 126.795 64.3972 113.815 64.3972Z" fill="#4ED364"/><path fill-rule="evenodd" clip-rule="evenodd" d="M101.41 115.668C97.3229 115.668 94.0242 112.37 94.0242 108.282C94.0242 104.194 97.3229 100.824 101.41 100.824C105.498 100.824 108.868 104.194 108.868 108.282C108.868 112.37 105.498 115.668 101.41 115.668ZM67.8492 115.668C63.7617 115.668 60.3912 112.37 60.3912 108.282C60.3912 104.194 63.7617 100.824 67.8492 100.824C71.9368 100.824 75.2355 104.194 75.2355 108.282C75.2355 112.37 71.9368 115.668 67.8492 115.668Z" fill="#4ED364"/><path fill-rule="evenodd" clip-rule="evenodd" d="M143.076 37H86.926C76.2897 37 67.2536 44.04 64.352 53.7063C64.089 54.5827 64.7715 55.4299 65.6865 55.4299H113.818C131.746 55.4299 146.375 70.059 146.375 88.0588V120.692C146.375 121.562 147.145 122.234 147.996 122.055C158.669 119.811 166.669 110.296 166.669 98.959V60.5931C166.669 47.6133 156.056 37 143.076 37Z" fill="#4ED364"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-chat">Chat</p>
+              <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+                <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-chat-11">Chat 1:1</span>
+                <div style="width:20px;height:10px;background:#e0e2ee;border-radius:999px;position:relative;flex-shrink:0;">
+                  <div style="width:8px;height:8px;background:#fff;border-radius:50%;position:absolute;top:1px;left:1px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:5px;margin-bottom:6px;">
+                <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-grupos-nuevos">Grupos nuevos</span>
+                <div style="width:20px;height:10px;background:#4ED364;border-radius:999px;position:relative;flex-shrink:0;">
+                  <div style="width:8px;height:8px;background:#fff;border-radius:50%;position:absolute;top:1px;right:1px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+                </div>
+              </div>
+              <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;" data-i18n="mock-desde-roles">Configura desde Roles y Permisos</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-chat">Chat</span>
+            <h2 class="card-title" data-i18n="title-permisos-conv">Permisos de conversación</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#4ED364;"></span>
+              <span data-i18n="badge-chat">Chat</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-permisos-conv"><strong>Control de inicio:</strong> Define desde la sección de Roles y Permisos qué colaboradores pueden abrir nuevas conversaciones.<br><br><strong>Chats individuales:</strong> Restringe o habilita la apertura de chats uno a uno (1:1) según el perfil asignado.<br><br><strong>Conversaciones grupales:</strong> Aplica el mismo nivel de control para evitar o permitir la creación de nuevos grupos.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Card: Roles y Permisos (Separación de funciones) -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#E6F4F7;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M146.801 127.442V121.978C146.801 113.78 140.65 106.948 132.452 106.948C124.259 106.948 118.109 113.093 118.109 121.978V127.442C114.006 128.81 111.277 133.593 111.277 137.689V149.304C111.277 155.455 116.741 160.238 122.205 160.238H144.066C150.217 160.238 155 155.455 155 149.304V137.689C154.32 132.906 150.904 129.49 146.801 127.442ZM132.452 117.195C135.187 117.195 136.554 119.244 136.554 121.978V126.762H127.675V121.978C128.356 119.244 129.723 117.195 132.452 117.195Z" fill="#30A2BC"/><path fill-rule="evenodd" clip-rule="evenodd" d="M92.8229 40C110.184 40 124.251 54.0668 124.251 71.4281C124.251 88.7892 110.184 102.856 92.8229 102.856C75.4618 102.856 61.395 88.7892 61.395 71.4281C61.395 54.0668 75.4618 40 92.8229 40Z" fill="#30A2BC"/><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M85.9941 116.514C76.4279 116.514 67.5485 117.882 60.7172 119.93C56.6145 121.298 52.5184 123.346 49.7832 126.081C47.0548 128.809 45 132.912 45 137.695C45 142.479 46.3676 145.895 49.7832 149.31C52.5184 152.039 56.6145 154.093 60.7172 155.454C67.5485 157.509 76.4279 158.87 85.9941 158.87C90.09 158.87 92.8254 156.141 92.8254 152.039V123.346C92.8254 119.25 90.09 116.514 85.9941 116.514Z" fill="#30A2BC"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-roles">Roles y Permisos</p>
+              <div style="display:flex;align-items:center;gap:5px;padding:4px 6px;background:#f0f8fa;border-radius:6px;margin-bottom:4px;">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="#30A2BC" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="#30A2BC" stroke-width="2"/></svg>
+                <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-config-tecnica">Config. técnica</span>
+                <span style="font-size:5px;font-weight:600;color:#30A2BC;background:#e6f4f7;padding:1px 4px;border-radius:999px;font-family:Roboto,sans-serif;">Admin</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:5px;padding:4px 6px;background:#f0f8fa;border-radius:6px;margin-bottom:5px;">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><circle cx="12" cy="8" r="4" stroke="#30A2BC" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#30A2BC" stroke-width="2" stroke-linecap="round"/></svg>
+                <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-asignar-usuarios">Asignar usuarios</span>
+                <span style="font-size:5px;font-weight:600;color:#F0B623;background:#fef8e9;padding:1px 4px;border-radius:999px;font-family:Roboto,sans-serif;">RRHH</span>
+              </div>
+              <span style="font-size:5.5px;color:#30A2BC;background:#e6f4f7;padding:2px 6px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-rol-sin-miembros">⚠ Rol sin miembros</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-roles">Roles y Permisos</span>
+            <h2 class="card-title" data-i18n="title-separacion">Separación de funciones</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#30A2BC;"></span>
+              <span data-i18n="badge-roles">Roles y Permisos</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-separacion"><strong>División de tareas:</strong> Separa la configuración técnica de los permisos de la asignación final de los usuarios.<br><br><strong>Roles vacíos activos:</strong> Habilita perfiles de acceso de forma anticipada con alertas claras hasta sumar miembros.<br><br><strong>Gestión flexible:</strong> Elige entre el control total o permisos separados según la necesidad de tu empresa.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419?utm_source=landing&utm_medium=landingES&_gl=1*w7a500*_gcl_aw*R0NMLjE3MzE0MjM2NzguQ2owS0NRaUFsc3k1QmhEZUFSSXNBQlJjNlp0U0xyZVVfckZhYTZ3RnpZX1lWVWxWQnVGQThrTG5mdXEzNV9yelA1OVBaekx1NktRQUJtTWFBaF9DRUFMd193Y0I.*_gcl_au*MTA3MzcwMzMxMy4xNzMwOTAzNDIw*_ga*MTYxMjY4ODIuMTcyMzEyMDUwMA..*_ga_GQ39TPFYL3*MTczMzQ5MDMzMC40OC4xLjE3MzM0OTEzNDUuNTguMC4yMDczODQyMDQ0*_ga_WVJ012ZJJ0*MTczMzQ4OTY1My4yMTMuMS4xNzMzNDkxMzQ1LjAuMC4w" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
   </div>
   </div>
 
@@ -1447,10 +1547,13 @@
         'badge-librerias': 'Librerías de Conocimiento',
         'badge-reclutamiento': 'Reclutamiento',
         'badge-grupos':    'Grupos',
+        'badge-roles':     'Roles y Permisos',
         'badge-asistencia':'Control de Asistencia',
         'cta-ver-detalle': '→ Ver detalle',
         'cta-proximamente':'Próximamente',
         'cta-accede':      'Accede a más información',
+        'title-permisos-conv': 'Permisos de conversación',
+        'title-separacion':    'Separación de funciones',
         'title-workflows': 'Workflows: Duplicado y segmentación',
         'title-mensajes':  'Mensajes fijados: resalta lo importante',
         'title-cierre':    'Cierre automático de jornada',
@@ -1475,6 +1578,15 @@
         'body-librerias':  '<strong>Home personalizada:</strong> Configura una imagen de portada y descripción propia para darle identidad al módulo.<br><br><strong>Autonomía para editores:</strong> Ahora pueden crear, duplicar y reordenar subartículos en borrador.<br><br><strong>Notificaciones automáticas:</strong> Los editores pueden enviar notificaciones al actualizar contenidos.',
         'body-saldos':     '<strong>Descuento inmediato:</strong> Descuenta el saldo de solicitudes para ciclos futuros al momento de ser aprobadas, sin esperar a que inicie el periodo.<br><br><strong>Visibilidad real:</strong> Permite que admins y colaboradores vean el saldo disponible actualizado, considerando los días que ya están comprometidos.<br><br><strong>Control opcional:</strong> Activa esta función para asegurar que el saldo refleje la disponibilidad real del equipo.',
         'body-comprobantes':'<strong>Exportación masiva en PDF:</strong> Descarga múltiples constancias en un solo paso para agilizar tus registros.<br><br><strong>Procesamiento en segundo plano:</strong> Recibe un archivo en tu correo con todos los documentos solicitados.<br><br><strong>Organización automática:</strong> Los documentos mantienen sus nombres originales, facilitando el control.',
+        'body-permisos-conv':'<strong>Control de inicio:</strong> Define desde la sección de Roles y Permisos qué colaboradores pueden abrir nuevas conversaciones.<br><br><strong>Chats individuales:</strong> Restringe o habilita la apertura de chats uno a uno (1:1) según el perfil asignado.<br><br><strong>Conversaciones grupales:</strong> Aplica el mismo nivel de control para evitar o permitir la creación de nuevos grupos.',
+        'body-separacion':  '<strong>División de tareas:</strong> Separa la configuración técnica de los permisos de la asignación final de los usuarios.<br><br><strong>Roles vacíos activos:</strong> Habilita perfiles de acceso de forma anticipada con alertas claras hasta sumar miembros.<br><br><strong>Gestión flexible:</strong> Elige entre el control total o permisos separados según la necesidad de tu empresa.',
+        'mock-chat-11':          'Chat 1:1',
+        'mock-grupos-nuevos':    'Grupos nuevos',
+        'mock-desde-roles':      'Configura desde Roles y Permisos',
+        'mock-head-roles':       'Roles y Permisos',
+        'mock-config-tecnica':   'Config. técnica',
+        'mock-asignar-usuarios': 'Asignar usuarios',
+        'mock-rol-sin-miembros': '⚠ Rol sin miembros',
         'mock-solicitud':   'Solicitud de vacaciones',
         'mock-activo':      'Activo',
         'mock-copiar':      'Copiar',
@@ -1529,10 +1641,13 @@
         'badge-librerias': 'Knowledge Libraries',
         'badge-reclutamiento': 'Internal Job Postings',
         'badge-grupos':    'Groups',
+        'badge-roles':     'Roles & Permissions',
         'badge-asistencia':'Time Tracking',
         'cta-ver-detalle': '→ See details',
         'cta-proximamente':'Coming soon',
         'cta-accede':      'Access more information',
+        'title-permisos-conv': 'Conversation permissions',
+        'title-separacion':    'Role separation',
         'title-workflows': 'Workflows: Duplication & segmentation',
         'title-mensajes':  'Pinned messages: highlight what matters',
         'title-cierre':    'Automatic shift close',
@@ -1557,6 +1672,15 @@
         'body-librerias':  '<strong>Custom home:</strong> Set a cover image and description to give the module its own identity.<br><br><strong>Editor autonomy:</strong> Editors can now create, duplicate, and reorder draft sub-articles.<br><br><strong>Automatic notifications:</strong> Editors can send notifications when updating content.',
         'body-saldos':     '<strong>Immediate deduction:</strong> Deducts the balance for future cycle requests as soon as they are approved, without waiting for the period to start.<br><br><strong>Real visibility:</strong> Allows admins and employees to see the updated available balance, accounting for already committed days.<br><br><strong>Optional control:</strong> Enable this feature to ensure the balance reflects the team\'s actual availability.',
         'body-comprobantes':'<strong>Bulk PDF export:</strong> Download multiple receipts in a single step to streamline your records.<br><br><strong>Background processing:</strong> Receive a file in your email with all the requested documents.<br><br><strong>Automatic organization:</strong> Documents retain their original names, making control easier.',
+        'body-permisos-conv':'<strong>Conversation control:</strong> Define from the Roles & Permissions section which employees can start new conversations.<br><br><strong>Individual chats:</strong> Restrict or enable opening 1:1 chats based on the assigned profile.<br><br><strong>Group conversations:</strong> Apply the same level of control to prevent or allow the creation of new groups.',
+        'body-separacion':  '<strong>Task separation:</strong> Split technical permission configuration from the final assignment of users.<br><br><strong>Active empty roles:</strong> Enable access profiles in advance with clear alerts until members are added.<br><br><strong>Flexible management:</strong> Choose between full control or separate permissions based on your company\'s needs.',
+        'mock-chat-11':          'Chat 1:1',
+        'mock-grupos-nuevos':    'New groups',
+        'mock-desde-roles':      'Configure from Roles & Permissions',
+        'mock-head-roles':       'Roles & Permissions',
+        'mock-config-tecnica':   'Technical config.',
+        'mock-asignar-usuarios': 'Assign users',
+        'mock-rol-sin-miembros': '⚠ Empty role',
         'mock-solicitud':   'Leave request',
         'mock-activo':      'Active',
         'mock-copiar':      'Copy',
@@ -1611,10 +1735,13 @@
         'badge-librerias': 'Biblioteca de Conhecimento',
         'badge-reclutamiento': 'Anúncios de emprego internos',
         'badge-grupos':    'Grupos',
+        'badge-roles':     'Funções e Permissões',
         'badge-asistencia':'Controle de Presença',
         'cta-ver-detalle': '→ Ver detalhes',
         'cta-proximamente':'Em breve',
         'cta-accede':      'Acesse mais informações',
+        'title-permisos-conv': 'Permissões de conversa',
+        'title-separacion':    'Separação de funções',
         'title-workflows': 'Workflows: Duplicação e segmentação',
         'title-mensajes':  'Mensagens fixadas: destaque o que importa',
         'title-cierre':    'Encerramento automático de jornada',
@@ -1639,6 +1766,15 @@
         'body-librerias':  '<strong>Home personalizada:</strong> Configure uma imagem de capa e descrição própria para dar identidade ao módulo.<br><br><strong>Autonomia para editores:</strong> Agora podem criar, duplicar e reordenar subartigos em rascunho.<br><br><strong>Notificações automáticas:</strong> Os editores podem enviar notificações ao atualizar conteúdos.',
         'body-saldos':     '<strong>Desconto imediato:</strong> Desconta o saldo de solicitações para ciclos futuros no momento em que são aprovadas, sem aguardar o início do período.<br><br><strong>Visibilidade real:</strong> Permite que admins e colaboradores vejam o saldo disponível atualizado, considerando os dias já comprometidos.<br><br><strong>Controle opcional:</strong> Ative esta função para garantir que o saldo reflita a disponibilidade real da equipe.',
         'body-comprobantes':'<strong>Exportação em massa em PDF:</strong> Baixe múltiplos comprovantes em um único passo para agilizar seus registros.<br><br><strong>Processamento em segundo plano:</strong> Receba um arquivo no seu e-mail com todos os documentos solicitados.<br><br><strong>Organização automática:</strong> Os documentos mantêm seus nomes originais, facilitando o controle.',
+        'body-permisos-conv':'<strong>Controle de início:</strong> Defina na seção Funções e Permissões quais colaboradores podem abrir novas conversas.<br><br><strong>Chats individuais:</strong> Restrinja ou habilite a abertura de chats um a um (1:1) conforme o perfil atribuído.<br><br><strong>Conversas em grupo:</strong> Aplique o mesmo nível de controle para evitar ou permitir a criação de novos grupos.',
+        'body-separacion':  '<strong>Divisão de tarefas:</strong> Separe a configuração técnica das permissões da atribuição final dos usuários.<br><br><strong>Funções vazias ativas:</strong> Habilite perfis de acesso antecipadamente com alertas claros até adicionar membros.<br><br><strong>Gestão flexível:</strong> Escolha entre controle total ou permissões separadas conforme a necessidade da sua empresa.',
+        'mock-chat-11':          'Chat 1:1',
+        'mock-grupos-nuevos':    'Novos grupos',
+        'mock-desde-roles':      'Configure em Funções e Permissões',
+        'mock-head-roles':       'Funções e Permissões',
+        'mock-config-tecnica':   'Config. técnica',
+        'mock-asignar-usuarios': 'Atribuir usuários',
+        'mock-rol-sin-miembros': '⚠ Função sem membros',
         'mock-solicitud':   'Solicitação de férias',
         'mock-activo':      'Ativo',
         'mock-copiar':      'Copiar',
