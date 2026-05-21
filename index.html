@@ -1313,6 +1313,243 @@
       </div>
     </div>
 
+    <!-- Card: Control de Asistencia — Nuevas reglas de cierre automático -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#E4F4E6;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-asistencia">Control de Asistencia</p>
+              <!-- Selector de criterio -->
+              <div style="margin-bottom:6px;">
+                <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-criterio-cierre">Criterio de cierre</span>
+                <div style="border:1.5px solid #b8e8c0;border-radius:5px;padding:4px 7px;display:flex;align-items:center;justify-content:space-between;background:#fff;">
+                  <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-al-finalizar">Al finalizar el turno</span>
+                  <svg width="7" height="7" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="#1CA332" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <!-- Employees con check -->
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #f0f1f7;">
+                <img src="images/memojis/memoji-05.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;">
+                <span style="flex:1;font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">M. García</span>
+                <span style="font-size:5.5px;color:#1CA332;background:#e4f4e6;padding:1px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;" data-i18n="mock-cerrado">Cerrado ✓</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;">
+                <img src="images/memojis/memoji-10.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;">
+                <span style="flex:1;font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">C. Rodríguez</span>
+                <span style="font-size:5.5px;color:#1CA332;background:#e4f4e6;padding:1px 5px;border-radius:999px;font-family:Roboto,sans-serif;flex-shrink:0;" data-i18n="mock-cerrado">Cerrado ✓</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-asistencia">Control de Asistencia</span>
+            <h2 class="card-title" data-i18n="title-nuevas-reglas-cierre">Nuevas reglas de cierre automático</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#1CA332;"></span>
+              <span data-i18n="badge-asistencia">Control de Asistencia</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-nuevas-reglas-cierre"><strong>Solución a olvidos:</strong> El sistema detecta cuando alguien no marcó su salida y completa el turno de forma automática.<br><br><strong>Opciones a tu medida:</strong> Elige si el turno se cierra según el horario de la jornada, las horas programadas o un tiempo fijo.<br><br><strong>Reportes al día:</strong> Configura las horas de espera antes del cierre automático y mantén tus métricas de asistencia siempre limpias.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Card: Gestión de Servicios — Notificación de horas por aprobar -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F1EDFF;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M66.7821 98.0814C75.1112 98.0814 82.5729 102.729 86.2757 110.205C88.8781 115.48 94.1393 118.76 100 118.76C105.861 118.76 111.122 115.48 113.724 110.205C117.434 102.722 124.896 98.0814 133.218 98.0814H165.589C166.368 98.0814 167 97.4502 167 96.6709V72.0927C167 48.7132 152.027 33 129.748 33H70.259C47.9727 33 33 48.7132 33 72.0927V96.6709C33 97.4502 33.6315 98.0814 34.4105 98.0814H66.7821Z" fill="#886BFF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M133.218 108.652C128.951 108.652 125.122 111.036 123.21 114.886C118.816 123.794 109.916 129.33 100 129.33C90.0841 129.33 81.1835 123.794 76.7827 114.879C74.8855 111.036 71.056 108.652 66.7821 108.652H34.4105C33.6315 108.652 33 109.283 33 110.063V128.322C33 151.708 47.9727 167.421 70.259 167.421H129.741C152.027 167.421 167 151.708 167 128.322V110.063C167 109.283 166.368 108.652 165.589 108.652H133.218Z" fill="#886BFF"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-gestion">Gestión de Servicios</p>
+              <!-- Notification banner -->
+              <div style="background:#ede8ff;border-radius:7px;padding:5px 8px;margin-bottom:6px;display:flex;align-items:center;gap:7px;">
+                <div style="position:relative;flex-shrink:0;">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="#886BFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  <div style="width:7px;height:7px;background:#886BFF;border-radius:50%;position:absolute;top:-1px;right:-1px;display:flex;align-items:center;justify-content:center;">
+                    <span style="font-size:4px;color:#fff;font-family:Roboto,sans-serif;font-weight:700;">2</span>
+                  </div>
+                </div>
+                <div>
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;" data-i18n="mock-horas-por-aprobar">Horas por aprobar</span>
+                  <span style="font-size:5.5px;color:#886BFF;font-family:Roboto,sans-serif;" data-i18n="mock-2-solicitudes">2 solicitudes</span>
+                </div>
+              </div>
+              <!-- Employee rows -->
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #f0f1f7;">
+                <img src="images/memojis/memoji-05.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;">M. García</span>
+                  <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-2hs-extra">2 hs extra</span>
+                </div>
+                <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#886BFF" stroke-width="1.5"/><path d="M12 8v4l2 2" stroke="#886BFF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;">
+                <img src="images/memojis/memoji-03.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;">C. Pérez</span>
+                  <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-3hs-extra">3 hs extra</span>
+                </div>
+                <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#886BFF" stroke-width="1.5"/><path d="M12 8v4l2 2" stroke="#886BFF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-gestion">Gestión de Servicios</span>
+            <h2 class="card-title" data-i18n="title-notif-horas">Notificación de horas por aprobar</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#886BFF;"></span>
+              <span data-i18n="badge-gestion">Gestión de Servicios</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-notif-horas"><strong>Alertas en el momento:</strong> Recibe un aviso cuando un colaborador solicite la aprobación de sus horas.<br><br><strong>Trámites sin interrupciones:</strong> Si una solicitud se genera sin un aprobador asignado, el sistema te dará aviso para evitar que el proceso se quede frenado.<br><br><strong>Acceso directo:</strong> Abre la notificación para responder la solicitud al instante.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Card: Reclutamiento — Portal de Empleos personalizado -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F1EDFF;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.5528 35.4924C139.786 27.5484 132.133 118.592 79.8946 102.246C48.1603 92.3061 51.9867 40.1922 84.5528 35.4924Z" fill="#886BFF"/><path opacity="0.4" d="M45.9171 155.234C33.3982 143.131 42.4651 127.327 57.1052 122.419C63.9261 120.131 84.0147 115.806 88.5482 121.837C91.8339 126.204 92.1666 155.401 90.0455 160.309C85.2625 171.538 52.9877 162.097 45.9171 155.276V155.234Z" fill="#886BFF"/><path d="M157.962 152.826L152.555 147.419C153.969 144.341 154.801 140.889 154.801 137.27C154.801 123.836 143.862 112.939 130.47 112.939C117.077 112.939 106.139 123.878 106.139 137.27C106.139 150.663 117.077 161.601 130.47 161.601C135.336 161.601 139.869 160.146 143.696 157.65L148.437 162.392C149.768 163.722 151.473 164.388 153.22 164.388C154.967 164.388 156.672 163.722 158.003 162.392C160.665 159.73 160.665 155.446 158.003 152.826H157.962ZM119.656 137.27C119.656 131.323 124.522 126.457 130.47 126.457C136.417 126.457 141.284 131.323 141.284 137.27C141.284 139.683 140.493 141.887 139.162 143.717C138.913 143.967 138.705 144.216 138.538 144.507C136.542 146.712 133.672 148.126 130.511 148.126C124.564 148.126 119.698 143.26 119.698 137.312L119.656 137.27Z" fill="#886BFF"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-reclutamiento">Reclutamiento</p>
+              <!-- Field rows -->
+              <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-campo-nombre">Nombre</span>
+                </div>
+                <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;padding:1.5px 5px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-visible">Visible</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f0f1f7;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-campo-cv">CV adjunto</span>
+                </div>
+                <span style="font-size:5.5px;color:#636271;background:#f0f2fa;padding:1.5px 5px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-opcional">Opcional</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;padding:5px 0;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;color:#8e8ea0;font-family:Roboto,sans-serif;" data-i18n="mock-campo-telefono">Teléfono</span>
+                </div>
+                <span style="font-size:5.5px;color:#8e8ea0;background:#f0f2fa;padding:1.5px 5px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-oculto">Oculto</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-reclutamiento">Reclutamiento</span>
+            <h2 class="card-title" data-i18n="title-portal-empleos">Portal de Empleos personalizado</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#886BFF;"></span>
+              <span data-i18n="badge-reclutamiento">Reclutamiento</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-portal-empleos"><strong>Campos configurables:</strong> Adapta el formulario de forma independiente para cada empleo según las necesidades del perfil.<br><br><strong>Flexibilidad de formatos:</strong> Habilita campos de texto, fechas, números de teléfono o archivos para recibir la información exacta.<br><br><strong>Control de visibilidad:</strong> Define de manera simple si cada campo será visible, opcional u oculto para los candidatos.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Card: Legajo Digital — Registro de motivos de baja -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#E4F4E6;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M49.1955 171.499H150.804C154.522 171.499 157 169.021 157 165.304C157 144.238 139.652 121.934 100 121.934C60.3477 121.934 43 144.238 43 165.304C43 169.021 45.4782 171.499 49.1955 171.499Z" fill="#1CA332"/><path opacity="0.4" d="M138.412 67.4131C138.412 46.348 121.065 29 99.9993 29C78.9342 29 61.5862 46.348 61.5862 67.4131C61.5862 88.4782 78.9342 105.826 99.9993 105.826C121.065 105.826 138.412 88.4782 138.412 67.4131Z" fill="#1CA332"/></svg>
+            </div>
+            <div class="mock" style="padding-top:6px;">
+              <p class="mock-head" style="margin-bottom:4px;" data-i18n="mock-head-legajo">Legajo Digital</p>
+              <!-- Profile row -->
+              <div style="display:flex;align-items:center;gap:6px;padding-bottom:4px;border-bottom:1px solid #f0f1f7;margin-bottom:5px;">
+                <img src="images/memojis/memoji-08.png" style="width:18px;height:18px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;">M. García</span>
+                  <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;" data-i18n="mock-baja-activa">Desactivar colaborador</span>
+                </div>
+              </div>
+              <!-- Dropdown selector -->
+              <div style="margin-bottom:5px;">
+                <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-motivo-label">Motivo de baja</span>
+                <div style="border:1.5px solid #b8e8c0;border-radius:5px;padding:4px 7px;display:flex;align-items:center;justify-content:space-between;background:#fff;">
+                  <span style="font-size:6px;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-renuncia">Renuncia voluntaria</span>
+                  <svg width="7" height="7" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="#1CA332" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <!-- Observations skeleton -->
+              <div style="border:1px solid #f0f1f7;border-radius:5px;padding:4px 7px;">
+                <div class="mock-bar" style="width:80%;height:3.5px;background:#e8eaf0;margin-bottom:3px;"></div>
+                <div class="mock-bar" style="width:55%;height:3.5px;background:#e8eaf0;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-legajo">Legajo Digital</span>
+            <h2 class="card-title" data-i18n="title-motivos-baja">Registro de motivos de baja</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#1CA332;"></span>
+              <span data-i18n="badge-legajo">Legajo Digital</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-motivos-baja"><strong>Detalle de la baja:</strong> Selecciona el motivo de salida y añade observaciones en el flujo de desactivación.<br><br><strong>Asignación de reemplazos:</strong> Configura un nuevo responsable en el mismo flujo si el usuario tiene personas a cargo.<br><br><strong>Visibilidad y reportes:</strong> Consulta la información en el perfil del colaborador o descárgala en los reportes de usuarios.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
   </div>
 
@@ -1473,6 +1710,91 @@
       </div>
     </div>
 
+    <!-- Card: Gestión de Servicios — Filtro por colaborador -->
+    <div class="card-wrapper" style="cursor:default;">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F1EDFF;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M66.7821 98.0814C75.1112 98.0814 82.5729 102.729 86.2757 110.205C88.8781 115.48 94.1393 118.76 100 118.76C105.861 118.76 111.122 115.48 113.724 110.205C117.434 102.722 124.896 98.0814 133.218 98.0814H165.589C166.368 98.0814 167 97.4502 167 96.6709V72.0927C167 48.7132 152.027 33 129.748 33H70.259C47.9727 33 33 48.7132 33 72.0927V96.6709C33 97.4502 33.6315 98.0814 34.4105 98.0814H66.7821Z" fill="#886BFF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M133.218 108.652C128.951 108.652 125.122 111.036 123.21 114.886C118.816 123.794 109.916 129.33 100 129.33C90.0841 129.33 81.1835 123.794 76.7827 114.879C74.8855 111.036 71.056 108.652 66.7821 108.652H34.4105C33.6315 108.652 33 109.283 33 110.063V128.322C33 151.708 47.9727 167.421 70.259 167.421H129.741C152.027 167.421 167 151.708 167 128.322V110.063C167 109.283 166.368 108.652 165.589 108.652H133.218Z" fill="#886BFF"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-gestion">Gestión de Servicios</p>
+              <!-- Search bar -->
+              <div style="border:1.5px solid #d8d0f7;border-radius:6px;padding:4px 8px;display:flex;align-items:center;gap:5px;margin-bottom:6px;background:#faf8ff;">
+                <svg width="9" height="9" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="#886BFF" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="#886BFF" stroke-width="2" stroke-linecap="round"/></svg>
+                <span style="font-size:5.5px;color:#9e8ecc;font-family:Roboto,sans-serif;" data-i18n="mock-buscar-colaborador">Buscar colaborador…</span>
+              </div>
+              <!-- Employee rows -->
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #f0f1f7;">
+                <img src="images/memojis/memoji-05.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;">
+                <span style="flex:1;font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">M. García</span>
+                <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;padding:1px 4px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-activo">Activo</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;padding:4px 0;">
+                <img src="images/memojis/memoji-03.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;">
+                <span style="flex:1;font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">C. Pérez</span>
+                <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;padding:1px 4px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-activo">Activo</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-gestion">Gestión de Servicios</span>
+            <h2 class="card-title" data-i18n="title-filtro-colab">Filtro por colaborador</h2>
+            <p class="card-sub" data-i18n="sub-filtro-colab">Encuentra rápido a cualquier colaborador en el panel aplicando un filtro.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Card: Gestión de Servicios — Buscador y filtros en aprobaciones -->
+    <div class="card-wrapper" style="cursor:default;">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F1EDFF;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M66.7821 98.0814C75.1112 98.0814 82.5729 102.729 86.2757 110.205C88.8781 115.48 94.1393 118.76 100 118.76C105.861 118.76 111.122 115.48 113.724 110.205C117.434 102.722 124.896 98.0814 133.218 98.0814H165.589C166.368 98.0814 167 97.4502 167 96.6709V72.0927C167 48.7132 152.027 33 129.748 33H70.259C47.9727 33 33 48.7132 33 72.0927V96.6709C33 97.4502 33.6315 98.0814 34.4105 98.0814H66.7821Z" fill="#886BFF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M133.218 108.652C128.951 108.652 125.122 111.036 123.21 114.886C118.816 123.794 109.916 129.33 100 129.33C90.0841 129.33 81.1835 123.794 76.7827 114.879C74.8855 111.036 71.056 108.652 66.7821 108.652H34.4105C33.6315 108.652 33 109.283 33 110.063V128.322C33 151.708 47.9727 167.421 70.259 167.421H129.741C152.027 167.421 167 151.708 167 128.322V110.063C167 109.283 166.368 108.652 165.589 108.652H133.218Z" fill="#886BFF"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-gestion">Gestión de Servicios</p>
+              <!-- Search bar -->
+              <div style="border:1.5px solid #d8d0f7;border-radius:6px;padding:4px 8px;display:flex;align-items:center;gap:5px;margin-bottom:5px;background:#faf8ff;">
+                <svg width="9" height="9" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="#886BFF" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="#886BFF" stroke-width="2" stroke-linecap="round"/></svg>
+                <span style="font-size:5.5px;color:#9e8ecc;font-family:Roboto,sans-serif;" data-i18n="mock-buscar-tramite">Buscar trámite…</span>
+              </div>
+              <!-- Filter pills -->
+              <div style="display:flex;gap:4px;margin-bottom:5px;">
+                <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;padding:2px 6px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-pendiente">Pendiente</span>
+                <span style="font-size:5.5px;color:#636271;background:#f0f2fa;padding:2px 6px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-aprobado">Aprobado</span>
+              </div>
+              <!-- Request rows -->
+              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid #f0f1f7;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;" data-i18n="mock-vacaciones-req">Vacaciones</span>
+                  <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">M. García</span>
+                </div>
+                <span style="font-size:5.5px;color:#886BFF;background:#ede8ff;padding:1px 4px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-pendiente">Pendiente</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;">
+                <div style="flex:1;">
+                  <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;" data-i18n="mock-permiso-req">Permiso especial</span>
+                  <span style="font-size:5.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">C. Pérez</span>
+                </div>
+                <span style="font-size:5.5px;color:#636271;background:#f0f2fa;padding:1px 4px;border-radius:999px;font-family:Roboto,sans-serif;" data-i18n="mock-aprobado">Aprobado</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-gestion">Gestión de Servicios</span>
+            <h2 class="card-title" data-i18n="title-buscador-aprobaciones">Buscador y filtros en aprobaciones</h2>
+            <p class="card-sub" data-i18n="sub-buscador-aprobaciones">Encuentra rápido cualquier trámite pendiente buscando por nombre, fecha o colaborador.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
   </div>
 
@@ -1626,6 +1948,39 @@
         'mock-head-comprobantes': 'Comprobantes',
         'mock-head-asistencia':   'Control de Asistencia',
         'mock-head-grupos':       'Grupos',
+        'title-nuevas-reglas-cierre': 'Nuevas reglas de cierre automático',
+        'title-notif-horas':    'Notificación de horas por aprobar',
+        'title-portal-empleos': 'Portal de Empleos personalizado',
+        'title-motivos-baja':   'Registro de motivos de baja',
+        'title-filtro-colab':   'Filtro por colaborador',
+        'title-buscador-aprobaciones': 'Buscador y filtros en aprobaciones',
+        'sub-filtro-colab':     'Encuentra rápido a cualquier colaborador en el panel aplicando un filtro.',
+        'sub-buscador-aprobaciones': 'Encuentra rápido cualquier trámite pendiente buscando por nombre, fecha o colaborador.',
+        'body-nuevas-reglas-cierre': '<strong>Solución a olvidos:</strong> El sistema detecta cuando alguien no marcó su salida y completa el turno de forma automática.<br><br><strong>Opciones a tu medida:</strong> Elige si el turno se cierra según el horario de la jornada, las horas programadas o un tiempo fijo.<br><br><strong>Reportes al día:</strong> Configura las horas de espera antes del cierre automático y mantén tus métricas de asistencia siempre limpias.',
+        'body-notif-horas':     '<strong>Alertas en el momento:</strong> Recibe un aviso cuando un colaborador solicite la aprobación de sus horas.<br><br><strong>Trámites sin interrupciones:</strong> Si una solicitud se genera sin un aprobador asignado, el sistema te dará aviso para evitar que el proceso se quede frenado.<br><br><strong>Acceso directo:</strong> Abre la notificación para responder la solicitud al instante.',
+        'body-portal-empleos':  '<strong>Campos configurables:</strong> Adapta el formulario de forma independiente para cada empleo según las necesidades del perfil.<br><br><strong>Flexibilidad de formatos:</strong> Habilita campos de texto, fechas, números de teléfono o archivos para recibir la información exacta.<br><br><strong>Control de visibilidad:</strong> Define de manera simple si cada campo será visible, opcional u oculto para los candidatos.',
+        'body-motivos-baja':    '<strong>Detalle de la baja:</strong> Selecciona el motivo de salida y añade observaciones en el flujo de desactivación.<br><br><strong>Asignación de reemplazos:</strong> Configura un nuevo responsable en el mismo flujo si el usuario tiene personas a cargo.<br><br><strong>Visibilidad y reportes:</strong> Consulta la información en el perfil del colaborador o descárgala en los reportes de usuarios.',
+        'mock-head-gestion':    'Gestión de Servicios',
+        'mock-head-reclutamiento': 'Reclutamiento',
+        'mock-criterio-cierre': 'Criterio de cierre',
+        'mock-al-finalizar':    'Al finalizar el turno',
+        'mock-horas-por-aprobar': 'Horas por aprobar',
+        'mock-2-solicitudes':   '2 solicitudes',
+        'mock-campo-nombre':    'Nombre',
+        'mock-campo-cv':        'CV adjunto',
+        'mock-campo-telefono':  'Teléfono',
+        'mock-visible':         'Visible',
+        'mock-opcional':        'Opcional',
+        'mock-oculto':          'Oculto',
+        'mock-baja-activa':     'Desactivar colaborador',
+        'mock-motivo-label':    'Motivo de baja',
+        'mock-renuncia':        'Renuncia voluntaria',
+        'mock-buscar-colaborador': 'Buscar colaborador…',
+        'mock-buscar-tramite':  'Buscar trámite…',
+        'mock-pendiente':       'Pendiente',
+        'mock-aprobado':        'Aprobado',
+        'mock-vacaciones-req':  'Vacaciones',
+        'mock-permiso-req':     'Permiso especial',
       },
       en: {
         'header-title':    '<strong>What\'s new</strong> in Humand',
@@ -1720,6 +2075,39 @@
         'mock-head-comprobantes': 'Receipts',
         'mock-head-asistencia':   'Attendance',
         'mock-head-grupos':       'Groups',
+        'title-nuevas-reglas-cierre': 'New auto-close rules',
+        'title-notif-horas':    'Overtime approval notification',
+        'title-portal-empleos': 'Custom job portal',
+        'title-motivos-baja':   'Offboarding reason log',
+        'title-filtro-colab':   'Filter by employee',
+        'title-buscador-aprobaciones': 'Search & filters in approvals',
+        'sub-filtro-colab':     'Quickly find any employee in the panel by applying a filter.',
+        'sub-buscador-aprobaciones': 'Quickly find any pending request by name, date, or employee.',
+        'body-nuevas-reglas-cierre': '<strong>Missed check-outs:</strong> The system detects when someone forgot to clock out and completes the shift automatically.<br><br><strong>Flexible options:</strong> Choose whether the shift closes based on shift schedule, planned hours, or a fixed time.<br><br><strong>Up-to-date reports:</strong> Configure the waiting time before auto-close and keep attendance metrics always clean.',
+        'body-notif-horas':     '<strong>Real-time alerts:</strong> Get notified when an employee submits an overtime approval request.<br><br><strong>Uninterrupted flow:</strong> If a request is created without an assigned approver, the system alerts you to prevent the process from stalling.<br><br><strong>Direct access:</strong> Open the notification to respond to the request instantly.',
+        'body-portal-empleos':  '<strong>Configurable fields:</strong> Customize the form independently for each job posting based on profile needs.<br><br><strong>Format flexibility:</strong> Enable text, date, phone number, or file fields to receive exactly the right information.<br><br><strong>Visibility control:</strong> Easily define whether each field will be visible, optional, or hidden to candidates.',
+        'body-motivos-baja':    '<strong>Offboarding detail:</strong> Select the departure reason and add notes within the deactivation flow.<br><br><strong>Replacement assignment:</strong> Set a new manager in the same flow if the user has direct reports.<br><br><strong>Visibility & reports:</strong> View the information in the employee profile or download it in user reports.',
+        'mock-head-gestion':    'Service Management',
+        'mock-head-reclutamiento': 'Recruitment',
+        'mock-criterio-cierre': 'Close criteria',
+        'mock-al-finalizar':    'At end of shift',
+        'mock-horas-por-aprobar': 'Overtime to approve',
+        'mock-2-solicitudes':   '2 requests',
+        'mock-campo-nombre':    'Name',
+        'mock-campo-cv':        'CV attachment',
+        'mock-campo-telefono':  'Phone',
+        'mock-visible':         'Visible',
+        'mock-opcional':        'Optional',
+        'mock-oculto':          'Hidden',
+        'mock-baja-activa':     'Deactivate employee',
+        'mock-motivo-label':    'Departure reason',
+        'mock-renuncia':        'Voluntary resignation',
+        'mock-buscar-colaborador': 'Search employee…',
+        'mock-buscar-tramite':  'Search request…',
+        'mock-pendiente':       'Pending',
+        'mock-aprobado':        'Approved',
+        'mock-vacaciones-req':  'Time off',
+        'mock-permiso-req':     'Special leave',
       },
       pt: {
         'header-title':    '<strong>Novidades</strong> no Humand',
@@ -1814,6 +2202,39 @@
         'mock-head-comprobantes': 'Comprovantes',
         'mock-head-asistencia':   'Presença',
         'mock-head-grupos':       'Grupos',
+        'title-nuevas-reglas-cierre': 'Novas regras de encerramento automático',
+        'title-notif-horas':    'Notificação de horas para aprovar',
+        'title-portal-empleos': 'Portal de Empregos personalizado',
+        'title-motivos-baja':   'Registro de motivos de desligamento',
+        'title-filtro-colab':   'Filtro por colaborador',
+        'title-buscador-aprobaciones': 'Busca e filtros em aprovações',
+        'sub-filtro-colab':     'Encontre rapidamente qualquer colaborador no painel aplicando um filtro.',
+        'sub-buscador-aprobaciones': 'Encontre rapidamente qualquer solicitação pendente buscando por nome, data ou colaborador.',
+        'body-nuevas-reglas-cierre': '<strong>Solução para esquecimentos:</strong> O sistema detecta quando alguém não marcou a saída e completa o turno automaticamente.<br><br><strong>Opções personalizadas:</strong> Escolha se o turno encerra conforme o horário da jornada, as horas programadas ou um tempo fixo.<br><br><strong>Relatórios atualizados:</strong> Configure o tempo de espera antes do encerramento automático e mantenha suas métricas de presença sempre limpas.',
+        'body-notif-horas':     '<strong>Alertas em tempo real:</strong> Receba um aviso quando um colaborador solicitar a aprovação das suas horas.<br><br><strong>Processos sem interrupções:</strong> Se uma solicitação for gerada sem um aprovador atribuído, o sistema te avisará para evitar que o processo fique parado.<br><br><strong>Acesso direto:</strong> Abra a notificação para responder à solicitação imediatamente.',
+        'body-portal-empleos':  '<strong>Campos configuráveis:</strong> Adapte o formulário de forma independente para cada vaga conforme as necessidades do perfil.<br><br><strong>Flexibilidade de formatos:</strong> Habilite campos de texto, datas, números de telefone ou arquivos para receber exatamente as informações corretas.<br><br><strong>Controle de visibilidade:</strong> Defina de forma simples se cada campo será visível, opcional ou oculto para os candidatos.',
+        'body-motivos-baja':    '<strong>Detalhe do desligamento:</strong> Selecione o motivo de saída e adicione observações no fluxo de desativação.<br><br><strong>Atribuição de substitutos:</strong> Configure um novo responsável no mesmo fluxo se o usuário tiver pessoas sob sua gestão.<br><br><strong>Visibilidade e relatórios:</strong> Consulte as informações no perfil do colaborador ou baixe nos relatórios de usuários.',
+        'mock-head-gestion':    'Gerenciamento de serviços',
+        'mock-head-reclutamiento': 'Recrutamento',
+        'mock-criterio-cierre': 'Critério de encerramento',
+        'mock-al-finalizar':    'Ao finalizar o turno',
+        'mock-horas-por-aprobar': 'Horas para aprovar',
+        'mock-2-solicitudes':   '2 solicitações',
+        'mock-campo-nombre':    'Nome',
+        'mock-campo-cv':        'Currículo anexado',
+        'mock-campo-telefono':  'Telefone',
+        'mock-visible':         'Visível',
+        'mock-opcional':        'Opcional',
+        'mock-oculto':          'Oculto',
+        'mock-baja-activa':     'Desativar colaborador',
+        'mock-motivo-label':    'Motivo do desligamento',
+        'mock-renuncia':        'Demissão voluntária',
+        'mock-buscar-colaborador': 'Buscar colaborador…',
+        'mock-buscar-tramite':  'Buscar solicitação…',
+        'mock-pendiente':       'Pendente',
+        'mock-aprobado':        'Aprovado',
+        'mock-vacaciones-req':  'Férias',
+        'mock-permiso-req':     'Licença especial',
       }
     };
 
