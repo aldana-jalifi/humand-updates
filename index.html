@@ -1550,6 +1550,70 @@
       </div>
       </div>
     </div>
+    <!-- Card: Turnos laborales — Vista mensual de turnos -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#E4F4E6;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M99.9514 48.21C67.0079 48.21 40.2039 75.014 40.2039 107.958C40.2039 140.901 67.0079 167.705 99.9514 167.705C132.895 167.705 159.699 140.901 159.699 107.958C159.699 75.014 132.895 48.21 99.9514 48.21Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M59.8554 43.4651C62.4984 41.8329 63.3146 38.3739 61.6824 35.7384C60.0427 33.0954 56.5836 32.2793 53.9556 33.9115C43.6757 40.2531 34.6911 48.8109 27.9752 58.6566C26.2306 61.2172 26.8895 64.7137 29.4501 66.4582C30.416 67.1245 31.5166 67.439 32.6097 67.439C34.4066 67.439 36.1661 66.578 37.2517 64.9907C43.0917 56.4329 50.9083 48.9906 59.8554 43.4651Z" fill="#1CA332"/><path fill-rule="evenodd" clip-rule="evenodd" d="M172.025 58.6627C165.242 48.7048 156.227 40.117 145.962 33.8278C143.319 32.2106 139.86 33.0342 138.236 35.6771C136.618 38.3276 137.442 41.7792 140.085 43.4039C149.017 48.8695 156.849 56.3342 162.748 64.9893C163.834 66.5841 165.594 67.4376 167.391 67.4376C168.476 67.4376 169.577 67.1232 170.55 66.4643C173.111 64.7198 173.77 61.2233 172.025 58.6627Z" fill="#1CA332"/><path d="M119.193 130.867C121.064 130.867 122.936 129.894 123.984 128.097C125.631 125.477 124.733 122.033 122.038 120.46L104.293 109.754V86.5434C104.293 83.3986 101.747 80.9279 98.6777 80.9279C95.608 80.9279 93.0624 83.3986 93.0624 86.5434V112.973C93.0624 114.92 94.1106 116.792 95.8326 117.765L116.273 130.044C117.171 130.568 118.219 130.867 119.193 130.867Z" fill="#1CA332"/></svg>
+            </div>
+            <div class="mock" style="padding-top:6px;">
+              <p class="mock-head" style="margin-bottom:4px;" data-i18n="mock-head-turnos">Turnos laborales</p>
+              <!-- Month header -->
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;">
+                <span style="font-size:6px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-mes-junio">Junio 2025</span>
+                <div style="display:flex;gap:3px;">
+                  <svg width="7" height="7" fill="none" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke="#1CA332" stroke-width="2.5" stroke-linecap="round"/></svg>
+                  <svg width="7" height="7" fill="none" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="#1CA332" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <!-- Day headers -->
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px;margin-bottom:2px;">
+                <div style="text-align:center;font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">L</div>
+                <div style="text-align:center;font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">M</div>
+                <div style="text-align:center;font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">X</div>
+                <div style="text-align:center;font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">J</div>
+                <div style="text-align:center;font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">V</div>
+                <div style="text-align:center;font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">S</div>
+                <div style="text-align:center;font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;">D</div>
+              </div>
+              <!-- Calendar grid -->
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px 1px;">
+                <div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">2</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">3</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">4</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">5</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">6</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">7</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">8</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">9</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">10</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">11</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">12</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">13</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">14</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">15</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">16</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">17</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">18</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">19</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">20</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#c0c0cc;font-family:Roboto,sans-serif;display:block;line-height:1.2;">21</span><div style="height:6px;border-radius:2px;margin-top:1px;"></div></div><div style="text-align:center;"><span style="font-size:4.5px;color:#8e8ea0;font-family:Roboto,sans-serif;display:block;line-height:1.2;">22</span><div style="height:6px;background:#b8e8c0;border-radius:2px;margin-top:1px;"></div></div>
+              </div>
+              <!-- Legend -->
+              <div style="display:flex;align-items:center;gap:4px;margin-top:4px;">
+                <div style="width:8px;height:5px;background:#b8e8c0;border-radius:1.5px;flex-shrink:0;"></div>
+                <span style="font-size:5px;color:#8e8ea0;font-family:Roboto,sans-serif;" data-i18n="mock-turno-asignado">Turno asignado</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-turnos">Turnos laborales</span>
+            <h2 class="card-title" data-i18n="title-vista-mensual">Vista mensual de turnos</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#1CA332;"></span>
+              <span data-i18n="badge-turnos">Turnos laborales</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-vista-mensual"><strong>Panorama completo:</strong> Visualiza la planificación de turnos de todo el mes en una sola pantalla.<br><br><strong>Mejor contexto para decidir:</strong> Identifica patrones, días sin cobertura o superposiciones con una perspectiva más amplia.<br><br><strong>Complementa la vista semanal:</strong> Alterna entre semana y mes según la necesidad del momento sin perder información.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
   </div>
 
@@ -1948,6 +2012,10 @@
         'mock-head-comprobantes': 'Comprobantes',
         'mock-head-asistencia':   'Control de Asistencia',
         'mock-head-grupos':       'Grupos',
+        'title-vista-mensual':  'Vista mensual de turnos',
+        'body-vista-mensual':   '<strong>Panorama completo:</strong> Visualiza la planificación de turnos de todo el mes en una sola pantalla.<br><br><strong>Mejor contexto para decidir:</strong> Identifica patrones, días sin cobertura o superposiciones con una perspectiva más amplia.<br><br><strong>Complementa la vista semanal:</strong> Alterna entre semana y mes según la necesidad del momento sin perder información.',
+        'mock-mes-junio':       'Junio 2025',
+        'mock-turno-asignado':  'Turno asignado',
         'title-nuevas-reglas-cierre': 'Nuevas reglas de cierre automático',
         'title-notif-horas':    'Notificación de horas por aprobar',
         'title-portal-empleos': 'Portal de Empleos personalizado',
@@ -2075,6 +2143,10 @@
         'mock-head-comprobantes': 'Receipts',
         'mock-head-asistencia':   'Attendance',
         'mock-head-grupos':       'Groups',
+        'title-vista-mensual':  'Monthly shift view',
+        'body-vista-mensual':   '<strong>Full overview:</strong> See the entire month\'s shift schedule in a single screen.<br><br><strong>Better context for decisions:</strong> Identify patterns, uncovered days, or overlaps with a broader perspective.<br><br><strong>Complements the weekly view:</strong> Switch between weekly and monthly views as needed without losing any information.',
+        'mock-mes-junio':       'June 2025',
+        'mock-turno-asignado':  'Assigned shift',
         'title-nuevas-reglas-cierre': 'New auto-close rules',
         'title-notif-horas':    'Overtime approval notification',
         'title-portal-empleos': 'Custom job portal',
@@ -2202,6 +2274,10 @@
         'mock-head-comprobantes': 'Comprovantes',
         'mock-head-asistencia':   'Presença',
         'mock-head-grupos':       'Grupos',
+        'title-vista-mensual':  'Visão mensal de turnos',
+        'body-vista-mensual':   '<strong>Panorama completo:</strong> Visualize o planejamento de turnos do mês inteiro em uma única tela.<br><br><strong>Melhor contexto para decidir:</strong> Identifique padrões, dias sem cobertura ou sobreposições com uma perspectiva mais ampla.<br><br><strong>Complementa a visão semanal:</strong> Alterne entre semana e mês conforme a necessidade do momento sem perder informações.',
+        'mock-mes-junio':       'Junho 2025',
+        'mock-turno-asignado':  'Turno atribuído',
         'title-nuevas-reglas-cierre': 'Novas regras de encerramento automático',
         'title-notif-horas':    'Notificação de horas para aprovar',
         'title-portal-empleos': 'Portal de Empregos personalizado',
