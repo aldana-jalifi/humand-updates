@@ -1,0 +1,53 @@
+{
+  "$schema": "humand-modules-catalog",
+  "description": "Catálogo maestro de módulos Humand. Cada entry tiene la key del icono (igual al key en humand-modules.js), nombre canónico en español, color de fondo tintado (bg) para usar en la imagen, y accent color del módulo (color del icono).",
+  "source_icons": "https://github.com/aldana-jalifi/modules-icons",
+  "tint_formula": "bg = mix(accent, white, 0.90) — 90% blanco + 10% accent",
+  "modules": [
+    { "key": "chat",          "name": "Chat",                       "category": "Comunicación Interna", "bg": "#EBF9EE", "accent": "#4ED364" },
+    { "key": "livestreaming", "name": "Live Streaming",             "category": "Comunicación Interna", "bg": "#FBEBEF", "accent": "#DB345B" },
+    { "key": "orgchart",      "name": "Organigrama",                "category": "Comunicación Interna", "bg": "#FDEEEA", "accent": "#E9582B" },
+    { "key": "benefits",      "name": "Beneficios",                 "category": "Comunicación Interna", "bg": "#FEF8E9", "accent": "#F0B623" },
+    { "key": "socialfeed",    "name": "Red Social Interna (Muro)",  "category": "Comunicación Interna", "bg": "#E5F3FD", "accent": "#0182D2" },
+    { "key": "magazine",      "name": "Noticias",                   "category": "Comunicación Interna", "bg": "#EAF6F8", "accent": "#30A2BC" },
+    { "key": "libraries",     "name": "Biblioteca de Recursos",     "category": "Comunicación Interna", "bg": "#E7F4F1", "accent": "#35A48E" },
+    { "key": "mailbox",       "name": "Buzón de Sugerencias",       "category": "Comunicación Interna", "bg": "#FCECEC", "accent": "#E54241" },
+    { "key": "chatbots",      "name": "AI Chatbots",                "category": "Comunicación Interna", "bg": "#E6F2FA", "accent": "#0081D0" },
+    { "key": "complaints",    "name": "Canal de Denuncias",         "category": "Comunicación Interna", "bg": "#FDEEEA", "accent": "#E9582B" },
+    { "key": "videocalls",    "name": "Videollamadas",              "category": "Comunicación Interna", "bg": "#EBF6F4", "accent": "#35A48E" },
+
+    { "key": "documents",     "name": "Documentos",                 "category": "Gestión de RRHH",      "bg": "#F3F0FF", "accent": "#886BFF" },
+    { "key": "timeoff",       "name": "Vacaciones y Permisos",      "category": "Gestión de RRHH",      "bg": "#FEF8E9", "accent": "#F0B623" },
+    { "key": "files",         "name": "Archivos",                   "category": "Gestión de RRHH",      "bg": "#EBF6F4", "accent": "#35A48E" },
+    { "key": "quicklinks",    "name": "Accesos Rápidos",            "category": "Gestión de RRHH",      "bg": "#EEF6E8", "accent": "#59A31C" },
+    { "key": "onboarding",    "name": "Onboarding",                 "category": "Gestión de RRHH",      "bg": "#F3F0FF", "accent": "#886BFF" },
+    { "key": "employeefile",  "name": "Expediente Digital (Legajo)","category": "Gestión de RRHH",      "bg": "#E4F4E6", "accent": "#1CA332" },
+    { "key": "spacereserv",   "name": "Reserva de Espacios",        "category": "Gestión de RRHH",      "bg": "#FDEEEA", "accent": "#E9582B" },
+    { "key": "policies",      "name": "Políticas",                  "category": "Gestión de RRHH",      "bg": "#EBF6F4", "accent": "#35A48E" },
+
+    { "key": "surveys",       "name": "Encuestas",                  "category": "Desarrollo de Talento","bg": "#F3F0FF", "accent": "#886BFF" },
+    { "key": "okrs",          "name": "Objetivos y OKRs",           "category": "Desarrollo de Talento","bg": "#FBEBEF", "accent": "#DB345B" },
+    { "key": "devplan",       "name": "Plan de Carrera",            "category": "Desarrollo de Talento","bg": "#F6EBF4", "accent": "#A33896" },
+    { "key": "performance",   "name": "Evaluación de Desempeño",    "category": "Desarrollo de Talento","bg": "#FEF8E9", "accent": "#F0B623" },
+    { "key": "learning",      "name": "Aprendizaje",                "category": "Desarrollo de Talento","bg": "#EBF6F4", "accent": "#35A48E" },
+    { "key": "jobposting",    "name": "Búsquedas Internas (Reclutamiento)", "category": "Desarrollo de Talento", "bg": "#F1EDFF", "accent": "#886BFF" },
+
+    { "key": "servicedesk",   "name": "Gestión de Servicios",       "category": "Operaciones",          "bg": "#F1EDFF", "accent": "#886BFF" },
+    { "key": "workflows",     "name": "Formularios y Trámites",     "category": "Operaciones",          "bg": "#EFEDFA", "accent": "#6347D1" },
+    { "key": "timetracking",  "name": "Control de Asistencia (Gestión del Tiempo)", "category": "Operaciones", "bg": "#E4F4E6", "accent": "#1CA332" },
+
+    { "key": "referral",      "name": "Programa de Referidos",      "category": "Cultura Empresarial",  "bg": "#EAF6F8", "accent": "#30A2BC" },
+    { "key": "birthdays",     "name": "Cumpleaños y Aniversarios",  "category": "Cultura Empresarial",  "bg": "#FBEBF2", "accent": "#D7357D" },
+    { "key": "events",        "name": "Eventos",                    "category": "Cultura Empresarial",  "bg": "#EAF6F8", "accent": "#30A2BC" },
+    { "key": "experience",    "name": "People Experience",          "category": "Cultura Empresarial",  "bg": "#F6EBF4", "accent": "#A33896" },
+    { "key": "marketplace",   "name": "Marketplace",                "category": "Cultura Empresarial",  "bg": "#FDECEC", "accent": "#E74444" },
+    { "key": "kudos",         "name": "Reconocimientos",            "category": "Cultura Empresarial",  "bg": "#FEF8E9", "accent": "#F0B623" },
+
+    { "key": "roles",         "name": "Roles y Permisos",           "category": "Plataforma",           "bg": "#EAF6F8", "accent": "#30A2BC" },
+    { "key": "integrations",  "name": "Integraciones",              "category": "Plataforma",           "bg": "#FBEBEF", "accent": "#DB345B" },
+    { "key": "insights",      "name": "Insights",                   "category": "Plataforma",           "bg": "#FDEEEA", "accent": "#E9582B" },
+    { "key": "idaccess",      "name": "Acceso con ID",              "category": "Plataforma",           "bg": "#EEF6E8", "accent": "#59A31C" },
+    { "key": "security",      "name": "Seguridad y Privacidad",     "category": "Plataforma",           "bg": "#F5EEEC", "accent": "#9A543C" },
+    { "key": "groups",        "name": "Grupos",                     "category": "Plataforma",           "bg": "#F0E3EE", "accent": "#801973" }
+  ]
+}
