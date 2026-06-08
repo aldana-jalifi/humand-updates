@@ -530,9 +530,6 @@
         height: 210px;
       }
 
-      .card-flat {
-        margin-bottom: 24px;
-      }
     }
 
     /* ── Desktop ── */
@@ -2111,172 +2108,252 @@
   <div class="cards">
 
   <!-- Card 1: Gestión del Desempeño — Reporte de competencias evaluadas (STANDARD) -->
-  <div class="card-flat">
-    <div style="background:#EBF4E4;height:200px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:12px;right:12px;width:44px;height:44px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(30,30,60,0.10);z-index:2;">
-        <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M125.547 36H74.4531C53.1836 36 37 52.8398 37 74.9297V125.07C37 147.16 53.1836 164 74.4531 164H125.547C146.816 164 163 147.16 163 125.07V74.9297C163 52.8398 146.816 36 125.547 36Z" fill="#59A31C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M138.395 80.2319C140.442 82.2795 140.442 85.5706 138.395 87.6182L95.2379 130.775C94.2141 131.799 92.8519 132.311 91.4897 132.311C90.1275 132.311 88.7654 131.799 87.7415 130.775L61.6046 104.638C59.5569 102.59 59.5569 99.2993 61.6046 97.2516C63.6522 95.204 66.9433 95.204 68.9909 97.2516L91.4897 119.75L130.009 81.2312C132.056 79.1277 135.347 79.1836 138.395 80.2319Z" fill="#59A31C"/></svg>
-      </div>
-      <div class="mock">
-        <p class="mock-head" data-i18n="mock-head-desempenio">Gestión del Desempeño</p>
-        <div style="background:#fff;border-radius:6px;border:1px solid #dfe0e6;overflow:hidden;">
-          <div style="background:#F5F6F8;padding:8px 9px;display:flex;align-items:center;justify-content:space-between;">
-            <span style="font-size:10px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-reporte-comp-label">Reporte de competencias</span>
-            <span style="font-size:7px;color:#636271;background:#DCDDE3;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;line-height:1.4;">Q1 2025</span>
+  <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+    <div class="card-scene">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="card-visual" style="background:#EBF4E4;">
+          <div class="card-visual-icon">
+            <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M125.547 36H74.4531C53.1836 36 37 52.8398 37 74.9297V125.07C37 147.16 53.1836 164 74.4531 164H125.547C146.816 164 163 147.16 163 125.07V74.9297C163 52.8398 146.816 36 125.547 36Z" fill="#59A31C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M138.395 80.2319C140.442 82.2795 140.442 85.5706 138.395 87.6182L95.2379 130.775C94.2141 131.799 92.8519 132.311 91.4897 132.311C90.1275 132.311 88.7654 131.799 87.7415 130.775L61.6046 104.638C59.5569 102.59 59.5569 99.2993 61.6046 97.2516C63.6522 95.204 66.9433 95.204 68.9909 97.2516L91.4897 119.75L130.009 81.2312C132.056 79.1277 135.347 79.1836 138.395 80.2319Z" fill="#59A31C"/></svg>
           </div>
-          <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:flex;align-items:center;gap:5px;">
-            <img src="images/memojis/memoji-05.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-            <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;">M. García</span>
-            <span style="font-size:7px;color:#fff;background:#59A31C;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;">85%</span>
-          </div>
-          <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:flex;align-items:center;gap:5px;">
-            <img src="images/memojis/memoji-03.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-            <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;">C. Pérez</span>
-            <span style="font-size:7px;color:#fff;background:#59A31C;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;">72%</span>
-          </div>
-          <div style="padding:5px 9px;display:flex;align-items:center;gap:5px;">
-            <img src="images/memojis/memoji-10.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-            <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;">C. Rodríguez</span>
-            <span style="font-size:7px;color:#fff;background:#F0B623;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;">61%</span>
+          <div class="mock">
+            <p class="mock-head" data-i18n="mock-head-desempenio">Gestión del Desempeño</p>
+            <div style="background:#fff;border-radius:6px;border:1px solid #dfe0e6;overflow:hidden;">
+              <div style="background:#F5F6F8;padding:8px 9px;display:flex;align-items:center;justify-content:space-between;">
+                <span style="font-size:10px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-reporte-comp-label">Reporte de competencias</span>
+                <span style="font-size:7px;color:#636271;background:#DCDDE3;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;line-height:1.4;">Q1 2025</span>
+              </div>
+              <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:flex;align-items:center;gap:5px;">
+                <img src="images/memojis/memoji-05.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;">M. García</span>
+                <span style="font-size:7px;color:#fff;background:#59A31C;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;">85%</span>
+              </div>
+              <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:flex;align-items:center;gap:5px;">
+                <img src="images/memojis/memoji-03.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;">C. Pérez</span>
+                <span style="font-size:7px;color:#fff;background:#59A31C;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;">72%</span>
+              </div>
+              <div style="padding:5px 9px;display:flex;align-items:center;gap:5px;">
+                <img src="images/memojis/memoji-10.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;flex:1;">C. Rodríguez</span>
+                <span style="font-size:7px;color:#fff;background:#F0B623;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;">61%</span>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end;margin-top:5px;">
+              <span style="font-size:8px;font-weight:600;color:#59A31C;font-family:Roboto,sans-serif;" data-i18n="mock-exportar">⬇ Exportar</span>
+            </div>
           </div>
         </div>
-        <div style="display:flex;justify-content:flex-end;margin-top:5px;">
-          <span style="font-size:8px;font-weight:600;color:#59A31C;font-family:Roboto,sans-serif;" data-i18n="mock-exportar">⬇ Exportar</span>
+        <div class="card-content">
+          <span class="card-badge" data-i18n="badge-desempenio">Gestión del Desempeño</span>
+          <h2 class="card-title" data-i18n="title-reporte-comp">Reporte de competencias evaluadas</h2>
+          <p class="card-cta" style="color:#496BE3;" data-i18n="cta-proximamente">Próximamente</p>
+        </div>
+      </div>
+      <div class="card-back">
+        <div class="back-header">
+          <span class="back-module">
+            <span class="back-module-dot" style="background:#59A31C;"></span>
+            <span data-i18n="badge-desempenio">Gestión del Desempeño</span>
+          </span>
+          <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+        </div>
+        <div class="back-content">
+          <p class="back-body" data-i18n-html="body-reporte-comp"><strong>Visión completa:</strong> Obtén un reporte detallado de las competencias evaluadas en tus ciclos de desempeño, con resultados por colaborador y por área.<br><br><strong>Decisiones más informadas:</strong> Identifica rápidamente fortalezas y brechas de competencias en tu organización para guiar planes de desarrollo.<br><br><strong>Exportable y filtrable:</strong> Accede al reporte desde el módulo de Evaluación de desempeño y descárgalo para compartirlo con tu equipo.</p>
+        </div>
+        <div class="back-cta">
+          <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
         </div>
       </div>
     </div>
-    <div class="card-content">
-      <span class="card-badge" data-i18n="badge-desempenio">Gestión del Desempeño</span>
-      <h2 class="card-title" data-i18n="title-reporte-comp">Reporte de competencias evaluadas</h2>
-      <p class="card-sub" data-i18n-html="body-reporte-comp"><strong>Visión completa:</strong> Obtén un reporte detallado de las competencias evaluadas en tus ciclos de desempeño, con resultados por colaborador y por área.<br><br><strong>Decisiones más informadas:</strong> Identifica rápidamente fortalezas y brechas de competencias en tu organización para guiar planes de desarrollo.<br><br><strong>Exportable y filtrable:</strong> Accede al reporte desde el módulo de Evaluación de desempeño y descárgalo para compartirlo con tu equipo.</p>
-      <p class="card-cta" data-i18n="cta-proximamente">Próximamente</p>
     </div>
   </div>
 
   <!-- Card 2: Reclutamiento — Jefe directo configurable por vacante (DOUBLE PANEL) -->
-  <div class="card-flat">
-    <div style="background:#F1EDFF;height:200px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:12px;right:12px;width:44px;height:44px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(30,30,60,0.10);z-index:3;">
-        <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.5528 35.4924C139.786 27.5484 132.133 118.592 79.8946 102.246C48.1603 92.3061 51.9867 40.1922 84.5528 35.4924Z" fill="#886BFF"/><path opacity="0.4" d="M45.9171 155.234C33.3982 143.131 42.4651 127.327 57.1052 122.419C63.9261 120.131 84.0147 115.806 88.5482 121.837C91.8339 126.204 92.1666 155.401 90.0455 160.309C85.2625 171.538 52.9877 162.097 45.9171 155.276V155.234Z" fill="#886BFF"/><path d="M157.962 152.826L152.555 147.419C153.969 144.341 154.801 140.889 154.801 137.27C154.801 123.836 143.862 112.939 130.47 112.939C117.077 112.939 106.139 123.878 106.139 137.27C106.139 150.663 117.077 161.601 130.47 161.601C135.336 161.601 139.869 160.146 143.696 157.65L148.437 162.392C149.768 163.722 151.473 164.388 153.22 164.388C154.967 164.388 156.672 163.722 158.003 162.392C160.665 159.73 160.665 155.446 158.003 152.826H157.962ZM119.656 137.27C119.656 131.323 124.522 126.457 130.47 126.457C136.417 126.457 141.284 131.323 141.284 137.27C141.284 139.683 140.493 141.887 139.162 143.717C138.913 143.967 138.705 144.216 138.538 144.507C136.542 146.712 133.672 148.126 130.511 148.126C124.564 148.126 119.698 143.26 119.698 137.312L119.656 137.27Z" fill="#886BFF"/></svg>
-      </div>
-      <!-- Back panel (vacancy list) -->
-      <div style="position:absolute;top:33%;left:46%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;box-shadow:0 3px 12px rgba(33,52,120,0.07);width:205px;padding:7px 10px;z-index:1;">
-        <p class="mock-head" style="margin-bottom:5px;" data-i18n="mock-busquedas-activas">Búsquedas activas</p>
-        <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid #eeeef1;">
-          <div style="width:6px;height:6px;border-radius:50%;background:#886BFF;flex-shrink:0;"></div>
-          <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-analista-rrhh">Analista de RRHH</span>
-          <span style="font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-activa">Activa</span>
+  <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+    <div class="card-scene">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="card-visual" style="background:#F1EDFF;">
+          <div class="card-visual-icon">
+            <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.5528 35.4924C139.786 27.5484 132.133 118.592 79.8946 102.246C48.1603 92.3061 51.9867 40.1922 84.5528 35.4924Z" fill="#886BFF"/><path opacity="0.4" d="M45.9171 155.234C33.3982 143.131 42.4651 127.327 57.1052 122.419C63.9261 120.131 84.0147 115.806 88.5482 121.837C91.8339 126.204 92.1666 155.401 90.0455 160.309C85.2625 171.538 52.9877 162.097 45.9171 155.276V155.234Z" fill="#886BFF"/><path d="M157.962 152.826L152.555 147.419C153.969 144.341 154.801 140.889 154.801 137.27C154.801 123.836 143.862 112.939 130.47 112.939C117.077 112.939 106.139 123.878 106.139 137.27C106.139 150.663 117.077 161.601 130.47 161.601C135.336 161.601 139.869 160.146 143.696 157.65L148.437 162.392C149.768 163.722 151.473 164.388 153.22 164.388C154.967 164.388 156.672 163.722 158.003 162.392C160.665 159.73 160.665 155.446 158.003 152.826H157.962ZM119.656 137.27C119.656 131.323 124.522 126.457 130.47 126.457C136.417 126.457 141.284 131.323 141.284 137.27C141.284 139.683 140.493 141.887 139.162 143.717C138.913 143.967 138.705 144.216 138.538 144.507C136.542 146.712 133.672 148.126 130.511 148.126C124.564 148.126 119.698 143.26 119.698 137.312L119.656 137.27Z" fill="#886BFF"/></svg>
+          </div>
+          <!-- Back panel (vacancy list) -->
+          <div style="position:absolute;top:33%;left:46%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;box-shadow:0 3px 12px rgba(33,52,120,0.07);width:205px;padding:7px 10px;z-index:1;">
+            <p class="mock-head" style="margin-bottom:5px;" data-i18n="mock-busquedas-activas">Búsquedas activas</p>
+            <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid #eeeef1;">
+              <div style="width:6px;height:6px;border-radius:50%;background:#886BFF;flex-shrink:0;"></div>
+              <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-analista-rrhh">Analista de RRHH</span>
+              <span style="font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-activa">Activa</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:3px 0;">
+              <div style="width:6px;height:6px;border-radius:50%;background:#886BFF;flex-shrink:0;"></div>
+              <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-dev-frontend">Dev. Frontend</span>
+              <span style="font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-activa">Activa</span>
+            </div>
+          </div>
+          <!-- Front panel (edit vacancy) -->
+          <div style="position:absolute;top:70%;left:54%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;box-shadow:0 4px 16px rgba(33,52,120,0.12);width:195px;padding:7px 9px;z-index:2;">
+            <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:6px;" data-i18n="mock-editar-vacante">Editar vacante</span>
+            <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-jefe-directo-label">Jefe directo</span>
+            <div style="border:1.5px solid #886BFF;border-radius:6px;padding:4px 7px;display:flex;align-items:center;gap:4px;">
+              <img src="images/memojis/memoji-18.png" style="width:14px;height:14px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+              <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;">Ana M.</span>
+              <span style="margin-left:auto;font-size:9px;color:#886BFF;font-family:Roboto,sans-serif;">▾</span>
+            </div>
+          </div>
         </div>
-        <div style="display:flex;align-items:center;gap:5px;padding:3px 0;">
-          <div style="width:6px;height:6px;border-radius:50%;background:#886BFF;flex-shrink:0;"></div>
-          <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;flex:1;" data-i18n="mock-dev-frontend">Dev. Frontend</span>
-          <span style="font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-activa">Activa</span>
+        <div class="card-content">
+          <span class="card-badge" data-i18n="badge-reclutamiento">Reclutamiento</span>
+          <h2 class="card-title" data-i18n="title-jefe-directo">Jefe directo configurable por vacante</h2>
+          <p class="card-cta" style="color:#496BE3;" data-i18n="cta-proximamente">Próximamente</p>
         </div>
       </div>
-      <!-- Front panel (edit vacancy) -->
-      <div style="position:absolute;top:70%;left:54%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;box-shadow:0 4px 16px rgba(33,52,120,0.12);width:195px;padding:7px 9px;z-index:2;">
-        <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;margin-bottom:6px;" data-i18n="mock-editar-vacante">Editar vacante</span>
-        <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;display:block;margin-bottom:2px;" data-i18n="mock-jefe-directo-label">Jefe directo</span>
-        <div style="border:1.5px solid #886BFF;border-radius:6px;padding:4px 7px;display:flex;align-items:center;gap:4px;">
-          <img src="images/memojis/memoji-18.png" style="width:14px;height:14px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-          <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;">Ana M.</span>
-          <span style="margin-left:auto;font-size:9px;color:#886BFF;font-family:Roboto,sans-serif;">▾</span>
+      <div class="card-back">
+        <div class="back-header">
+          <span class="back-module">
+            <span class="back-module-dot" style="background:#886BFF;"></span>
+            <span data-i18n="badge-reclutamiento">Reclutamiento</span>
+          </span>
+          <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+        </div>
+        <div class="back-content">
+          <p class="back-body" data-i18n-html="body-jefe-directo"><strong>Asignación directa:</strong> Define el jefe directo del puesto al crear o editar una vacante para agilizar la gestión del proceso de selección.<br><br><strong>Mejor coordinación:</strong> El jefe directo queda vinculado a la vacante, facilitando la comunicación y las aprobaciones durante el reclutamiento.<br><br><strong>Configuración desde el panel:</strong> Disponible al crear o editar empleos desde el panel de administración de Búsquedas Internas.</p>
+        </div>
+        <div class="back-cta">
+          <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
         </div>
       </div>
     </div>
-    <div class="card-content">
-      <span class="card-badge" data-i18n="badge-reclutamiento">Reclutamiento</span>
-      <h2 class="card-title" data-i18n="title-jefe-directo">Jefe directo configurable por vacante</h2>
-      <p class="card-sub" data-i18n-html="body-jefe-directo"><strong>Asignación directa:</strong> Define el jefe directo del puesto al crear o editar una vacante para agilizar la gestión del proceso de selección.<br><br><strong>Mejor coordinación:</strong> El jefe directo queda vinculado a la vacante, facilitando la comunicación y las aprobaciones durante el reclutamiento.<br><br><strong>Configuración desde el panel:</strong> Disponible al crear o editar empleos desde el panel de administración de Búsquedas Internas.</p>
-      <p class="card-cta" data-i18n="cta-proximamente">Próximamente</p>
     </div>
   </div>
 
   <!-- Card 3: Gestión del Desempeño — Calibración de evaluaciones (OC) -->
-  <div class="card-flat">
-    <div style="background:#EBF4E4;height:200px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:12px;right:12px;width:44px;height:44px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(30,30,60,0.10);z-index:2;">
-        <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M125.547 36H74.4531C53.1836 36 37 52.8398 37 74.9297V125.07C37 147.16 53.1836 164 74.4531 164H125.547C146.816 164 163 147.16 163 125.07V74.9297C163 52.8398 146.816 36 125.547 36Z" fill="#59A31C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M138.395 80.2319C140.442 82.2795 140.442 85.5706 138.395 87.6182L95.2379 130.775C94.2141 131.799 92.8519 132.311 91.4897 132.311C90.1275 132.311 88.7654 131.799 87.7415 130.775L61.6046 104.638C59.5569 102.59 59.5569 99.2993 61.6046 97.2516C63.6522 95.204 66.9433 95.204 68.9909 97.2516L91.4897 119.75L130.009 81.2312C132.056 79.1277 135.347 79.1836 138.395 80.2319Z" fill="#59A31C"/></svg>
+  <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+    <div class="card-scene">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="card-visual" style="background:#EBF4E4;">
+          <div class="card-visual-icon">
+            <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M125.547 36H74.4531C53.1836 36 37 52.8398 37 74.9297V125.07C37 147.16 53.1836 164 74.4531 164H125.547C146.816 164 163 147.16 163 125.07V74.9297C163 52.8398 146.816 36 125.547 36Z" fill="#59A31C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M138.395 80.2319C140.442 82.2795 140.442 85.5706 138.395 87.6182L95.2379 130.775C94.2141 131.799 92.8519 132.311 91.4897 132.311C90.1275 132.311 88.7654 131.799 87.7415 130.775L61.6046 104.638C59.5569 102.59 59.5569 99.2993 61.6046 97.2516C63.6522 95.204 66.9433 95.204 68.9909 97.2516L91.4897 119.75L130.009 81.2312C132.056 79.1277 135.347 79.1836 138.395 80.2319Z" fill="#59A31C"/></svg>
+          </div>
+          <div style="position:absolute;top:65px;left:50%;transform:translateX(-50%);width:215px;background:#fff;border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 3px 16px rgba(33,52,120,0.09);">
+            <div style="background:#F5F6F8;padding:8px 9px;display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:10px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-calibracion">Calibración</span>
+              <span style="font-size:7px;color:#636271;background:#DCDDE3;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;line-height:1.4;" data-i18n="mock-borrador-tag">Borrador</span>
+            </div>
+            <div style="background:#f9f9fb;padding:4px 9px;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;border-bottom:1px solid #eeeef1;">
+              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-col-colaborador">Colaborador</span>
+              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;" data-i18n="mock-col-original">Original</span>
+              <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;" data-i18n="mock-col-calibrado">Calibrado</span>
+            </div>
+            <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
+              <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">M. García</span>
+              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">72%</span>
+              <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">80%</span>
+            </div>
+            <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
+              <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">C. Pérez</span>
+              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">68%</span>
+              <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">75%</span>
+            </div>
+            <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
+              <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">L. Torres</span>
+              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">55%</span>
+              <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">63%</span>
+            </div>
+            <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
+              <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">C. Rodríguez</span>
+              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">90%</span>
+              <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">90%</span>
+            </div>
+            <div style="padding:6px 9px;text-align:right;">
+              <span style="font-size:8px;font-weight:600;color:#fff;background:#59A31C;border-radius:999px;padding:3px 10px;font-family:Roboto,sans-serif;" data-i18n="mock-guardar-calibracion">Guardar calibración</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <span class="card-badge" data-i18n="badge-desempenio">Gestión del Desempeño</span>
+          <h2 class="card-title" data-i18n="title-calibracion">Calibración de evaluaciones de desempeño</h2>
+          <p class="card-cta" style="color:#496BE3;" data-i18n="cta-proximamente">Próximamente</p>
+        </div>
       </div>
-      <div style="position:absolute;top:65px;left:50%;transform:translateX(-50%);width:215px;background:#fff;border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 3px 16px rgba(33,52,120,0.09);">
-        <div style="background:#F5F6F8;padding:8px 9px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:10px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;" data-i18n="mock-calibracion">Calibración</span>
-          <span style="font-size:7px;color:#636271;background:#DCDDE3;border-radius:999px;padding:1px 5px;font-family:Roboto,sans-serif;line-height:1.4;" data-i18n="mock-borrador-tag">Borrador</span>
+      <div class="card-back">
+        <div class="back-header">
+          <span class="back-module">
+            <span class="back-module-dot" style="background:#59A31C;"></span>
+            <span data-i18n="badge-desempenio">Gestión del Desempeño</span>
+          </span>
+          <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
         </div>
-        <div style="background:#f9f9fb;padding:4px 9px;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;border-bottom:1px solid #eeeef1;">
-          <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-col-colaborador">Colaborador</span>
-          <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;" data-i18n="mock-col-original">Original</span>
-          <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;" data-i18n="mock-col-calibrado">Calibrado</span>
+        <div class="back-content">
+          <p class="back-body" data-i18n-html="body-calibracion"><strong>Correcciones antes del cierre:</strong> Activa una etapa de calibración post-evaluación para que el comité revisor ajuste las calificaciones antes de la entrega final.<br><br><strong>Trazabilidad total:</strong> Cada cambio queda registrado, permitiendo comparar la evaluación original con la calibrada.<br><br><strong>Configurable por segmento:</strong> Asigna calibradores específicos a diferentes grupos de colaboradores según la estructura de tu organización.</p>
         </div>
-        <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
-          <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">M. García</span>
-          <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">72%</span>
-          <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">80%</span>
-        </div>
-        <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
-          <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">C. Pérez</span>
-          <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">68%</span>
-          <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">75%</span>
-        </div>
-        <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
-          <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">L. Torres</span>
-          <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">55%</span>
-          <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">63%</span>
-        </div>
-        <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:grid;grid-template-columns:1fr 46px 50px;gap:4px;align-items:center;">
-          <span style="font-size:8px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;">C. Rodríguez</span>
-          <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;text-align:center;">90%</span>
-          <span style="font-size:7px;color:#59A31C;font-weight:600;font-family:Roboto,sans-serif;text-align:center;">90%</span>
-        </div>
-        <div style="padding:6px 9px;text-align:right;">
-          <span style="font-size:8px;font-weight:600;color:#fff;background:#59A31C;border-radius:999px;padding:3px 10px;font-family:Roboto,sans-serif;" data-i18n="mock-guardar-calibracion">Guardar calibración</span>
+        <div class="back-cta">
+          <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
         </div>
       </div>
     </div>
-    <div class="card-content">
-      <span class="card-badge" data-i18n="badge-desempenio">Gestión del Desempeño</span>
-      <h2 class="card-title" data-i18n="title-calibracion">Calibración de evaluaciones de desempeño</h2>
-      <p class="card-sub" data-i18n-html="body-calibracion"><strong>Correcciones antes del cierre:</strong> Activa una etapa de calibración post-evaluación para que el comité revisor ajuste las calificaciones antes de la entrega final.<br><br><strong>Trazabilidad total:</strong> Cada cambio queda registrado, permitiendo comparar la evaluación original con la calibrada.<br><br><strong>Configurable por segmento:</strong> Asigna calibradores específicos a diferentes grupos de colaboradores según la estructura de tu organización.</p>
-      <p class="card-cta" data-i18n="cta-proximamente">Próximamente</p>
     </div>
   </div>
 
   <!-- Card 4: Reclutamiento — Búsqueda candidatos por nombre (STANDARD) -->
-  <div class="card-flat">
-    <div style="background:#F1EDFF;height:200px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:12px;right:12px;width:44px;height:44px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(30,30,60,0.10);z-index:2;">
-        <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.5528 35.4924C139.786 27.5484 132.133 118.592 79.8946 102.246C48.1603 92.3061 51.9867 40.1922 84.5528 35.4924Z" fill="#886BFF"/><path opacity="0.4" d="M45.9171 155.234C33.3982 143.131 42.4651 127.327 57.1052 122.419C63.9261 120.131 84.0147 115.806 88.5482 121.837C91.8339 126.204 92.1666 155.401 90.0455 160.309C85.2625 171.538 52.9877 162.097 45.9171 155.276V155.234Z" fill="#886BFF"/><path d="M157.962 152.826L152.555 147.419C153.969 144.341 154.801 140.889 154.801 137.27C154.801 123.836 143.862 112.939 130.47 112.939C117.077 112.939 106.139 123.878 106.139 137.27C106.139 150.663 117.077 161.601 130.47 161.601C135.336 161.601 139.869 160.146 143.696 157.65L148.437 162.392C149.768 163.722 151.473 164.388 153.22 164.388C154.967 164.388 156.672 163.722 158.003 162.392C160.665 159.73 160.665 155.446 158.003 152.826H157.962ZM119.656 137.27C119.656 131.323 124.522 126.457 130.47 126.457C136.417 126.457 141.284 131.323 141.284 137.27C141.284 139.683 140.493 141.887 139.162 143.717C138.913 143.967 138.705 144.216 138.538 144.507C136.542 146.712 133.672 148.126 130.511 148.126C124.564 148.126 119.698 143.26 119.698 137.312L119.656 137.27Z" fill="#886BFF"/></svg>
-      </div>
-      <div class="mock">
-        <p class="mock-head" data-i18n="mock-head-reclutamiento">Reclutamiento</p>
-        <div style="border:1.5px solid #886BFF;border-radius:6px;padding:5px 8px;display:flex;align-items:center;gap:5px;margin-bottom:6px;">
-          <span style="font-size:10px;color:#886BFF;">🔍</span>
-          <span style="font-size:9px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-buscar-candidato">Buscar candidato...</span>
+  <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+    <div class="card-scene">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="card-visual" style="background:#F1EDFF;">
+          <div class="card-visual-icon">
+            <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.5528 35.4924C139.786 27.5484 132.133 118.592 79.8946 102.246C48.1603 92.3061 51.9867 40.1922 84.5528 35.4924Z" fill="#886BFF"/><path opacity="0.4" d="M45.9171 155.234C33.3982 143.131 42.4651 127.327 57.1052 122.419C63.9261 120.131 84.0147 115.806 88.5482 121.837C91.8339 126.204 92.1666 155.401 90.0455 160.309C85.2625 171.538 52.9877 162.097 45.9171 155.276V155.234Z" fill="#886BFF"/><path d="M157.962 152.826L152.555 147.419C153.969 144.341 154.801 140.889 154.801 137.27C154.801 123.836 143.862 112.939 130.47 112.939C117.077 112.939 106.139 123.878 106.139 137.27C106.139 150.663 117.077 161.601 130.47 161.601C135.336 161.601 139.869 160.146 143.696 157.65L148.437 162.392C149.768 163.722 151.473 164.388 153.22 164.388C154.967 164.388 156.672 163.722 158.003 162.392C160.665 159.73 160.665 155.446 158.003 152.826H157.962ZM119.656 137.27C119.656 131.323 124.522 126.457 130.47 126.457C136.417 126.457 141.284 131.323 141.284 137.27C141.284 139.683 140.493 141.887 139.162 143.717C138.913 143.967 138.705 144.216 138.538 144.507C136.542 146.712 133.672 148.126 130.511 148.126C124.564 148.126 119.698 143.26 119.698 137.312L119.656 137.27Z" fill="#886BFF"/></svg>
+          </div>
+          <div class="mock">
+            <p class="mock-head" data-i18n="mock-head-reclutamiento">Reclutamiento</p>
+            <div style="border:1.5px solid #886BFF;border-radius:6px;padding:5px 8px;display:flex;align-items:center;gap:5px;margin-bottom:6px;">
+              <span style="font-size:10px;color:#886BFF;">🔍</span>
+              <span style="font-size:9px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-buscar-candidato">Buscar candidato...</span>
+            </div>
+            <div style="border:1px solid #dfe0e6;border-radius:6px;overflow:hidden;">
+              <div style="padding:5px 8px;border-bottom:1px solid #eeeef1;display:flex;align-items:center;gap:5px;">
+                <img src="images/memojis/memoji-05.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                <div>
+                  <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;">M. García</span>
+                  <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-analista-rrhh">Analista de RRHH</span>
+                </div>
+                <span style="margin-left:auto;font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-en-proceso">En proceso</span>
+              </div>
+              <div style="padding:5px 8px;display:flex;align-items:center;gap:5px;">
+                <img src="images/memojis/memoji-24.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                <div>
+                  <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;">L. Torres</span>
+                  <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-dev-frontend">Dev. Frontend</span>
+                </div>
+                <span style="margin-left:auto;font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-entrevista">Entrevista</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div style="border:1px solid #dfe0e6;border-radius:6px;overflow:hidden;">
-          <div style="padding:5px 8px;border-bottom:1px solid #eeeef1;display:flex;align-items:center;gap:5px;">
-            <img src="images/memojis/memoji-05.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-            <div>
-              <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;">M. García</span>
-              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-analista-rrhh">Analista de RRHH</span>
-            </div>
-            <span style="margin-left:auto;font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-en-proceso">En proceso</span>
-          </div>
-          <div style="padding:5px 8px;display:flex;align-items:center;gap:5px;">
-            <img src="images/memojis/memoji-24.png" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-            <div>
-              <span style="font-size:9px;font-weight:600;color:#303036;font-family:Roboto,sans-serif;display:block;">L. Torres</span>
-              <span style="font-size:7px;color:#636271;font-family:Roboto,sans-serif;" data-i18n="mock-dev-frontend">Dev. Frontend</span>
-            </div>
-            <span style="margin-left:auto;font-size:7px;color:#886BFF;background:#ede9ff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-entrevista">Entrevista</span>
-          </div>
+        <div class="card-content">
+          <span class="card-badge" data-i18n="badge-reclutamiento">Reclutamiento</span>
+          <h2 class="card-title" data-i18n="title-busqueda-cand">Búsqueda candidatos por nombre</h2>
+          <p class="card-cta" style="color:#496BE3;" data-i18n="cta-proximamente">Próximamente</p>
+        </div>
+      </div>
+      <div class="card-back">
+        <div class="back-header">
+          <span class="back-module">
+            <span class="back-module-dot" style="background:#886BFF;"></span>
+            <span data-i18n="badge-reclutamiento">Reclutamiento</span>
+          </span>
+          <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+        </div>
+        <div class="back-content">
+          <p class="back-body" data-i18n-html="body-busqueda-cand"><strong>Búsqueda instantánea:</strong> Encuentra cualquier aplicación escribiendo el nombre del candidato, sin necesidad de filtrar manualmente.<br><br><strong>Menos tiempo en la gestión:</strong> Ideal para hacer seguimiento directo de candidatos específicos en procesos con alto volumen de postulaciones.<br><br><strong>Disponible en el panel ATS:</strong> Accede a la búsqueda desde la vista de aplicaciones de cada empleo.</p>
+        </div>
+        <div class="back-cta">
+          <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
         </div>
       </div>
     </div>
-    <div class="card-content">
-      <span class="card-badge" data-i18n="badge-reclutamiento">Reclutamiento</span>
-      <h2 class="card-title" data-i18n="title-busqueda-cand">Búsqueda candidatos por nombre</h2>
-      <p class="card-sub" data-i18n-html="body-busqueda-cand"><strong>Búsqueda instantánea:</strong> Encuentra cualquier aplicación escribiendo el nombre del candidato, sin necesidad de filtrar manualmente.<br><br><strong>Menos tiempo en la gestión:</strong> Ideal para hacer seguimiento directo de candidatos específicos en procesos con alto volumen de postulaciones.<br><br><strong>Disponible en el panel ATS:</strong> Accede a la búsqueda desde la vista de aplicaciones de cada empleo.</p>
-      <p class="card-cta" data-i18n="cta-proximamente">Próximamente</p>
     </div>
   </div>
 
