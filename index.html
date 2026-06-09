@@ -3364,6 +3364,15 @@
   <!-- Vercel Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSFS1JTHB1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MSFS1JTHB1');
+  </script>
+
   <!-- Event tracking -->
   <script>
     document.querySelectorAll('.card-wrapper').forEach(function(card) {
@@ -3373,6 +3382,7 @@
 
       card.addEventListener('click', function() {
         if (window.va) window.va('event', { name: 'card_click', data: { card: cardName } });
+        gtag('event', 'card_click', { card: cardName });
       });
 
       var cta = card.querySelector('.back-cta a');
@@ -3380,6 +3390,7 @@
         cta.addEventListener('click', function(e) {
           e.stopPropagation();
           if (window.va) window.va('event', { name: 'accede_mas_info', data: { card: cardName } });
+          gtag('event', 'accede_mas_info', { card: cardName });
         });
       }
     });
