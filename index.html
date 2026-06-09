@@ -3366,22 +3366,41 @@
 
   <!-- Event tracking -->
   <script>
+    function track(name, data) {
+      if (window.va) window.va('event', { name: name, data: data });
+    }
+
+    // Card clicks y CTA
     document.querySelectorAll('.card-wrapper').forEach(function(card) {
       var title = card.querySelector('.card-title');
       if (!title) return;
       var cardName = title.textContent.trim();
 
       card.addEventListener('click', function() {
-        if (window.va) window.va('event', { name: 'card_click', data: { card: cardName } });
+        track('card_click', { card: cardName });
       });
 
       var cta = card.querySelector('.back-cta a');
       if (cta) {
         cta.addEventListener('click', function(e) {
           e.stopPropagation();
-          if (window.va) window.va('event', { name: 'accede_mas_info', data: { card: cardName } });
+          track('help_center_click', { card: cardName });
         });
       }
+    });
+
+    // Navegación por tabs
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        track('tab_navigation', { tab: btn.textContent.trim() });
+      });
+    });
+
+    // Cambio de idioma
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        track('language_change', { language: btn.dataset.lang });
+      });
     });
   </script>
 </body>
