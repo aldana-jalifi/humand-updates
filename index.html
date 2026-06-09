@@ -3360,5 +3360,29 @@
 
   <!-- Humand Analytics -->
   <script src="https://tracking-humand.vercel.app/api/tracker" defer></script>
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- Event tracking -->
+  <script>
+    document.querySelectorAll('.card-wrapper').forEach(function(card) {
+      var title = card.querySelector('.card-title');
+      if (!title) return;
+      var cardName = title.textContent.trim();
+
+      card.addEventListener('click', function() {
+        if (window.va) window.va('event', { name: 'card_click', data: { card: cardName } });
+      });
+
+      var cta = card.querySelector('.back-cta a');
+      if (cta) {
+        cta.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (window.va) window.va('event', { name: 'accede_mas_info', data: { card: cardName } });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
