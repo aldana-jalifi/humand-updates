@@ -2274,7 +2274,7 @@
       </div>
     </div>
 
-    <!-- Card: Reclutamiento — Filtra candidatos por fuente y fecha de aplicación -->
+    <!-- Card: Reclutamiento — Filtra por fuente y fecha de aplicación -->
     <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
       <div class="card-scene">
       <div class="card-inner">
@@ -2305,7 +2305,7 @@
           </div>
           <div class="card-content">
             <span class="card-badge" data-i18n="badge-reclutamiento">Reclutamiento</span>
-            <h2 class="card-title" data-i18n="title-filtra-candidatos-fuente">Filtra candidatos por fuente y fecha de aplicación</h2>
+            <h2 class="card-title" data-i18n="title-filtra-candidatos-fuente">Filtra por fuente y fecha de aplicación</h2>
             <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
           </div>
         </div>
@@ -2424,6 +2424,59 @@
           </div>
           <div class="back-content">
             <p class="back-body" data-i18n-html="body-filtra-aprobaciones"><strong>Múltiples criterios de filtro:</strong> Reduce el listado por servicio, solicitante, fecha o estado para ver exactamente lo que necesitas revisar.<br><br><strong>Buscador integrado:</strong> Encuentra cualquier solicitud escribiendo el nombre del solicitante.<br><br><strong>Web y mobile:</strong> Disponible en el Panel de Agente y en el Portal de Aprobaciones.</p>
+          </div>
+          <div class="back-cta">
+            <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Card: Reclutamiento — Búsqueda por nombre -->
+    <div class="card-wrapper" onclick="this.classList.toggle('flipped')">
+      <div class="card-scene">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-visual" style="background:#F1EDFF;">
+            <div class="card-visual-icon">
+              <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M45 75c0-16.569 13.431-30 30-30h50c16.569 0 30 13.431 30 30v50c0 16.569-13.431 30-30 30H75c-16.569 0-30-13.431-30-30V75z" fill="#886BFF"/><path d="M133 133l22 22" stroke="#886BFF" stroke-width="12" stroke-linecap="round"/><circle cx="100" cy="100" r="28" stroke="#886BFF" stroke-width="10"/></svg>
+            </div>
+            <div class="mock">
+              <p class="mock-head" data-i18n="mock-head-reclutamiento">Reclutamiento</p>
+              <div style="background:#fff;border-radius:6px;border:1px solid #dfe0e6;overflow:hidden;">
+                <div style="padding:6px 9px;border-bottom:1px solid #eeeef1;display:flex;gap:4px;">
+                  <span style="font-size:7px;color:#886BFF;background:#f1edff;padding:2px 6px;border-radius:999px;font-family:Roboto,sans-serif;border:1px solid #886BFF;" data-i18n="mock-fuente-filtro">Fuente ▾</span>
+                  <span style="font-size:7px;color:#636271;background:#f5f6f8;padding:2px 6px;border-radius:999px;font-family:Roboto,sans-serif;border:1px solid #dfe0e6;" data-i18n="mock-fecha-filtro">Fecha ▾</span>
+                </div>
+                <div style="padding:5px 9px;border-bottom:1px solid #eeeef1;display:flex;align-items:center;gap:5px;">
+                  <img src="images/memojis/memoji-05.png" style="width:14px;height:14px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                  <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;flex:1;">M. García</span>
+                  <span style="font-size:7px;color:#886BFF;background:#f1edff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-linkedin">LinkedIn</span>
+                </div>
+                <div style="padding:5px 9px;display:flex;align-items:center;gap:5px;">
+                  <img src="images/memojis/memoji-03.png" style="width:14px;height:14px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                  <span style="font-size:8px;color:#303036;font-family:Roboto,sans-serif;flex:1;">C. Pérez</span>
+                  <span style="font-size:7px;color:#886BFF;background:#f1edff;border-radius:999px;padding:1px 4px;font-family:Roboto,sans-serif;" data-i18n="mock-referido">Referido</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge" data-i18n="badge-reclutamiento">Reclutamiento</span>
+            <h2 class="card-title" data-i18n="title-busqueda-cand">Búsqueda por nombre</h2>
+            <p class="card-cta" data-i18n="cta-ver-detalle">→ Ver detalle</p>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-header">
+            <span class="back-module">
+              <span class="back-module-dot" style="background:#886BFF;"></span>
+              <span data-i18n="badge-reclutamiento">Reclutamiento</span>
+            </span>
+            <button class="back-close" onclick="event.stopPropagation();this.closest('.card-wrapper').classList.remove('flipped')">✕</button>
+          </div>
+          <div class="back-content">
+            <p class="back-body" data-i18n-html="body-busqueda-cand"><strong>Filtro por fuente:</strong> Selecciona el origen de postulación (referidos, portal, LinkedIn).<br><br><strong>Filtro por fecha:</strong> Acota el listado a un rango de aplicación para priorizar las postulaciones más recientes.<br><br><strong>Combinables entre sí:</strong> Usa ambos filtros junto con la búsqueda por nombre para obtener resultados más precisos.</p>
           </div>
           <div class="back-cta">
             <a href="https://help.humand.co/hc/es-419" target="_blank" onclick="event.stopPropagation()" data-i18n="cta-accede">Accede a más información</a>
@@ -2885,7 +2938,7 @@
         'mock-fecha-filtro':        'Fecha ▾',
         'mock-linkedin':            'LinkedIn',
         'mock-referido':            'Referido',
-        'title-filtra-candidatos-fuente':'Filtra candidatos por fuente y fecha de aplicación',
+        'title-filtra-candidatos-fuente':'Filtra por fuente y fecha de aplicación',
         'body-filtra-candidatos-fuente':'<strong>Filtro por fuente:</strong> Selecciona el origen de postulación (referidos, portal, LinkedIn).<br><br><strong>Filtro por fecha:</strong> Acota el listado a un rango de aplicación para priorizar las postulaciones más recientes.<br><br><strong>Combinables entre sí:</strong> Usa ambos filtros junto con la búsqueda por nombre para obtener resultados más precisos.',
         'mock-mensaje-reunión':     '¿Alguien se sumó a la reunión?',
         'title-confirmacion-lectura':'Confirmación de lectura en chats grupales',
